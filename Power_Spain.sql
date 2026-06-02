@@ -187,7 +187,7 @@ INSERT INTO "technologies" VALUES ('ELC_CHP_BMU_E','p','ELC','Cogeneration munic
 INSERT INTO "technologies" VALUES ('ELC_CHP_BGS_COG_E','p','ELC','Cogeneration biogas plant - Existing','');
 INSERT INTO "technologies" VALUES ('ELC_CHP_COA_IGCC_E','p','ELC','Cogeneration integrated gasification coal combined cycle - Existing','');
 INSERT INTO "technologies" VALUES ('ELC_CHP_BIO_CEN_E','p','ELC','Centralized cogeneration biomass plant - Existing','');
-INSERT INTO "technologies" VALUES ('ELC_NUC_E','p','ELC','Nuclear power plants - Existing','');
+INSERT INTO "technologies" VALUES ('ELC_NUC_LWR_E','p','ELC','Nuclear power plants LWR - Existing','');
 -- Planned technologies
 INSERT INTO "technologies" VALUES ('ELC_COA_STM_P','pb','ELC','Coal steam cycle - New (planned)','');
 INSERT INTO "technologies" VALUES ('ELC_NGA_CC_P','p','ELC','Natural gas combined cycle - New (planned)','');
@@ -777,7 +777,7 @@ INSERT INTO "TechGroupWeight" VALUES ('ELC_PV_ROOF_ITF_N','ELC_SOL_GRP',1.0,'');
 INSERT INTO "TechGroupWeight" VALUES ('ELC_PV_ROOF_ITG_N','ELC_SOL_GRP',1.0,'');
 INSERT INTO "TechGroupWeight" VALUES ('ELC_PV_ROOF_ITH_N','ELC_SOL_GRP',1.0,'');
 INSERT INTO "TechGroupWeight" VALUES ('ELC_PV_ROOF_ITI_N','ELC_SOL_GRP',1.0,'');
-INSERT INTO "TechGroupWeight" VALUES ('ELC_NUC_E','ELC_NUC_GRP',1.0,'');
+INSERT INTO "TechGroupWeight" VALUES ('ELC_NUC_LWR_E','ELC_NUC_GRP',1.0,'');
 INSERT INTO "TechGroupWeight" VALUES ('ELC_NUC_LWR_N','ELC_NUC_GRP',1.0,'');
 INSERT INTO "TechGroupWeight" VALUES ('ELC_NUC_SMR_N','ELC_NUC_GRP',1.0,'');
 -- CCUS
@@ -1870,7 +1870,9 @@ INSERT INTO "Efficiency" VALUES ('IT','ELC_BMU','ELC_CHP_BMU_E',2006,'ELC_CEN',0
 INSERT INTO "Efficiency" VALUES ('IT','ELC_BGS','ELC_CHP_BGS_COG_E',2006,'ELC_CEN',0.66,'');
 INSERT INTO "Efficiency" VALUES ('IT','ELC_COA','ELC_CHP_COA_IGCC_E',2006,'ELC_CEN',0.47,'');
 INSERT INTO "Efficiency" VALUES ('IT','ELC_SLB','ELC_CHP_BIO_CEN_E',2006,'ELC_CEN',0.49,'');
--- Aggiungere nuclear
+-- Nuclear da TEMOA  europe
+INSERT INTO "Efficiency" VALUES ('EU','ELC_NUC','ELC_NUC_LWR_E',2006,'ELC_CEN',0.311,'10.1016/j.fusengdes.2024.114679');
+
 -- Planned technologies
 INSERT INTO "Efficiency" VALUES ('IT','ELC_COA','ELC_COA_STM_P',2007,'ELC_CEN',0.42,'');
 INSERT INTO "Efficiency" VALUES ('IT','ELC_NGA','ELC_NGA_CC_P',2007,'ELC_CEN',0.47,'');
@@ -2361,7 +2363,7 @@ INSERT INTO "CostVariable" VALUES ('IT',2006,'ELC_CHP_BMU_E',2006,0.83,'M€/PJ'
 INSERT INTO "CostVariable" VALUES ('IT',2006,'ELC_CHP_BGS_COG_E',2006,0.83,'M€/PJ','');
 INSERT INTO "CostVariable" VALUES ('IT',2006,'ELC_CHP_COA_IGCC_E',2006,0.83,'M€/PJ','');
 INSERT INTO "CostVariable" VALUES ('IT',2006,'ELC_CHP_BIO_CEN_E',2006,0.83,'M€/PJ','');
--- Aggiungere nuclear
+-- Aggiungere nuclear (non c'è?)
 -- Planned technologies
 INSERT INTO "CostVariable" VALUES ('IT',2007,'ELC_COA_STM_P',2007,0.46,'M€/PJ','');
 INSERT INTO "CostVariable" VALUES ('IT',2007,'ELC_NGA_CC_P',2007,1.41,'M€/PJ','');
@@ -2568,7 +2570,7 @@ INSERT INTO "CostInvest" VALUES ('IT','STG_ELC_DST_BTT',2050,1002,'M$/GW','ATB 2
 -- Distrib and demand
 INSERT INTO "CostInvest" VALUES ('IT','DISTR_ELC',2025,20,'M€/GW','Assumption');
 
-
+-- TODO costi fissi nuclear?
 CREATE TABLE "CostFixed" (
 	"regions"	text NOT NULL,
 	"periods"	integer NOT NULL,
@@ -2616,7 +2618,7 @@ INSERT INTO "CostFixed" VALUES ('IT',2006,'ELC_CHP_BMU_E',2006,220.50,'M€/GW',
 INSERT INTO "CostFixed" VALUES ('IT',2006,'ELC_CHP_BGS_COG_E',2006,220.50,'M€/GW','');
 INSERT INTO "CostFixed" VALUES ('IT',2006,'ELC_CHP_COA_IGCC_E',2006,220.50,'M€/GW','');
 INSERT INTO "CostFixed" VALUES ('IT',2006,'ELC_CHP_BIO_CEN_E',2006,220.50,'M€/GW','');
--- Aggiungere nuclear
+-- Aggiungere nuclear (non c'è?)
 -- Planned technologies
 INSERT INTO "CostFixed" VALUES ('IT',2007,'ELC_COA_STM_P',2007,32.04,'M€/GW','');
 INSERT INTO "CostFixed" VALUES ('IT',2007,'ELC_NGA_CC_P',2007,12.91,'M€/GW','');
@@ -2850,7 +2852,7 @@ INSERT INTO "CurrencyTech" VALUES ('ELC_CHP_NGA_TURB_N','EUR09');
 INSERT INTO "CurrencyTech" VALUES ('ELC_CHP_NGA_CC_N','EUR09');
 INSERT INTO "CurrencyTech" VALUES ('ELC_CHP_NGA_CP_N','EUR09');
 INSERT INTO "CurrencyTech" VALUES ('ELC_CHP_NGA_TAP_N','EUR09');
-INSERT INTO "CurrencyTech" VALUES ('ELC_NUC_E','EUR09');
+INSERT INTO "CurrencyTech" VALUES ('ELC_NUC_LWR_E','EUR09');
 -- CCUS
 INSERT INTO "CurrencyTech" VALUES ('CCUS_ELC_COA','USD20');
 INSERT INTO "CurrencyTech" VALUES ('CCUS_ELC_NGA','USD20');
@@ -2903,7 +2905,7 @@ INSERT INTO "CapacityToActivity" VALUES ('IT','ELC_CHP_BMU_E',31.536,'PJ/GW');
 INSERT INTO "CapacityToActivity" VALUES ('IT','ELC_CHP_BGS_COG_E',31.536,'PJ/GW');
 INSERT INTO "CapacityToActivity" VALUES ('IT','ELC_CHP_COA_IGCC_E',31.536,'PJ/GW');
 INSERT INTO "CapacityToActivity" VALUES ('IT','ELC_CHP_BIO_CEN_E',31.536,'PJ/GW');
-INSERT INTO "CapacityToActivity" VALUES ('IT','ELC_NUC_E',31.536,'PJ/GW');
+INSERT INTO "CapacityToActivity" VALUES ('IT','ELC_NUC_LWR_E',31.536,'PJ/GW');
 -- Planned plants
 INSERT INTO "CapacityToActivity" VALUES ('IT','ELC_COA_STM_P',31.536,'PJ/GW');
 INSERT INTO "CapacityToActivity" VALUES ('IT','ELC_NGA_CC_P',31.536,'PJ/GW');
@@ -3828,7 +3830,40 @@ INSERT INTO "MaterialIntensity" VALUES ('IT','GAL','ELC_PV_ROOF_ITI_N',2007,4.00
 INSERT INTO "MaterialIntensity" VALUES ('IT','IND','ELC_PV_ROOF_ITI_N',2007,1.50E-01,'t/GW','10.1016/j.mtener.2025.101805');
 INSERT INTO "MaterialIntensity" VALUES ('IT','SIL','ELC_PV_ROOF_ITI_N',2007,3.80E+00,'t/GW','10.1016/j.mtener.2025.101805');
 INSERT INTO "MaterialIntensity" VALUES ('IT','SIV','ELC_PV_ROOF_ITI_N',2007,1.90E+00,'t/GW','10.1016/j.mtener.2025.101805');
--- Aggiungere nuclear
+-- Exsiting nuclear from TEMOA Europe
+INSERT INTO "MaterialIntensity" VALUES ('EU','ALU','ELC_NUC_LWR_E',2010,7.64E+02,'t/GW','Ecoinvent - PWR');
+INSERT INTO "MaterialIntensity" VALUES ('EU','BOR','ELC_NUC_LWR_E',2010,5.35E-01,'t/GW','Ecoinvent - PWR');
+INSERT INTO "MaterialIntensity" VALUES ('EU','CER','ELC_NUC_LWR_E',2010,4.05E+00,'t/GW','Ecoinvent - PWR');
+INSERT INTO "MaterialIntensity" VALUES ('EU','CHR','ELC_NUC_LWR_E',2010,4.59E+03,'t/GW','Ecoinvent - PWR');
+INSERT INTO "MaterialIntensity" VALUES ('EU','COB','ELC_NUC_LWR_E',2010,9.00E+00,'t/GW','Ecoinvent - PWR');
+INSERT INTO "MaterialIntensity" VALUES ('EU','COP','ELC_NUC_LWR_E',2010,1.50E+03,'t/GW','Ecoinvent - PWR');
+INSERT INTO "MaterialIntensity" VALUES ('EU','DYS','ELC_NUC_LWR_E',2010,2.12E-04,'t/GW','Ecoinvent - PWR');
+INSERT INTO "MaterialIntensity" VALUES ('EU','EUP','ELC_NUC_LWR_E',2010,1.63E-02,'t/GW','Ecoinvent - PWR');
+INSERT INTO "MaterialIntensity" VALUES ('EU','FLU','ELC_NUC_LWR_E',2010,4.55E+01,'t/GW','Ecoinvent - PWR');
+INSERT INTO "MaterialIntensity" VALUES ('EU','GAD','ELC_NUC_LWR_E',2010,5.69E-02,'t/GW','Ecoinvent - PWR');
+INSERT INTO "MaterialIntensity" VALUES ('EU','GAL','ELC_NUC_LWR_E',2010,2.12E-01,'t/GW','Ecoinvent - PWR');
+INSERT INTO "MaterialIntensity" VALUES ('EU','GRA','ELC_NUC_LWR_E',2010,9.58E-01,'t/GW','Ecoinvent - PWR');
+INSERT INTO "MaterialIntensity" VALUES ('EU','IND','ELC_NUC_LWR_E',2010,1.90E-03,'t/GW','Ecoinvent - PWR');
+INSERT INTO "MaterialIntensity" VALUES ('EU','LAN','ELC_NUC_LWR_E',2010,1.87E+00,'t/GW','Ecoinvent - PWR');
+INSERT INTO "MaterialIntensity" VALUES ('EU','LIT','ELC_NUC_LWR_E',2010,9.87E-05,'t/GW','Ecoinvent - PWR');
+INSERT INTO "MaterialIntensity" VALUES ('EU','MAG','ELC_NUC_LWR_E',2010,1.35E+02,'t/GW','Ecoinvent - PWR');
+INSERT INTO "MaterialIntensity" VALUES ('EU','MAN','ELC_NUC_LWR_E',2010,6.18E+02,'t/GW','Ecoinvent - PWR');
+INSERT INTO "MaterialIntensity" VALUES ('EU','MOL','ELC_NUC_LWR_E',2010,3.12E+01,'t/GW','Ecoinvent - PWR');
+INSERT INTO "MaterialIntensity" VALUES ('EU','NEO','ELC_NUC_LWR_E',2010,1.50E+00,'t/GW','Ecoinvent - PWR');
+INSERT INTO "MaterialIntensity" VALUES ('EU','NIC','ELC_NUC_LWR_E',2010,3.42E+03,'t/GW','Ecoinvent - PWR');
+INSERT INTO "MaterialIntensity" VALUES ('EU','NIO','ELC_NUC_LWR_E',2010,5.07E-01,'t/GW','Ecoinvent - PWR');
+INSERT INTO "MaterialIntensity" VALUES ('EU','PAL','ELC_NUC_LWR_E',2010,1.92E-03,'t/GW','Ecoinvent - PWR');
+INSERT INTO "MaterialIntensity" VALUES ('EU','PHO','ELC_NUC_LWR_E',2010,2.13E+01,'t/GW','Ecoinvent - PWR');
+INSERT INTO "MaterialIntensity" VALUES ('EU','PLA','ELC_NUC_LWR_E',2010,9.83E-04,'t/GW','Ecoinvent - PWR');
+INSERT INTO "MaterialIntensity" VALUES ('EU','PRA','ELC_NUC_LWR_E',2010,5.02E-01,'t/GW','Ecoinvent - PWR');
+INSERT INTO "MaterialIntensity" VALUES ('EU','SIL','ELC_NUC_LWR_E',2010,4.88E+02,'t/GW','Ecoinvent - PWR');
+INSERT INTO "MaterialIntensity" VALUES ('EU','SIV','ELC_NUC_LWR_E',2010,3.47E-01,'t/GW','Ecoinvent - PWR');
+INSERT INTO "MaterialIntensity" VALUES ('EU','TAN','ELC_NUC_LWR_E',2010,3.89E-03,'t/GW','Ecoinvent - PWR');
+INSERT INTO "MaterialIntensity" VALUES ('EU','TER','ELC_NUC_LWR_E',2010,6.42E-05,'t/GW','Ecoinvent - PWR');
+INSERT INTO "MaterialIntensity" VALUES ('EU','TIT','ELC_NUC_LWR_E',2010,6.01E+01,'t/GW','Ecoinvent - PWR');
+INSERT INTO "MaterialIntensity" VALUES ('EU','VAN','ELC_NUC_LWR_E',2010,2.16E-03,'t/GW','Ecoinvent - PWR');
+INSERT INTO "MaterialIntensity" VALUES ('EU','YTT','ELC_NUC_LWR_E',2010,1.19E-03,'t/GW','Ecoinvent - PWR');
+INSERT INTO "MaterialIntensity" VALUES ('EU','ZIR','ELC_NUC_LWR_E',2010,6.13E+00,'t/GW','Ecoinvent - PWR');
 -- Storage
 INSERT INTO "MaterialIntensity" VALUES ('IT','ALU','STG_ELC_CEN_BTT',2020,1.35E+04,'t/GW','10.1016/j.mtener.2025.101805');
 INSERT INTO "MaterialIntensity" VALUES ('IT','COB','STG_ELC_CEN_BTT',2020,6.22E+02,'t/GW','10.1016/j.mtener.2025.101805');

@@ -1,5 +1,5 @@
 - ExsistingCapacity
-- Aggiungere dati sul nucleare
+- Aggiungere dati sul nucleare (fatto Efficiency, MaterialIntensity)
 - MaxCapacityGroup
 - MaxActivity
 - Tabella MinActivityGroup e MaxActivityGroup
