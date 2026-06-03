@@ -48,19 +48,19 @@ CREATE TABLE "time_season" (
 	"t_season"	text,
 	PRIMARY KEY("t_season")
 );
-INSERT INTO "time_season" VALUES ('winter'); --January/March
-INSERT INTO "time_season" VALUES ('spring'); --April/June
-INSERT INTO "time_season" VALUES ('summer'); --July/September
-INSERT INTO "time_season" VALUES ('fall'); --October/December
+INSERT INTO "time_season" VALUES ('winter'); --December/February
+INSERT INTO "time_season" VALUES ('spring'); --March/May
+INSERT INTO "time_season" VALUES ('summer'); --June/August
+INSERT INTO "time_season" VALUES ('fall'); --September/November
 
 CREATE TABLE "time_of_day" (
 	"t_day"	text,
 	PRIMARY KEY("t_day")
 );
-INSERT INTO "time_of_day" VALUES ('night'); --20:00/04:59
-INSERT INTO "time_of_day" VALUES ('morning'); --05:00/10:59
-INSERT INTO "time_of_day" VALUES ('noon'); --11:00/13:59
-INSERT INTO "time_of_day" VALUES ('afternoon'); --14:00/19:59
+INSERT INTO "time_of_day" VALUES ('night'); --22:00/05:59
+INSERT INTO "time_of_day" VALUES ('morning'); --06:00/10:59
+INSERT INTO "time_of_day" VALUES ('noon'); --11:00/14:59
+INSERT INTO "time_of_day" VALUES ('afternoon'); --14:59/21:59
 
 CREATE TABLE "SegFrac" (
 	"season_name"	text,
@@ -71,22 +71,22 @@ CREATE TABLE "SegFrac" (
 	FOREIGN KEY("season_name") REFERENCES "time_season"("t_season"),
 	FOREIGN KEY("time_of_day_name") REFERENCES "time_of_day"("t_day")
 );
-INSERT INTO "SegFrac" VALUES ('winter','night',0.0925,'');
-INSERT INTO "SegFrac" VALUES ('winter','morning',0.0617,'');
-INSERT INTO "SegFrac" VALUES ('winter','noon',0.0308,'');
-INSERT INTO "SegFrac" VALUES ('winter','afternoon',0.0617,'');
-INSERT INTO "SegFrac" VALUES ('spring','night',0.0935,'');
-INSERT INTO "SegFrac" VALUES ('spring','morning',0.0623,'');
-INSERT INTO "SegFrac" VALUES ('spring','noon',0.0312,'');
-INSERT INTO "SegFrac" VALUES ('spring','afternoon',0.0623,'');
-INSERT INTO "SegFrac" VALUES ('summer','night',0.0945,'');
-INSERT INTO "SegFrac" VALUES ('summer','morning',0.0630,'');
-INSERT INTO "SegFrac" VALUES ('summer','noon',0.0315,'');
-INSERT INTO "SegFrac" VALUES ('summer','afternoon',0.0630,'');
-INSERT INTO "SegFrac" VALUES ('fall','night',0.0945,'');
-INSERT INTO "SegFrac" VALUES ('fall','morning',0.0630,'');
-INSERT INTO "SegFrac" VALUES ('fall','noon',0.0315,'');
-INSERT INTO "SegFrac" VALUES ('fall','afternoon',0.0630,'');
+INSERT INTO "SegFrac" VALUES ('winter','night',0.08333,''); -- correction based on the cf calculation
+INSERT INTO "SegFrac" VALUES ('winter','morning',0.05201,'');
+INSERT INTO "SegFrac" VALUES ('winter','noon',0.041667,'');
+INSERT INTO "SegFrac" VALUES ('winter','afternoon',0.072917,'');
+INSERT INTO "SegFrac" VALUES ('spring','night',0.083333,'');
+INSERT INTO "SegFrac" VALUES ('spring','morning',0.05201,'');
+INSERT INTO "SegFrac" VALUES ('spring','noon',0.041667,'');
+INSERT INTO "SegFrac" VALUES ('spring','afternoon',0.072917,'');
+INSERT INTO "SegFrac" VALUES ('summer','night',0.08333,'');
+INSERT INTO "SegFrac" VALUES ('summer','morning',0.05201,'');
+INSERT INTO "SegFrac" VALUES ('summer','noon',0.041667,'');
+INSERT INTO "SegFrac" VALUES ('summer','afternoon',0.072917,'');
+INSERT INTO "SegFrac" VALUES ('fall','night',0.08333,'');
+INSERT INTO "SegFrac" VALUES ('fall','morning',0.05201,'');
+INSERT INTO "SegFrac" VALUES ('fall','noon',0.041667,'');
+INSERT INTO "SegFrac" VALUES ('fall','afternoon',0.072917,'');
 
 CREATE TABLE "sector_labels" (
 	"sector"	text,
@@ -611,7 +611,7 @@ CREATE TABLE "PlanningReserveMargin" (
 	PRIMARY KEY("regions"),
 	FOREIGN KEY("regions") REFERENCES regions
 );
-INSERT INTO "PlanningReserveMargin" VALUES ('IT',0.35);
+INSERT INTO "PlanningReserveMargin" VALUES ('ES',0.35);
 
 CREATE TABLE "tech_groups" (
 	"tech"	text,
@@ -1519,7 +1519,8 @@ INSERT INTO "LifetimeTech" VALUES ('ES','ELC_FT_SOL',60,'');
 INSERT INTO "LifetimeTech" VALUES ('ES','ELC_FT_WIN',60,'');
 INSERT INTO "LifetimeTech" VALUES ('ES','ELC_FT_H2',20,'');
 -- Existing technologies
-INSERT INTO "LifetimeTech" VALUES ('ES','ELC_WIN_E',2,'Fictitious');
+INSERT INTO "LifetimeTech" VALUES ('ES','ELC_WIN_E',2,'Fictitious'); -- why?
+INSERT INTO "LifetimeTech" VALUES ('ES','ELC_NUC_LWR_E',40,''); -- for existing plants
 -- Planned technologies
 INSERT INTO "LifetimeTech" VALUES ('ES','ELC_COA_STM_P',30,'');
 INSERT INTO "LifetimeTech" VALUES ('ES','ELC_NGA_CC_P',25,'');
