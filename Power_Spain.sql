@@ -527,7 +527,7 @@ CREATE TABLE "TechnologyMaterialSupplyRisk" (
 	FOREIGN KEY("vintage") REFERENCES "time_periods"("t_periods")
 );
 
--- TODO (chiedere)
+-- TODO (chiedere) - CHP si può rimuovere con dovute precauzioni/ipotesi (es aggiustare le efficiency)
 CREATE TABLE "TechOutputSplit" (
 	"regions"	TEXT,
 	"periods"	integer,
@@ -568,7 +568,7 @@ INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'ELC_CHP_NGA_CP_N','ELC_CEN',0.2
 INSERT INTO "TechOutputSplit" VALUES ('IT',2007,'ELC_CHP_NGA_TAP_N','ELC_CEN',0.28,'TIMES-Italy');
 INSERT INTO "TechOutputSplit" VALUES ('IT',2040,'ELC_CHP_NGA_TAP_N','ELC_CEN',0.30,'TIMES-Italy');
 
--- TODO (chiedere)
+-- TODO (chiedere) - solo per tech che prendono più di un input
 CREATE TABLE "TechInputSplit" (
 	"regions"	TEXT,
 	"periods"	integer,
@@ -583,17 +583,15 @@ CREATE TABLE "TechInputSplit" (
 );
 -- Electricity sector
 -- Fuel technologies
-INSERT INTO "TechInputSplit" VALUES ('IT',2007,'OIL_PTC','ELC_FT_HHC',0.89,'');
-INSERT INTO "TechInputSplit" VALUES ('IT',2050,'OIL_PTC','ELC_FT_HHC',0.79,'');
-INSERT INTO "TechInputSplit" VALUES ('IT',2007,'BIO_BMU','ELC_FT_BMU',0.95,'');
-INSERT INTO "TechInputSplit" VALUES ('IT',2050,'BIO_BMU','ELC_FT_BMU',0.90,'');
-INSERT INTO "TechInputSplit" VALUES ('IT',2007,'BIO_BIN','ELC_FT_BMU',0.05,'');
-INSERT INTO "TechInputSplit" VALUES ('IT',2050,'BIO_BIN','ELC_FT_BMU',0.01,'');
+INSERT INTO "TechInputSplit" VALUES ('ES',2007,'OIL_PTC','ELC_FT_HHC',0.89,'');
+INSERT INTO "TechInputSplit" VALUES ('ES',2050,'OIL_PTC','ELC_FT_HHC',0.79,'');
+INSERT INTO "TechInputSplit" VALUES ('ES',2007,'BIO_BMU','ELC_FT_BMU',0.95,'');
+INSERT INTO "TechInputSplit" VALUES ('ES',2050,'BIO_BMU','ELC_FT_BMU',0.90,'');
+INSERT INTO "TechInputSplit" VALUES ('ES',2007,'BIO_BIN','ELC_FT_BMU',0.05,'');
+INSERT INTO "TechInputSplit" VALUES ('ES',2050,'BIO_BIN','ELC_FT_BMU',0.01,'');
 -- Base year technologies
-INSERT INTO "TechInputSplit" VALUES ('IT',2007,'ELC_COA','ELC_COA_OIL_E',0.85,'');
-INSERT INTO "TechInputSplit" VALUES ('IT',2007,'ELC_OIL','ELC_COA_OIL_E',0.15,'');
-INSERT INTO "TechInputSplit" VALUES ('IT',2007,'ELC_NGA','ELC_NGA_E',1,'');
--- Aggiungere nuclear
+INSERT INTO "TechInputSplit" VALUES ('ES',2007,'ELC_COA','ELC_COA_OIL_E',0.85,'');
+INSERT INTO "TechInputSplit" VALUES ('ES',2007,'ELC_OIL','ELC_COA_OIL_E',0.15,'');
 
 CREATE TABLE "StorageDuration" (
 	"regions"	text,
@@ -784,7 +782,7 @@ INSERT INTO "TechGroupWeight" VALUES ('ELC_NUC_SMR_N','ELC_NUC_GRP',1.0,'');
 --INSERT INTO "TechGroupWeight" VALUES ('CCUS_ELC_COA','CCUS_GRP',1.0,'');
 --INSERT INTO "TechGroupWeight" VALUES ('CCUS_ELC_NGA','CCUS_GRP',1.0,'');
 
--- TODO
+-- TODO (calibrazione)
 CREATE TABLE "MinActivityGroup" (
 	"regions"	text,
 	"periods"	integer,
@@ -964,8 +962,9 @@ CREATE TABLE "MinInputGroup" (
 -- Electricity sector
 INSERT INTO "MinInputGroup" VALUES ('IT',2020,'ELC_CEN','ELC_FT_H2_GRP',0.06,'');
 INSERT INTO "MinInputGroup" VALUES ('IT',2050,'ELC_CEN','ELC_FT_H2_GRP',0.06,'');
+-- Almeno il 6% del consumo sul trasporto di H2 richiede elettricità
 
--- TODO (chiedere)
+-- TODO (chiedere) massimo input in gruppo di tech
 CREATE TABLE "MaxInputGroup" (
 	"regions"	      text,
 	"periods"	      integer,
@@ -1033,7 +1032,6 @@ CREATE TABLE "MinOutputGroup" (
 	PRIMARY KEY("regions","periods","output_comm","group_name")
 );
 
--- TODO (chiedere)
 CREATE TABLE "MaxOutputGroup" (
 	"regions"	      text,
 	"periods"	      integer,
@@ -1124,7 +1122,7 @@ CREATE TABLE "MinActivity" (
 --INSERT INTO "MinActivity" VALUES ('IT',2008,'STG_ELC_HYD_PUM_E',18.00,'PJ','TIMES-Italy');
 --INSERT INTO "MinActivity" VALUES ('IT',2022,'STG_ELC_HYD_PUM_E',0.00,'PJ','TIMES-Italy');
 
--- TODO (chiedere)
+-- TODO (chiedere) calibrazione + realismo dati futuri
 CREATE TABLE "MaxCapacity" (
 	"regions"	text,
 	"periods"	integer,
@@ -1610,13 +1608,13 @@ CREATE TABLE "GrowthRateMax" (
 	FOREIGN KEY("tech") REFERENCES "technologies"("tech")
 );
 
--- TODO (chiedere)
+-- TODO quanto è rischioso l'investimento delle tech
 CREATE TABLE "GlobalDiscountRate" (
 	"rate"	real
 );
 INSERT INTO "GlobalDiscountRate" VALUES (0.05);
 
--- TODO - perché dice prices?
+-- TODO
 CREATE TABLE "ExistingCapacity" (
 	"regions"	text,
 	"tech"	text,
@@ -1629,7 +1627,7 @@ CREATE TABLE "ExistingCapacity" (
 	FOREIGN KEY("vintage") REFERENCES "time_periods"("t_periods")
 );
 -- Upstream sector
--- Import/export prices
+-- Import/export prices - capacity to activity 1 se lasciamo PJ
 INSERT INTO "ExistingCapacity" VALUES ('ES','UPS_IMP_ELC_CEN',2006,32.73,'PJ','https://www.sistemaelectrico-ree.es/es/publicaciones/informe-del-sistema-electrico-espanol-2006');
 INSERT INTO "ExistingCapacity" VALUES ('ES','UPS_EXP_ELC_CEN',2006,44.54,'PJ','https://www.sistemaelectrico-ree.es/es/publicaciones/informe-del-sistema-electrico-espanol-2006');
 -- Electricity sector
@@ -1752,7 +1750,7 @@ CREATE TABLE "EmissionAggregation" (
     PRIMARY KEY("emis_comm","emis_agg","emis_agg_weight")
 );
 
--- TODO (chiedere)
+-- TODO (chiedere) - Energy balance Eurostat https://ec.europa.eu/eurostat/web/energy/database/additional-data#Energy%20balances
 CREATE TABLE "Efficiency" (
 	"regions"	text,
 	"input_comm"	text,
@@ -2018,7 +2016,7 @@ CREATE TABLE "LinkedTechs" (
 INSERT INTO "LinkedTechs" VALUES('IT','CCUS_ELC_COA','SNK_CO2_EM','CCUS_ELC_COA_LINKED','');
 INSERT INTO "LinkedTechs" VALUES('IT','CCUS_ELC_NGA','SNK_CO2_EM','CCUS_ELC_NGA_LINKED','');
 
--- TODO (chiedere)
+-- TODO per adesso lasciamo così - semmai cambiare per un CRM
 CREATE TABLE "DiscountRate" (
 	"regions"	text,
 	"tech"	text,
@@ -2029,7 +2027,6 @@ CREATE TABLE "DiscountRate" (
 	FOREIGN KEY("tech") REFERENCES "technologies"("tech"),
 	FOREIGN KEY("vintage") REFERENCES "time_periods"("t_periods")
 );
-
 -- Electricity sector
 -- New technologies
 INSERT INTO "DiscountRate" VALUES ('IT','ELC_NGA_CT_N',2007,0.027,'');
@@ -2272,6 +2269,7 @@ INSERT INTO "Demand" VALUES ('ES',2050,'ELC_DEM',388*3.6,'PJ','CP Scenario of Es
 -- Other sectors and dummies (not required in the whole database)
 INSERT INTO "Demand" VALUES ('ES',2006,'DMY_OUT',1E6,'PJ','');
 
+-- TODO add nuclear (probabilmente trascurabile) (database annual technology baseline NREL)
 CREATE TABLE "CostVariable" (
 	"regions"	text NOT NULL,
 	"periods"	integer NOT NULL,
@@ -2420,7 +2418,7 @@ INSERT INTO "CostEmission" VALUES ('IT',2007,'ELC_CO2',0.010,'M€/kt','ETS');
 INSERT INTO "CostEmission" VALUES ('IT',2030,'ELC_CO2',0.080,'M€/kt','ETS');
 INSERT INTO "CostEmission" VALUES ('IT',2050,'ELC_CO2',0.150,'M€/kt','ETS');
 
--- TODO (chiedere)
+-- TODO
 CREATE TABLE "CostInvest" (
 	"regions"	text,
 	"tech"	text,
@@ -2618,7 +2616,7 @@ INSERT INTO "CostFixed" VALUES ('IT',2006,'ELC_CHP_BMU_E',2006,220.50,'M€/GW',
 INSERT INTO "CostFixed" VALUES ('IT',2006,'ELC_CHP_BGS_COG_E',2006,220.50,'M€/GW','');
 INSERT INTO "CostFixed" VALUES ('IT',2006,'ELC_CHP_COA_IGCC_E',2006,220.50,'M€/GW','');
 INSERT INTO "CostFixed" VALUES ('IT',2006,'ELC_CHP_BIO_CEN_E',2006,220.50,'M€/GW','');
--- Aggiungere nuclear (non c'è?)
+-- Aggiungere nuclear (non c'è?) - operation and maint
 -- Planned technologies
 INSERT INTO "CostFixed" VALUES ('IT',2007,'ELC_COA_STM_P',2007,32.04,'M€/GW','');
 INSERT INTO "CostFixed" VALUES ('IT',2007,'ELC_NGA_CC_P',2007,12.91,'M€/GW','');
