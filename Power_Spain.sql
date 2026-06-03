@@ -3179,8 +3179,8 @@ INSERT INTO "CapacityFactorTech" VALUES ('ES','fall','night','ELC_WIN_OFF_DEEP_N
 INSERT INTO "CapacityFactorTech" VALUES ('ES','fall','morning','ELC_WIN_OFF_DEEP_N',1.02*0.0464,'');
 INSERT INTO "CapacityFactorTech" VALUES ('ES','fall','noon','ELC_WIN_OFF_DEEP_N',1.02*0.102,'');
 INSERT INTO "CapacityFactorTech" VALUES ('ES','fall','afternoon','ELC_WIN_OFF_DEEP_N',1.02*0.464,'');
-INSERT INTO "CapacityFactorTech" VALUES ('ES','winter','night','ELC_PV_GRO_NRD_N',0.000,'');
-INSERT INTO "CapacityFactorTech" VALUES ('ES','winter','morning','ELC_PV_GRO_NRD_N',0.191,'');
+INSERT INTO "CapacityFactorTech" VALUES ('ES','winter','night','ELC_PV_GRO_NRD_N',0.000,'');-- https://www.statista.com/statistics/1032394/installed-photovoltaic-capacity-by-autonomous-community-in-spain/#:~:text=In%202024%2C%20Andalusia%20and%20Extremadura%20were%20the%20Spanish,the%20total%20photovoltaic%20capacity%20available%20in%20the%20country.
+INSERT INTO "CapacityFactorTech" VALUES ('ES','winter','morning','ELC_PV_GRO_NRD_N',0.191,'');-- https://pv-maps.com/en/blog/solar-irradiance-spain-province-map#:~:text=Explore%20the%20interactive%20solar%20irradiance%20map%20of%20Spain,province-level%20averages%20are%20useful%20for%20initial%20site%20screening.
 INSERT INTO "CapacityFactorTech" VALUES ('ES','winter','noon','ELC_PV_GRO_NRD_N',0.447,'');
 INSERT INTO "CapacityFactorTech" VALUES ('ES','winter','afternoon','ELC_PV_GRO_NRD_N',0.100,'');
 INSERT INTO "CapacityFactorTech" VALUES ('ES','spring','night','ELC_PV_GRO_NRD_N',0.000,'');
