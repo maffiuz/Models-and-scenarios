@@ -1,4 +1,3 @@
-- ExsistingCapacity
 - Aggiungere dati sul nucleare (fatto Efficiency, MaterialIntensity)
 - MaxCapacityGroup
 - MaxActivity
