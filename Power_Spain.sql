@@ -515,7 +515,6 @@ CREATE TABLE "TechnologyMaterialSupplyRisk" (
 	FOREIGN KEY("vintage") REFERENCES "time_periods"("t_periods")
 );
 
--- TODO (chiedere) - CHP si può rimuovere con dovute precauzioni/ipotesi (es aggiustare le efficiency)
 CREATE TABLE "TechOutputSplit" (
 	"regions"	TEXT,
 	"periods"	integer,
@@ -556,7 +555,6 @@ INSERT INTO "TechOutputSplit" VALUES ('ES',2007,'ELC_CHP_NGA_CP_N','ELC_CEN',0.2
 INSERT INTO "TechOutputSplit" VALUES ('ES',2007,'ELC_CHP_NGA_TAP_N','ELC_CEN',0.28,'TIMES-Italy');
 INSERT INTO "TechOutputSplit" VALUES ('ES',2040,'ELC_CHP_NGA_TAP_N','ELC_CEN',0.30,'TIMES-Italy');
 
--- TODO (chiedere) - solo per tech che prendono più di un input
 CREATE TABLE "TechInputSplit" (
 	"regions"	TEXT,
 	"periods"	integer,
@@ -926,7 +924,6 @@ INSERT INTO "MaxCapacityGroup" VALUES ('ES',2050,'ELC_WIN_GRP',70.35,'GW');
 INSERT INTO "MaxCapacityGroup" VALUES ('ES',2035,'ELC_NUC_GRP',0.00,'GW');
 INSERT INTO "MaxCapacityGroup" VALUES ('ES',2050,'ELC_NUC_GRP',0.00,'GW');
 
--- TODO (chiedere)
 CREATE TABLE "MinInputGroup" (
 	"regions"	      text,
 	"periods"	      integer,
@@ -944,7 +941,6 @@ INSERT INTO "MinInputGroup" VALUES ('ES',2020,'ELC_CEN','ELC_FT_H2_GRP',0.06,'')
 INSERT INTO "MinInputGroup" VALUES ('ES',2050,'ELC_CEN','ELC_FT_H2_GRP',0.06,'');
 -- Almeno il 6% del consumo sul trasporto di H2 richiede elettricità
 
--- TODO (chiedere) massimo input in gruppo di tech
 CREATE TABLE "MaxInputGroup" (
 	"regions"	      text,
 	"periods"	      integer,
@@ -1114,84 +1110,84 @@ CREATE TABLE "MaxCapacity" (
 	FOREIGN KEY("periods") REFERENCES "time_periods"("t_periods"),
 	FOREIGN KEY("tech") REFERENCES "technologies"("tech")
 );
--- Upstream sector
--- Import/export prices
-INSERT INTO "MaxCapacity" VALUES ('ES',2007,'UPS_IMP_ELC_CEN',7.63,'GW','TERNA');
-INSERT INTO "MaxCapacity" VALUES ('ES',2016,'UPS_IMP_ELC_CEN',7.63,'GW','TERNA');
-INSERT INTO "MaxCapacity" VALUES ('ES',2022,'UPS_IMP_ELC_CEN',9.93,'GW','TERNA');
-INSERT INTO "MaxCapacity" VALUES ('ES',2050,'UPS_IMP_ELC_CEN',14.89,'GW','TERNA');
-INSERT INTO "MaxCapacity" VALUES ('ES',2007,'UPS_EXP_ELC_CEN',4.10,'GW','TERNA');
-INSERT INTO "MaxCapacity" VALUES ('ES',2016,'UPS_EXP_ELC_CEN',4.10,'GW','TERNA');
-INSERT INTO "MaxCapacity" VALUES ('ES',2022,'UPS_EXP_ELC_CEN',5.69,'GW','TERNA');
-INSERT INTO "MaxCapacity" VALUES ('ES',2050,'UPS_EXP_ELC_CEN',8.53,'GW','TERNA');
--- Electricity sector
--- Planned technologies
-INSERT INTO "MaxCapacity" VALUES ('ES',2010,'ELC_COA_STM_P',0.80,'GW','');
-INSERT INTO "MaxCapacity" VALUES ('ES',2014,'ELC_COA_STM_P',2.00,'GW','');
-INSERT INTO "MaxCapacity" VALUES ('ES',2007,'ELC_NGA_CC_P',5.84,'GW','');
-INSERT INTO "MaxCapacity" VALUES ('ES',2008,'ELC_NGA_CC_P',8.50,'GW','');
-INSERT INTO "MaxCapacity" VALUES ('ES',2010,'ELC_NGA_CC_P',11.17,'GW','');
-INSERT INTO "MaxCapacity" VALUES ('ES',2012,'ELC_NGA_CC_P',11.94,'GW','');
-INSERT INTO "MaxCapacity" VALUES ('ES',2007,'ELC_CHP_NGA_CC_P',1.64,'GW','');
-INSERT INTO "MaxCapacity" VALUES ('ES',2008,'ELC_CHP_NGA_CC_P',2.51,'GW','');
-INSERT INTO "MaxCapacity" VALUES ('ES',2010,'ELC_CHP_NGA_CC_P',3.25,'GW','');
-INSERT INTO "MaxCapacity" VALUES ('ES',2007,'ELC_CHP_NGA_TURB_P',0.10,'GW','');
-INSERT INTO "MaxCapacity" VALUES ('ES',2007,'ELC_WIN_P',0.60,'GW','');
-INSERT INTO "MaxCapacity" VALUES ('ES',2008,'ELC_WIN_P',1.62,'GW','');
--- New technologies
-INSERT INTO "MaxCapacity" VALUES ('ES',2007,'ELC_HYD_MICRO_N',0.500,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2020,'ELC_HYD_MICRO_N',0.500,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2030,'ELC_HYD_MICRO_N',0.837,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2050,'ELC_HYD_MICRO_N',0.875,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2008,'ELC_HYD_MINI_N',1.500,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2030,'ELC_HYD_MINI_N',2.284,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2050,'ELC_HYD_MINI_N',2.352,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2010,'ELC_WIN_N',10.84,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2020,'ELC_WIN_N',12.02,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2025,'ELC_WIN_N',14.42,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2030,'ELC_WIN_N',17.30,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2050,'ELC_WIN_N',55.65,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2007,'ELC_WIN_OFF_N',0.00,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2020,'ELC_WIN_OFF_N',0.00,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2025,'ELC_WIN_OFF_N',0.10,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2030,'ELC_WIN_OFF_N',2.10,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2050,'ELC_WIN_OFF_N',8.40,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2030,'ELC_WIN_OFF_DEEP_N',0.00,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2040,'ELC_WIN_OFF_DEEP_N',1.26,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2050,'ELC_WIN_OFF_DEEP_N',6.30,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2020,'ELC_PV_GRO_NRD_N',2.40,'GW','ENSPRESO');
-INSERT INTO "MaxCapacity" VALUES ('ES',2050,'ELC_PV_GRO_NRD_N',15.95,'GW','ENSPRESO');
-INSERT INTO "MaxCapacity" VALUES ('ES',2020,'ELC_PV_GRO_CNT_N',6.99,'GW','ENSPRESO');
-INSERT INTO "MaxCapacity" VALUES ('ES',2050,'ELC_PV_GRO_CNT_N',18.18,'GW','ENSPRESO');
-INSERT INTO "MaxCapacity" VALUES ('ES',2020,'ELC_PV_GRO_SUD_N',4.75,'GW','ENSPRESO');
-INSERT INTO "MaxCapacity" VALUES ('ES',2050,'ELC_PV_GRO_SUD_N',28.20,'GW','ENSPRESO');
-INSERT INTO "MaxCapacity" VALUES ('ES',2020,'ELC_PV_ROOF_NRD_N',0.87,'GW','ENSPRESO');
-INSERT INTO "MaxCapacity" VALUES ('ES',2050,'ELC_PV_ROOF_NRD_N',6.22,'GW','ENSPRESO');
-INSERT INTO "MaxCapacity" VALUES ('ES',2020,'ELC_PV_ROOF_CNT_N',3.78,'GW','ENSPRESO');
-INSERT INTO "MaxCapacity" VALUES ('ES',2050,'ELC_PV_ROOF_CNT_N',5.50,'GW','ENSPRESO');
-INSERT INTO "MaxCapacity" VALUES ('ES',2020,'ELC_PV_ROOF_SUD_N',3.20,'GW','ENSPRESO');
-INSERT INTO "MaxCapacity" VALUES ('ES',2050,'ELC_PV_ROOF_SUD_N',8.67,'GW','ENSPRESO');
-INSERT INTO "MaxCapacity" VALUES ('ES',2007,'ELC_BGS_AGR_N',0.18,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2010,'ELC_BGS_AGR_N',0.27,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2030,'ELC_BGS_AGR_N',0.38,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2050,'ELC_BGS_AGR_N',0.67,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2007,'ELC_BGS_LAN_N',0.22,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2008,'ELC_BGS_LAN_N',0.25,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2010,'ELC_BGS_LAN_N',0.29,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2020,'ELC_BGS_LAN_N',0.35,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2030,'ELC_BGS_LAN_N',0.54,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2050,'ELC_BGS_LAN_N',0.72,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2007,'ELC_BIO_5C_N',0.73,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2010,'ELC_BIO_5C_N',0.57,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2020,'ELC_BIO_5C_N',0.83,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2030,'ELC_BIO_5C_N',1.57,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2050,'ELC_BIO_5C_N',2.56,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2007,'ELC_BIO_12C_N',0.30,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2010,'ELC_BIO_12C_N',0.24,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2020,'ELC_BIO_12C_N',0.32,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2030,'ELC_BIO_12C_N',0.83,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2040,'ELC_BIO_12C_N',0.61,'GW','TIMES-Italy');
-INSERT INTO "MaxCapacity" VALUES ('ES',2050,'ELC_BIO_12C_N',1.20,'GW','TIMES-Italy');
+-- -- Upstream sector
+-- -- Import/export prices
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2007,'UPS_IMP_ELC_CEN',7.63,'GW','TERNA');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2016,'UPS_IMP_ELC_CEN',7.63,'GW','TERNA');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2022,'UPS_IMP_ELC_CEN',9.93,'GW','TERNA');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2050,'UPS_IMP_ELC_CEN',14.89,'GW','TERNA');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2007,'UPS_EXP_ELC_CEN',4.10,'GW','TERNA');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2016,'UPS_EXP_ELC_CEN',4.10,'GW','TERNA');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2022,'UPS_EXP_ELC_CEN',5.69,'GW','TERNA');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2050,'UPS_EXP_ELC_CEN',8.53,'GW','TERNA');
+-- -- Electricity sector
+-- -- Planned technologies
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2010,'ELC_COA_STM_P',0.80,'GW','');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2014,'ELC_COA_STM_P',2.00,'GW','');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2007,'ELC_NGA_CC_P',5.84,'GW','');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2008,'ELC_NGA_CC_P',8.50,'GW','');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2010,'ELC_NGA_CC_P',11.17,'GW','');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2012,'ELC_NGA_CC_P',11.94,'GW','');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2007,'ELC_CHP_NGA_CC_P',1.64,'GW','');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2008,'ELC_CHP_NGA_CC_P',2.51,'GW','');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2010,'ELC_CHP_NGA_CC_P',3.25,'GW','');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2007,'ELC_CHP_NGA_TURB_P',0.10,'GW','');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2007,'ELC_WIN_P',0.60,'GW','');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2008,'ELC_WIN_P',1.62,'GW','');
+-- -- New technologies
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2007,'ELC_HYD_MICRO_N',0.500,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2020,'ELC_HYD_MICRO_N',0.500,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2030,'ELC_HYD_MICRO_N',0.837,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2050,'ELC_HYD_MICRO_N',0.875,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2008,'ELC_HYD_MINI_N',1.500,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2030,'ELC_HYD_MINI_N',2.284,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2050,'ELC_HYD_MINI_N',2.352,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2010,'ELC_WIN_N',10.84,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2020,'ELC_WIN_N',12.02,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2025,'ELC_WIN_N',14.42,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2030,'ELC_WIN_N',17.30,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2050,'ELC_WIN_N',55.65,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2007,'ELC_WIN_OFF_N',0.00,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2020,'ELC_WIN_OFF_N',0.00,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2025,'ELC_WIN_OFF_N',0.10,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2030,'ELC_WIN_OFF_N',2.10,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2050,'ELC_WIN_OFF_N',8.40,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2030,'ELC_WIN_OFF_DEEP_N',0.00,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2040,'ELC_WIN_OFF_DEEP_N',1.26,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2050,'ELC_WIN_OFF_DEEP_N',6.30,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2020,'ELC_PV_GRO_NRD_N',2.40,'GW','ENSPRESO');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2050,'ELC_PV_GRO_NRD_N',15.95,'GW','ENSPRESO');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2020,'ELC_PV_GRO_CNT_N',6.99,'GW','ENSPRESO');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2050,'ELC_PV_GRO_CNT_N',18.18,'GW','ENSPRESO');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2020,'ELC_PV_GRO_SUD_N',4.75,'GW','ENSPRESO');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2050,'ELC_PV_GRO_SUD_N',28.20,'GW','ENSPRESO');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2020,'ELC_PV_ROOF_NRD_N',0.87,'GW','ENSPRESO');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2050,'ELC_PV_ROOF_NRD_N',6.22,'GW','ENSPRESO');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2020,'ELC_PV_ROOF_CNT_N',3.78,'GW','ENSPRESO');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2050,'ELC_PV_ROOF_CNT_N',5.50,'GW','ENSPRESO');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2020,'ELC_PV_ROOF_SUD_N',3.20,'GW','ENSPRESO');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2050,'ELC_PV_ROOF_SUD_N',8.67,'GW','ENSPRESO');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2007,'ELC_BGS_AGR_N',0.18,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2010,'ELC_BGS_AGR_N',0.27,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2030,'ELC_BGS_AGR_N',0.38,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2050,'ELC_BGS_AGR_N',0.67,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2007,'ELC_BGS_LAN_N',0.22,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2008,'ELC_BGS_LAN_N',0.25,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2010,'ELC_BGS_LAN_N',0.29,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2020,'ELC_BGS_LAN_N',0.35,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2030,'ELC_BGS_LAN_N',0.54,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2050,'ELC_BGS_LAN_N',0.72,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2007,'ELC_BIO_5C_N',0.73,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2010,'ELC_BIO_5C_N',0.57,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2020,'ELC_BIO_5C_N',0.83,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2030,'ELC_BIO_5C_N',1.57,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2050,'ELC_BIO_5C_N',2.56,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2007,'ELC_BIO_12C_N',0.30,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2010,'ELC_BIO_12C_N',0.24,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2020,'ELC_BIO_12C_N',0.32,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2030,'ELC_BIO_12C_N',0.83,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2040,'ELC_BIO_12C_N',0.61,'GW','TIMES-Italy');
+-- INSERT INTO "MaxCapacity" VALUES ('ES',2050,'ELC_BIO_12C_N',1.20,'GW','TIMES-Italy');
 
 CREATE TABLE "DiscreteCapacity" (
 	"tech"	text,
@@ -1257,34 +1253,34 @@ INSERT INTO "MaxActivity" VALUES ('ES',2007,'ELC_BIO_DST_E',5.16,'PJ','');
 INSERT INTO "MaxActivity" VALUES ('ES',2012,'ELC_BIO_DST_E',5.16,'PJ','');
 INSERT INTO "MaxActivity" VALUES ('ES',2014,'ELC_BIO_DST_E',2.58,'PJ','');
 INSERT INTO "MaxActivity" VALUES ('ES',2016,'ELC_BIO_DST_E',0.00,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('ES',2007,'ELC_CHP_BGS_COG_E',2.11,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('ES',2008,'ELC_CHP_BGS_COG_E',2.11,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('ES',2010,'ELC_CHP_BGS_COG_E',0.00,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('ES',2007,'ELC_CHP_BIO_CEN_E',6.34,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('ES',2008,'ELC_CHP_BIO_CEN_E',6.34,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('ES',2010,'ELC_CHP_BIO_CEN_E',4.09,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('ES',2012,'ELC_CHP_BIO_CEN_E',1.06,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('ES',2014,'ELC_CHP_BIO_CEN_E',1.06,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('ES',2016,'ELC_CHP_BIO_CEN_E',0.00,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('ES',2007,'ELC_CHP_BMU_E',16.41,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('ES',2020,'ELC_CHP_BMU_E',16.41,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('ES',2022,'ELC_CHP_BMU_E',16.14,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('ES',2025,'ELC_CHP_BMU_E',16.14,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('ES',2030,'ELC_CHP_BMU_E',16.02,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('ES',2040,'ELC_CHP_BMU_E',6.30,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('ES',2050,'ELC_CHP_BMU_E',0.00,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('ES',2007,'ELC_CHP_COA_IGCC_E',21.41,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('ES',2008,'ELC_CHP_COA_IGCC_E',21.41,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('ES',2010,'ELC_CHP_COA_IGCC_E',20.77,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('ES',2012,'ELC_CHP_COA_IGCC_E',19.46,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('ES',2014,'ELC_CHP_COA_IGCC_E',16.86,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('ES',2016,'ELC_CHP_COA_IGCC_E',16.09,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('ES',2018,'ELC_CHP_COA_IGCC_E',16.09,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('ES',2020,'ELC_CHP_COA_IGCC_E',15.32,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('ES',2022,'ELC_CHP_COA_IGCC_E',14.80,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('ES',2025,'ELC_CHP_COA_IGCC_E',2.27,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('ES',2030,'ELC_CHP_COA_IGCC_E',0.06,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('ES',2040,'ELC_CHP_COA_IGCC_E',0.00,'PJ','');
+--INSERT INTO "MaxActivity" VALUES ('ES',2007,'ELC_CHP_BGS_COG_E',2.11,'PJ','');
+--INSERT INTO "MaxActivity" VALUES ('ES',2008,'ELC_CHP_BGS_COG_E',2.11,'PJ','');
+--INSERT INTO "MaxActivity" VALUES ('ES',2010,'ELC_CHP_BGS_COG_E',0.00,'PJ','');
+--INSERT INTO "MaxActivity" VALUES ('ES',2007,'ELC_CHP_BIO_CEN_E',6.34,'PJ','');
+--INSERT INTO "MaxActivity" VALUES ('ES',2008,'ELC_CHP_BIO_CEN_E',6.34,'PJ','');
+--INSERT INTO "MaxActivity" VALUES ('ES',2010,'ELC_CHP_BIO_CEN_E',4.09,'PJ','');
+--INSERT INTO "MaxActivity" VALUES ('ES',2012,'ELC_CHP_BIO_CEN_E',1.06,'PJ','');
+--INSERT INTO "MaxActivity" VALUES ('ES',2014,'ELC_CHP_BIO_CEN_E',1.06,'PJ','');
+--INSERT INTO "MaxActivity" VALUES ('ES',2016,'ELC_CHP_BIO_CEN_E',0.00,'PJ','');
+--INSERT INTO "MaxActivity" VALUES ('ES',2007,'ELC_CHP_BMU_E',16.41,'PJ','');
+--INSERT INTO "MaxActivity" VALUES ('ES',2020,'ELC_CHP_BMU_E',16.41,'PJ','');
+--INSERT INTO "MaxActivity" VALUES ('ES',2022,'ELC_CHP_BMU_E',16.14,'PJ','');
+--INSERT INTO "MaxActivity" VALUES ('ES',2025,'ELC_CHP_BMU_E',16.14,'PJ','');
+--INSERT INTO "MaxActivity" VALUES ('ES',2030,'ELC_CHP_BMU_E',16.02,'PJ','');
+--INSERT INTO "MaxActivity" VALUES ('ES',2040,'ELC_CHP_BMU_E',6.30,'PJ','');
+--INSERT INTO "MaxActivity" VALUES ('ES',2050,'ELC_CHP_BMU_E',0.00,'PJ','');
+--INSERT INTO "MaxActivity" VALUES ('ES',2007,'ELC_CHP_COA_IGCC_E',21.41,'PJ','');
+--INSERT INTO "MaxActivity" VALUES ('ES',2008,'ELC_CHP_COA_IGCC_E',21.41,'PJ','');
+--INSERT INTO "MaxActivity" VALUES ('ES',2010,'ELC_CHP_COA_IGCC_E',20.77,'PJ','');
+--INSERT INTO "MaxActivity" VALUES ('ES',2012,'ELC_CHP_COA_IGCC_E',19.46,'PJ','');
+--INSERT INTO "MaxActivity" VALUES ('ES',2014,'ELC_CHP_COA_IGCC_E',16.86,'PJ','');
+--INSERT INTO "MaxActivity" VALUES ('ES',2016,'ELC_CHP_COA_IGCC_E',16.09,'PJ','');
+--INSERT INTO "MaxActivity" VALUES ('ES',2018,'ELC_CHP_COA_IGCC_E',16.09,'PJ','');
+--INSERT INTO "MaxActivity" VALUES ('ES',2020,'ELC_CHP_COA_IGCC_E',15.32,'PJ','');
+--INSERT INTO "MaxActivity" VALUES ('ES',2022,'ELC_CHP_COA_IGCC_E',14.80,'PJ','');
+--INSERT INTO "MaxActivity" VALUES ('ES',2025,'ELC_CHP_COA_IGCC_E',2.27,'PJ','');
+--INSERT INTO "MaxActivity" VALUES ('ES',2030,'ELC_CHP_COA_IGCC_E',0.06,'PJ','');
+--INSERT INTO "MaxActivity" VALUES ('ES',2040,'ELC_CHP_COA_IGCC_E',0.00,'PJ','');
 --INSERT INTO "MaxActivity" VALUES ('ES',2007,'ELC_CHP_GASDER_CC_E',49.89,'PJ','');
 --INSERT INTO "MaxActivity" VALUES ('ES',2010,'ELC_CHP_GASDER_CC_E',45.05,'PJ','');
 --INSERT INTO "MaxActivity" VALUES ('ES',2050,'ELC_CHP_GASDER_CC_E',45.05,'PJ','');
@@ -1577,13 +1573,11 @@ CREATE TABLE "GrowthRateMax" (
 	FOREIGN KEY("tech") REFERENCES "technologies"("tech")
 );
 
--- TODO quanto è rischioso l'investimento delle tech
 CREATE TABLE "GlobalDiscountRate" (
 	"rate"	real
 );
 INSERT INTO "GlobalDiscountRate" VALUES (0.05);
 
--- TODO
 CREATE TABLE "ExistingCapacity" (
 	"regions"	text,
 	"tech"	text,
@@ -2378,7 +2372,6 @@ INSERT INTO "CostEmission" VALUES ('ES',2007,'ELC_CO2',0.010,'M€/kt','ETS');
 INSERT INTO "CostEmission" VALUES ('ES',2030,'ELC_CO2',0.080,'M€/kt','ETS');
 INSERT INTO "CostEmission" VALUES ('ES',2050,'ELC_CO2',0.150,'M€/kt','ETS');
 
--- TODO
 CREATE TABLE "CostInvest" (
 	"regions"	text,
 	"tech"	text,
@@ -2793,8 +2786,8 @@ CREATE TABLE "CapacityToActivity" (
 );
 -- Upstream sector
 -- Import/export prices
-INSERT INTO "CapacityToActivity" VALUES ('ES','UPS_IMP_ELC_CEN',31.536,'PJ/GW');
-INSERT INTO "CapacityToActivity" VALUES ('ES','UPS_EXP_ELC_CEN',31.536,'PJ/GW');
+INSERT INTO "CapacityToActivity" VALUES ('ES','UPS_IMP_ELC_CEN',1,'PJ/PJ');
+INSERT INTO "CapacityToActivity" VALUES ('ES','UPS_EXP_ELC_CEN',1,'PJ/PJ');
 -- Electricity sector
 -- Base year technologies
 INSERT INTO "CapacityToActivity" VALUES ('ES','ELC_COA_COND_E',31.536,'PJ/GW');
@@ -2876,7 +2869,6 @@ INSERT INTO "CapacityToActivity" VALUES ('ES','STG_ELC_DST_BTT',31.536,'PJ/GW');
 INSERT INTO "CapacityToActivity" VALUES ('ES','DISTR_ELC',31.536,'PJ/GW');
 INSERT INTO "CapacityToActivity" VALUES ('ES','END_USES_ELC',31.536,'PJ/GW');
 
--- TODO
 CREATE TABLE "CapacityFactor" (
 	"regions"	text,
 	"tech"	text,
@@ -3333,7 +3325,6 @@ CREATE TABLE "MaxMaterialReserve" (
 	PRIMARY KEY("regions","tech")
 );
 
--- TODO
 CREATE TABLE "MaterialIntensity" (
 	"regions"	text,
 	"comm_name" text,
