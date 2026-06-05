@@ -1,8 +1,8 @@
 import os
 import sqlite3
 
-sqlite_database = 'TEMOA_Spain.sqlite'
-sql_modules = ['TEMOA_Spain.sql']
+sqlite_database = 'Power_Spain.sqlite'
+sql_modules = ['Power_Spain.sql']
 
 Deleting = True
 Reading = True
