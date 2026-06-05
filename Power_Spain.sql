@@ -825,6 +825,15 @@ CREATE TABLE "MinActivityGroup" (
 --INSERT INTO "MinActivityGroup" VALUES ('ES',2040,'ELC_WIN_GRP',0.75*60.79,'PJ'); -- Check
 --INSERT INTO "MinActivityGroup" VALUES ('ES',2045,'ELC_WIN_GRP',0.75*60.79,'PJ'); -- Check
 --INSERT INTO "MinActivityGroup" VALUES ('ES',2050,'ELC_WIN_GRP',0.75*60.79,'PJ'); -- Check
+-- NUCLEAR: Dati storici reali dall'immagine (2010-2024) + Trend futuro (con * 1.1 esplicito)
+INSERT INTO "MinActivityGroup" VALUES ('ES',2010,'ELC_NUC_GRP',223.16 * 0.95,'PJ');   -- Anno 2010
+INSERT INTO "MinActivityGroup" VALUES ('ES',2012,'ELC_NUC_GRP',221.29 * 0.95,'PJ');   -- Anno 2012
+INSERT INTO "MinActivityGroup" VALUES ('ES',2014,'ELC_NUC_GRP',206.30 * 0.95,'PJ');   -- Anno 2014
+INSERT INTO "MinActivityGroup" VALUES ('ES',2016,'ELC_NUC_GRP',211.08 * 0.95,'PJ');   -- Anno 2016
+INSERT INTO "MinActivityGroup" VALUES ('ES',2018,'ELC_NUC_GRP',200.76 * 0.95,'PJ');   -- Anno 2018
+INSERT INTO "MinActivityGroup" VALUES ('ES',2020,'ELC_NUC_GRP',209.88 * 0.95,'PJ');   -- Anno 2020
+INSERT INTO "MinActivityGroup" VALUES ('ES',2030,'ELC_NUC_GRP',195.00 * 0.95,'PJ');   -- Trend futuro stimato (stabile/poco decrescente)
+INSERT INTO "MinActivityGroup" VALUES ('ES',2050,'ELC_NUC_GRP',190.00 * 0.95,'PJ');   -- Trend futuro stimato (stabile/poco decrescente)
 
 -- TODO
 CREATE TABLE "MaxActivityGroup" (
@@ -881,6 +890,15 @@ CREATE TABLE "MaxActivityGroup" (
 --INSERT INTO "MaxActivityGroup" VALUES ('ES',2025,'ELC_COA_GRP',146.83,'PJ');
 --INSERT INTO "MaxActivityGroup" VALUES ('ES',2030,'ELC_COA_GRP',50.00,'PJ');
 --INSERT INTO "MaxActivityGroup" VALUES ('ES',2050,'ELC_COA_GRP',0.00,'PJ');
+-- NUCLEAR: Dati storici reali dall'immagine (2010-2024) + Trend futuro (con * 1.1 esplicito)
+INSERT INTO "MaxActivityGroup" VALUES ('ES',2010,'ELC_NUC_GRP',223.16 * 1.1,'PJ');   -- Anno 2010
+INSERT INTO "MaxActivityGroup" VALUES ('ES',2012,'ELC_NUC_GRP',221.29 * 1.1,'PJ');   -- Anno 2012
+INSERT INTO "MaxActivityGroup" VALUES ('ES',2014,'ELC_NUC_GRP',206.30 * 1.1,'PJ');   -- Anno 2014
+INSERT INTO "MaxActivityGroup" VALUES ('ES',2016,'ELC_NUC_GRP',211.08 * 1.1,'PJ');   -- Anno 2016
+INSERT INTO "MaxActivityGroup" VALUES ('ES',2018,'ELC_NUC_GRP',200.76 * 1.1,'PJ');   -- Anno 2018
+INSERT INTO "MaxActivityGroup" VALUES ('ES',2020,'ELC_NUC_GRP',209.88 * 1.1,'PJ');   -- Anno 2020
+INSERT INTO "MaxActivityGroup" VALUES ('ES',2030,'ELC_NUC_GRP',195.00 * 1.1,'PJ');   -- Trend futuro stimato (stabile/poco decrescente)
+INSERT INTO "MaxActivityGroup" VALUES ('ES',2050,'ELC_NUC_GRP',190.00 * 1.1,'PJ');   -- Trend futuro stimato (stabile/poco decrescente)
 
 CREATE TABLE "MinCapacityGroup" (
 	"regions"	text,
@@ -1051,14 +1069,32 @@ CREATE TABLE "MinActivity" (
 	FOREIGN KEY("periods") REFERENCES "time_periods"("t_periods")
 );
 -- Upstream
--- INSERT INTO "MinActivity" VALUES ('ES',2007,'UPS_IMP_ELC_CEN',0.90*193.77,'PJ','');
--- INSERT INTO "MinActivity" VALUES ('ES',2008,'UPS_IMP_ELC_CEN',0.90*171.99,'PJ','');
--- INSERT INTO "MinActivity" VALUES ('ES',2010,'UPS_IMP_ELC_CEN',0.90*182.10,'PJ','');
--- INSERT INTO "MinActivity" VALUES ('ES',2012,'UPS_IMP_ELC_CEN',0.90*185.03,'PJ','');
--- INSERT INTO "MinActivity" VALUES ('ES',2014,'UPS_IMP_ELC_CEN',0.90*199.04,'PJ','');
--- INSERT INTO "MinActivity" VALUES ('ES',2018,'UPS_IMP_ELC_CEN',0.90*194.59,'PJ','');
--- INSERT INTO "MinActivity" VALUES ('ES',2022,'UPS_IMP_ELC_CEN',0.90*182.57,'PJ','');
--- INSERT INTO "MinActivity" VALUES ('ES',2050,'UPS_IMP_ELC_CEN',0.00,'PJ','');
+-- IMPORTS: Dati reali dall'immagine (2007-2024) + Trend futuro stimato (con * 1.1 esplicito)
+INSERT INTO "MinActivity" VALUES ('ES',2007,'UPS_IMP_ELC_CEN',31.58 * 0.9,'PJ','');   -- Anno 2007
+INSERT INTO "MinActivity" VALUES ('ES',2008,'UPS_IMP_ELC_CEN',21.17 * 0.9,'PJ','');   -- Anno 2008
+INSERT INTO "MinActivity" VALUES ('ES',2010,'UPS_IMP_ELC_CEN',18.74 * 0.9,'PJ','');   -- Anno 2010
+INSERT INTO "MinActivity" VALUES ('ES',2012,'UPS_IMP_ELC_CEN',28.03 * 0.9,'PJ','');   -- Anno 2012
+INSERT INTO "MinActivity" VALUES ('ES',2014,'UPS_IMP_ELC_CEN',44.32 * 0.9,'PJ','');   -- Anno 2014
+INSERT INTO "MinActivity" VALUES ('ES',2018,'UPS_IMP_ELC_CEN',86.46 * 0.9,'PJ','');   -- Anno 2018
+INSERT INTO "MinActivity" VALUES ('ES',2022,'UPS_IMP_ELC_CEN',28.91 * 0.9,'PJ','');   -- Anno 2022
+INSERT INTO "MinActivity" VALUES ('ES',2025,'UPS_IMP_ELC_CEN',52.19 * 0.9,'PJ','');   -- Trend futuro (+1% dal 2024)
+INSERT INTO "MinActivity" VALUES ('ES',2030,'UPS_IMP_ELC_CEN',53.25 * 0.9,'PJ','');   -- Trend futuro poco crescente
+INSERT INTO "MinActivity" VALUES ('ES',2040,'UPS_IMP_ELC_CEN',55.40 * 0.9,'PJ','');   -- Trend futuro poco crescente
+INSERT INTO "MinActivity" VALUES ('ES',2050,'UPS_IMP_ELC_CEN',57.65 * 0.9,'PJ','');   -- Trend futuro poco crescente
+-- EXPORTX
+INSERT INTO "MinActivity" VALUES ('ES',2007,'UPS_EXP_ELC_CEN',52.29 * 0.9,'PJ','');   -- Anno 2007
+INSERT INTO "MinActivity" VALUES ('ES',2008,'UPS_EXP_ELC_CEN',60.91 * 0.9,'PJ','');   -- Anno 2008
+INSERT INTO "MinActivity" VALUES ('ES',2010,'UPS_EXP_ELC_CEN',48.74 * 0.9,'PJ','');   -- Anno 2010
+INSERT INTO "MinActivity" VALUES ('ES',2012,'UPS_EXP_ELC_CEN',68.35 * 0.9,'PJ','');   -- Anno 2012
+INSERT INTO "MinActivity" VALUES ('ES',2014,'UPS_EXP_ELC_CEN',56.58 * 0.9,'PJ','');   -- Anno 2014
+INSERT INTO "MinActivity" VALUES ('ES',2016,'UPS_EXP_ELC_CEN',51.04 * 0.9,'PJ','');   -- Anno 2016
+INSERT INTO "MinActivity" VALUES ('ES',2018,'UPS_EXP_ELC_CEN',46.50 * 0.9,'PJ','');   -- Anno 2018
+INSERT INTO "MinActivity" VALUES ('ES',2020,'UPS_EXP_ELC_CEN',52.73 * 0.9,'PJ','');   -- Anno 2020
+INSERT INTO "MinActivity" VALUES ('ES',2022,'UPS_EXP_ELC_CEN',100.20 *0.91,'PJ','');  -- Anno 2022
+INSERT INTO "MinActivity" VALUES ('ES',2025,'UPS_EXP_ELC_CEN',89.38 * 0.9,'PJ','');   -- Trend futuro (+1% dal 2024)
+INSERT INTO "MinActivity" VALUES ('ES',2030,'UPS_EXP_ELC_CEN',91.18 * 0.9,'PJ','');   -- Trend futuro poco crescente
+INSERT INTO "MinActivity" VALUES ('ES',2040,'UPS_EXP_ELC_CEN',94.90 * 0.9,'PJ','');   -- Trend futuro poco crescente
+INSERT INTO "MinActivity" VALUES ('ES',2050,'UPS_EXP_ELC_CEN',98.80 * 0.9,'PJ','');   -- Trend futuro poco crescente
 -- Electricity sector
 -- Base year technologies
 -- INSERT INTO "MinActivity" VALUES ('ES',2007,'ELC_BIO_DST_E',1.43,'PJ','');
@@ -1216,35 +1252,36 @@ CREATE TABLE "MaxActivity" (
 	FOREIGN KEY("tech") REFERENCES "technologies"("tech")
 );
 -- Upstream
---INSERT INTO "MaxActivity" VALUES ('ES',2007,'UPS_IMP_ELC_CEN',193.77,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2008,'UPS_IMP_ELC_CEN',171.99,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2010,'UPS_IMP_ELC_CEN',182.10,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2012,'UPS_IMP_ELC_CEN',185.03,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2014,'UPS_IMP_ELC_CEN',199.04,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2018,'UPS_IMP_ELC_CEN',194.59,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2022,'UPS_IMP_ELC_CEN',182.57,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2025,'UPS_IMP_ELC_CEN',191.28,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2030,'UPS_IMP_ELC_CEN',209.59,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2040,'UPS_IMP_ELC_CEN',214.51,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2050,'UPS_IMP_ELC_CEN',241.49,'PJ','');
----- Export
---INSERT INTO "MaxActivity" VALUES ('ES',2007,'UPS_EXP_ELC_CEN',10.49,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2008,'UPS_EXP_ELC_CEN',13.46,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2010,'UPS_EXP_ELC_CEN',7.23,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2012,'UPS_EXP_ELC_CEN',10.51,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2014,'UPS_EXP_ELC_CEN',16.23,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2016,'UPS_EXP_ELC_CEN',23.64,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2018,'UPS_EXP_ELC_CEN',23.30,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2020,'UPS_EXP_ELC_CEN',23.47,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2022,'UPS_EXP_ELC_CEN',22.15,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2025,'UPS_EXP_ELC_CEN',24.10,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2030,'UPS_EXP_ELC_CEN',26.28,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2040,'UPS_EXP_ELC_CEN',28.15,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2050,'UPS_EXP_ELC_CEN',30.01,'PJ','');
+-- IMPORTS: Dati reali dall'immagine (2007-2024) + Trend futuro stimato (con * 1.1 esplicito)
+INSERT INTO "MaxActivity" VALUES ('ES',2007,'UPS_IMP_ELC_CEN',31.58 * 1.1,'PJ','');   -- Anno 2007
+INSERT INTO "MaxActivity" VALUES ('ES',2008,'UPS_IMP_ELC_CEN',21.17 * 1.1,'PJ','');   -- Anno 2008
+INSERT INTO "MaxActivity" VALUES ('ES',2010,'UPS_IMP_ELC_CEN',18.74 * 1.1,'PJ','');   -- Anno 2010
+INSERT INTO "MaxActivity" VALUES ('ES',2012,'UPS_IMP_ELC_CEN',28.03 * 1.1,'PJ','');   -- Anno 2012
+INSERT INTO "MaxActivity" VALUES ('ES',2014,'UPS_IMP_ELC_CEN',44.32 * 1.1,'PJ','');   -- Anno 2014
+INSERT INTO "MaxActivity" VALUES ('ES',2018,'UPS_IMP_ELC_CEN',86.46 * 1.1,'PJ','');   -- Anno 2018
+INSERT INTO "MaxActivity" VALUES ('ES',2022,'UPS_IMP_ELC_CEN',28.91 * 1.1,'PJ','');   -- Anno 2022
+INSERT INTO "MaxActivity" VALUES ('ES',2025,'UPS_IMP_ELC_CEN',52.19 * 1.1,'PJ','');   -- Trend futuro (+1% dal 2024)
+INSERT INTO "MaxActivity" VALUES ('ES',2030,'UPS_IMP_ELC_CEN',53.25 * 1.1,'PJ','');   -- Trend futuro poco crescente
+INSERT INTO "MaxActivity" VALUES ('ES',2040,'UPS_IMP_ELC_CEN',55.40 * 1.1,'PJ','');   -- Trend futuro poco crescente
+INSERT INTO "MaxActivity" VALUES ('ES',2050,'UPS_IMP_ELC_CEN',57.65 * 1.1,'PJ','');   -- Trend futuro poco crescente
+-- EXPORTS:
+INSERT INTO "MaxActivity" VALUES ('ES',2007,'UPS_EXP_ELC_CEN',52.29 * 1.1,'PJ','');   -- Anno 2007
+INSERT INTO "MaxActivity" VALUES ('ES',2008,'UPS_EXP_ELC_CEN',60.91 * 1.1,'PJ','');   -- Anno 2008
+INSERT INTO "MaxActivity" VALUES ('ES',2010,'UPS_EXP_ELC_CEN',48.74 * 1.1,'PJ','');   -- Anno 2010
+INSERT INTO "MaxActivity" VALUES ('ES',2012,'UPS_EXP_ELC_CEN',68.35 * 1.1,'PJ','');   -- Anno 2012
+INSERT INTO "MaxActivity" VALUES ('ES',2014,'UPS_EXP_ELC_CEN',56.58 * 1.1,'PJ','');   -- Anno 2014
+INSERT INTO "MaxActivity" VALUES ('ES',2016,'UPS_EXP_ELC_CEN',51.04 * 1.1,'PJ','');   -- Anno 2016
+INSERT INTO "MaxActivity" VALUES ('ES',2018,'UPS_EXP_ELC_CEN',46.50 * 1.1,'PJ','');   -- Anno 2018
+INSERT INTO "MaxActivity" VALUES ('ES',2020,'UPS_EXP_ELC_CEN',52.73 * 1.1,'PJ','');   -- Anno 2020
+INSERT INTO "MaxActivity" VALUES ('ES',2022,'UPS_EXP_ELC_CEN',100.20 * 1.1,'PJ','');  -- Anno 2022
+INSERT INTO "MaxActivity" VALUES ('ES',2025,'UPS_EXP_ELC_CEN',89.38 * 1.1,'PJ','');   -- Trend futuro (+1% dal 2024)
+INSERT INTO "MaxActivity" VALUES ('ES',2030,'UPS_EXP_ELC_CEN',91.18 * 1.1,'PJ','');   -- Trend futuro poco crescente
+INSERT INTO "MaxActivity" VALUES ('ES',2040,'UPS_EXP_ELC_CEN',94.90 * 1.1,'PJ','');   -- Trend futuro poco crescente
+INSERT INTO "MaxActivity" VALUES ('ES',2050,'UPS_EXP_ELC_CEN',98.80 * 1.1,'PJ','');   -- Trend futuro poco crescente
 ---- Electricity sector
 ---- Fuel technologies
---INSERT INTO "MaxActivity" VALUES ('ES',2020,'ELC_FT_NGA',1.172E+03,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2050,'ELC_FT_NGA',1.172E+04,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2020,'ELC_FT_NGA',1.172E+03,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2050,'ELC_FT_NGA',1.172E+04,'PJ','');
 ---- Base year technologies
 --INSERT INTO "MaxActivity" VALUES ('ES',2007,'ELC_BGS_E',3.91,'PJ','');
 --INSERT INTO "MaxActivity" VALUES ('ES',2008,'ELC_BGS_E',3.91,'PJ','');
@@ -1348,27 +1385,27 @@ CREATE TABLE "MaxActivity" (
 --INSERT INTO "MaxActivity" VALUES ('ES',2030,'ELC_COA_COND_E',0.27,'PJ','');
 --INSERT INTO "MaxActivity" VALUES ('ES',2040,'ELC_COA_COND_E',0.07,'PJ','');
 --INSERT INTO "MaxActivity" VALUES ('ES',2050,'ELC_COA_COND_E',0.00,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2007,'ELC_COA_OIL_E',37.35,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2008,'ELC_COA_OIL_E',37.35,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2010,'ELC_COA_OIL_E',31.54,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2012,'ELC_COA_OIL_E',23.65,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2014,'ELC_COA_OIL_E',15.77,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2016,'ELC_COA_OIL_E',11.04,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2018,'ELC_COA_OIL_E',7.73,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2020,'ELC_COA_OIL_E',5.41,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2022,'ELC_COA_OIL_E',3.79,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2025,'ELC_COA_OIL_E',2.65,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2030,'ELC_COA_OIL_E',0.00,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2007,'ELC_DERGAS_CC_E',9.45,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2018,'ELC_DERGAS_CC_E',5.99,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2050,'ELC_DERGAS_CC_E',0.00,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2007,'ELC_DST_TURB_E',0.53,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2008,'ELC_DST_TURB_E',0.48,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2012,'ELC_DST_TURB_E',0.48,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2014,'ELC_DST_TURB_E',0.45,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2016,'ELC_DST_TURB_E',0.42,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2018,'ELC_DST_TURB_E',0.42,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2020,'ELC_DST_TURB_E',0.00,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2007,'ELC_COA_OIL_E',37.35,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2008,'ELC_COA_OIL_E',37.35,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2010,'ELC_COA_OIL_E',31.54,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2012,'ELC_COA_OIL_E',23.65,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2014,'ELC_COA_OIL_E',15.77,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2016,'ELC_COA_OIL_E',11.04,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2018,'ELC_COA_OIL_E',7.73,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2020,'ELC_COA_OIL_E',5.41,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2022,'ELC_COA_OIL_E',3.79,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2025,'ELC_COA_OIL_E',2.65,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2030,'ELC_COA_OIL_E',0.00,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2007,'ELC_DERGAS_CC_E',9.45,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2018,'ELC_DERGAS_CC_E',5.99,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2050,'ELC_DERGAS_CC_E',0.00,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2007,'ELC_DST_TURB_E',0.53,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2008,'ELC_DST_TURB_E',0.48,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2012,'ELC_DST_TURB_E',0.48,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2014,'ELC_DST_TURB_E',0.45,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2016,'ELC_DST_TURB_E',0.42,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2018,'ELC_DST_TURB_E',0.42,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2020,'ELC_DST_TURB_E',0.00,'PJ','');
 --INSERT INTO "MaxActivity" VALUES ('ES',2007,'ELC_GEO_E',19.49,'PJ','');
 --INSERT INTO "MaxActivity" VALUES ('ES',2008,'ELC_GEO_E',19.49,'PJ','');
 --INSERT INTO "MaxActivity" VALUES ('ES',2010,'ELC_GEO_E',16.76,'PJ','');
@@ -1391,33 +1428,33 @@ CREATE TABLE "MaxActivity" (
 --INSERT INTO "MaxActivity" VALUES ('ES',2014,'ELC_HYD_L10MW_E',27.23,'PJ','');
 --INSERT INTO "MaxActivity" VALUES ('ES',2020,'ELC_HYD_L10MW_E',28.79,'PJ','');
 --INSERT INTO "MaxActivity" VALUES ('ES',2050,'ELC_HYD_L10MW_E',29.62,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2007,'ELC_NGA_CC_E',1056.74,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2012,'ELC_NGA_CC_E',856.74,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2014,'ELC_NGA_CC_E',556.53,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2016,'ELC_NGA_CC_E',356.32,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2020,'ELC_NGA_CC_E',256.32,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2022,'ELC_NGA_CC_E',256.08,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2025,'ELC_NGA_CC_E',247.22,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2030,'ELC_NGA_CC_E',221.22,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2040,'ELC_NGA_CC_E',27.20,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2050,'ELC_NGA_CC_E',0.00,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2007,'ELC_NGA_CC_E',1056.74,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2012,'ELC_NGA_CC_E',856.74,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2014,'ELC_NGA_CC_E',556.53,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2016,'ELC_NGA_CC_E',356.32,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2020,'ELC_NGA_CC_E',256.32,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2022,'ELC_NGA_CC_E',256.08,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2025,'ELC_NGA_CC_E',247.22,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2030,'ELC_NGA_CC_E',221.22,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2040,'ELC_NGA_CC_E',27.20,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2050,'ELC_NGA_CC_E',0.00,'PJ','');
 --INSERT INTO "MaxActivity" VALUES ('ES',2007,'ELC_NGA_MIN_E',4.89,'PJ','');
 --INSERT INTO "MaxActivity" VALUES ('ES',2012,'ELC_NGA_MIN_E',4.89,'PJ','');
 --INSERT INTO "MaxActivity" VALUES ('ES',2014,'ELC_NGA_MIN_E',4.82,'PJ','');
 --INSERT INTO "MaxActivity" VALUES ('ES',2016,'ELC_NGA_MIN_E',4.76,'PJ','');
 --INSERT INTO "MaxActivity" VALUES ('ES',2025,'ELC_NGA_MIN_E',4.64,'PJ','');
 --INSERT INTO "MaxActivity" VALUES ('ES',2030,'ELC_NGA_MIN_E',3.68,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2040,'ELC_NGA_MIN_E',0.00,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2007,'ELC_NGA_E',16.08,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2008,'ELC_NGA_E',16.08,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2010,'ELC_NGA_E',15.13,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2012,'ELC_NGA_E',13.60,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2014,'ELC_NGA_E',13.60,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2016,'ELC_NGA_E',10.88,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2018,'ELC_NGA_E',9.52,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2020,'ELC_NGA_E',4.87,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2022,'ELC_NGA_E',4.06,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2025,'ELC_NGA_E',0.00,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2040,'ELC_NGA_MIN_E',0.00,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2007,'ELC_NGA_E',16.08,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2008,'ELC_NGA_E',16.08,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2010,'ELC_NGA_E',15.13,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2012,'ELC_NGA_E',13.60,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2014,'ELC_NGA_E',13.60,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2016,'ELC_NGA_E',10.88,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2018,'ELC_NGA_E',9.52,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2020,'ELC_NGA_E',4.87,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2022,'ELC_NGA_E',4.06,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2025,'ELC_NGA_E',0.00,'PJ','');
 --INSERT INTO "MaxActivity" VALUES ('ES',2007,'ELC_NGA_STM_REP_E',36.29,'PJ','');
 --INSERT INTO "MaxActivity" VALUES ('ES',2018,'ELC_NGA_STM_REP_E',36.29,'PJ','');
 --INSERT INTO "MaxActivity" VALUES ('ES',2020,'ELC_NGA_STM_REP_E',0.00,'PJ','');
@@ -1432,37 +1469,37 @@ CREATE TABLE "MaxActivity" (
 --INSERT INTO "MaxActivity" VALUES ('ES',2025,'ELC_NGA_TURB_E',0.06,'PJ','');
 --INSERT INTO "MaxActivity" VALUES ('ES',2030,'ELC_NGA_TURB_E',0.01,'PJ','');
 --INSERT INTO "MaxActivity" VALUES ('ES',2040,'ELC_NGA_TURB_E',0.00,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2007,'ELC_NGA_OIL_STM_E',695.41,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2008,'ELC_NGA_OIL_STM_E',653.49,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2012,'ELC_NGA_OIL_STM_E',653.49,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2014,'ELC_NGA_OIL_STM_E',529.42,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2016,'ELC_NGA_OIL_STM_E',520.74,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2018,'ELC_NGA_OIL_STM_E',520.74,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2020,'ELC_NGA_OIL_STM_E',508.55,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2022,'ELC_NGA_OIL_STM_E',558.55,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2025,'ELC_NGA_OIL_STM_E',503.55,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2030,'ELC_NGA_OIL_STM_E',300.00,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2050,'ELC_NGA_OIL_STM_E',100.00,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2007,'ELC_SOL_E',10.09,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2008,'ELC_SOL_E',10.09,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2010,'ELC_SOL_E',10.10,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2012,'ELC_SOL_E',10.11,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2014,'ELC_SOL_E',10.07,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2016,'ELC_SOL_E',10.07,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2018,'ELC_SOL_E',10.08,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2020,'ELC_SOL_E',10.04,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2022,'ELC_SOL_E',10.04,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2025,'ELC_SOL_E',10.01,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2030,'ELC_SOL_E',10.00,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2007,'ELC_WIN_E',1910.70,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2008,'ELC_WIN_E',1911.34,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2010,'ELC_WIN_E',1910.96,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2012,'ELC_WIN_E',1911.20,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2014,'ELC_WIN_E',1919.37,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2016,'ELC_WIN_E',1917.17,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2018,'ELC_WIN_E',1916.80,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2020,'ELC_WIN_E',1911.00,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2022,'ELC_WIN_E',1910.00,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2007,'ELC_NGA_OIL_STM_E',695.41,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2008,'ELC_NGA_OIL_STM_E',653.49,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2012,'ELC_NGA_OIL_STM_E',653.49,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2014,'ELC_NGA_OIL_STM_E',529.42,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2016,'ELC_NGA_OIL_STM_E',520.74,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2018,'ELC_NGA_OIL_STM_E',520.74,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2020,'ELC_NGA_OIL_STM_E',508.55,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2022,'ELC_NGA_OIL_STM_E',558.55,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2025,'ELC_NGA_OIL_STM_E',503.55,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2030,'ELC_NGA_OIL_STM_E',300.00,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2050,'ELC_NGA_OIL_STM_E',100.00,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2007,'ELC_SOL_E',10.09,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2008,'ELC_SOL_E',10.09,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2010,'ELC_SOL_E',10.10,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2012,'ELC_SOL_E',10.11,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2014,'ELC_SOL_E',10.07,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2016,'ELC_SOL_E',10.07,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2018,'ELC_SOL_E',10.08,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2020,'ELC_SOL_E',10.04,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2022,'ELC_SOL_E',10.04,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2025,'ELC_SOL_E',10.01,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2030,'ELC_SOL_E',10.00,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2007,'ELC_WIN_E',1910.70,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2008,'ELC_WIN_E',1911.34,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2010,'ELC_WIN_E',1910.96,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2012,'ELC_WIN_E',1911.20,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2014,'ELC_WIN_E',1919.37,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2016,'ELC_WIN_E',1917.17,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2018,'ELC_WIN_E',1916.80,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2020,'ELC_WIN_E',1911.00,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2022,'ELC_WIN_E',1910.00,'PJ','');
 ---- Storage
 --INSERT INTO "MaxActivity" VALUES ('ES',2007,'STG_ELC_HYD_PUM_E',22.15,'PJ','TIMES-Italy');
 --INSERT INTO "MaxActivity" VALUES ('ES',2050,'STG_ELC_HYD_PUM_E',25.81,'PJ','TIMES-Italy');
@@ -1722,6 +1759,7 @@ CREATE TABLE "EmissionAggregation" (
 );
 
 -- TODO (chiedere) - Energy balance Eurostat https://ec.europa.eu/eurostat/web/energy/database/additional-data#Energy%20balances
+
 CREATE TABLE "Efficiency" (
 	"regions"	text,
 	"input_comm"	text,
