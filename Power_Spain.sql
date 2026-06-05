@@ -71,7 +71,7 @@ CREATE TABLE "SegFrac" (
 	FOREIGN KEY("season_name") REFERENCES "time_season"("t_season"),
 	FOREIGN KEY("time_of_day_name") REFERENCES "time_of_day"("t_day")
 );
-INSERT INTO "SegFrac" VALUES ('winter','night',0.08333,''); -- correction based on the cf calculation
+INSERT INTO "SegFrac" VALUES ('winter','night',0.08333,''); -- correction based on the cf calculations
 INSERT INTO "SegFrac" VALUES ('winter','morning',0.05201,'');
 INSERT INTO "SegFrac" VALUES ('winter','noon',0.041667,'');
 INSERT INTO "SegFrac" VALUES ('winter','afternoon',0.072917,'');
