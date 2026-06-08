@@ -1024,7 +1024,7 @@ INSERT INTO "MaxActivityGroup" VALUES ('ES',2020,'ELC_HYD_GRP',122.3928*1.1,'PJ'
 INSERT INTO "MaxActivityGroup" VALUES ('ES',2022,'ELC_HYD_GRP',79.5672*1.1,'PJ');
 INSERT INTO "MaxActivityGroup" VALUES ('ES',2024,'ELC_HYD_GRP',146.9556*1.1,'PJ');
 INSERT INTO "MaxActivityGroup" VALUES ('ES',2030,'ELC_HYD_GRP',220.0000*1.1,'PJ');
-INSERT INTO "MaxActivityGroup" VALUES ('ES',2050,'ELC_HYD_GRP',300.0000*1.1,'PJ');
+INSERT INTO "MaxActivityGroup" VALUES ('ES',2050,'ELC_HYD_GRP',270.0000*1.1,'PJ');
 -- NUCLEAR: Dati storici reali dall'immagine (2010-2024) + Trend futuro (con * 1.1 esplicito)
 INSERT INTO "MaxActivityGroup" VALUES ('ES',2010,'ELC_NUC_GRP',223.16 * 1.1,'PJ');   -- Anno 2010
 INSERT INTO "MaxActivityGroup" VALUES ('ES',2012,'ELC_NUC_GRP',221.29 * 1.1,'PJ');   -- Anno 2012
@@ -1033,8 +1033,8 @@ INSERT INTO "MaxActivityGroup" VALUES ('ES',2016,'ELC_NUC_GRP',211.08 * 1.1,'PJ'
 INSERT INTO "MaxActivityGroup" VALUES ('ES',2018,'ELC_NUC_GRP',200.76 * 1.1,'PJ');   -- Anno 2018
 INSERT INTO "MaxActivityGroup" VALUES ('ES',2020,'ELC_NUC_GRP',209.88 * 1.1,'PJ');   -- Anno 2020
 INSERT INTO "MaxActivityGroup" VALUES ('ES',2024,'ELC_NUC_GRP',196.31 * 1.1,'PJ');
---INSERT INTO "MaxActivityGroup" VALUES ('ES',2030,'ELC_NUC_GRP',195.00 * 0.7,'PJ');   -- Mid Phase out
---INSERT INTO "MaxActivityGroup" VALUES ('ES',2050,'ELC_NUC_GRP',190.00 * 0,'PJ');   -- Phase out
+INSERT INTO "MaxActivityGroup" VALUES ('ES',2030,'ELC_NUC_GRP',195.00 * 0.7,'PJ');   -- Mid Phase out
+INSERT INTO "MaxActivityGroup" VALUES ('ES',2050,'ELC_NUC_GRP',190.00 * 0,'PJ');   -- Phase out
 
 CREATE TABLE "MinCapacityGroup" (
 	"regions"	text,
