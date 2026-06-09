@@ -6,7 +6,7 @@ sql_modules = ['Power_Spain.sql']
 
 Deleting = True
 Reading = True
-Preprocessing = False
+Preprocessing = True
 Simplifying = False
 
 # Check if the SQLite database already exists and delete it

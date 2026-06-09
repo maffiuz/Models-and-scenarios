@@ -31,6 +31,7 @@ INSERT INTO "time_periods" VALUES (2016,'f');
 INSERT INTO "time_periods" VALUES (2018,'f');
 INSERT INTO "time_periods" VALUES (2020,'f');
 INSERT INTO "time_periods" VALUES (2022,'f');
+INSERT INTO "time_periods" VALUES (2024,'f');
 INSERT INTO "time_periods" VALUES (2025,'f');
 INSERT INTO "time_periods" VALUES (2030,'f');
 INSERT INTO "time_periods" VALUES (2035,'f');
@@ -642,6 +643,9 @@ INSERT INTO "tech_groups" VALUES ('ELC_NGA_CT_N','');
 INSERT INTO "tech_groups" VALUES ('ELC_NGA_CC_N','');
 INSERT INTO "tech_groups" VALUES ('ELC_NGA_OIL_STM_N','');
 INSERT INTO "tech_groups" VALUES ('ELC_NGA_OIL_STM_E','');
+INSERT INTO "tech_groups" VALUES ('ELC_CHP_NGA_CP_N','');
+INSERT INTO "tech_groups" VALUES ('ELC_CHP_NGA_CC_N','');
+INSERT INTO "tech_groups" VALUES ('ELC_CHP_NGA_TAP_N','');
 INSERT INTO "tech_groups" VALUES ('ELC_HYD_E','');
 INSERT INTO "tech_groups" VALUES ('ELC_HYD_L10MW_E','');
 INSERT INTO "tech_groups" VALUES ('ELC_HYD_MICRO_N','');
@@ -748,13 +752,16 @@ INSERT INTO "TechGroupWeight" VALUES ('ELC_NGA_TURB_E','ELC_NGA_GRP',1.0,'');
 INSERT INTO "TechGroupWeight" VALUES ('ELC_NGA_MIN_E','ELC_NGA_GRP',1.0,'');
 INSERT INTO "TechGroupWeight" VALUES ('ELC_NGA_CT_N','ELC_NGA_GRP',1.0,'');
 INSERT INTO "TechGroupWeight" VALUES ('ELC_NGA_CC_N','ELC_NGA_GRP',1.0,'');
+INSERT INTO "TechGroupWeight" VALUES ('ELC_CHP_NGA_CC_N','ELC_NGA_GRP',1.0,'');
+INSERT INTO "TechGroupWeight" VALUES ('ELC_CHP_NGA_CP_N','ELC_NGA_GRP',1.0,'');
+INSERT INTO "TechGroupWeight" VALUES ('ELC_CHP_NGA_TAP_N','ELC_NGA_GRP',1.0,'');
 INSERT INTO "TechGroupWeight" VALUES ('ELC_NGA_OIL_STM_N','ELC_OIL_GRP',1.0,'');
 INSERT INTO "TechGroupWeight" VALUES ('ELC_NGA_OIL_STM_E','ELC_OIL_GRP',1.0,'');
 INSERT INTO "TechGroupWeight" VALUES ('ELC_HYD_E','ELC_HYD_GRP',1.0,'');
 INSERT INTO "TechGroupWeight" VALUES ('ELC_HYD_L10MW_E','ELC_HYD_GRP',1.0,'');
 INSERT INTO "TechGroupWeight" VALUES ('ELC_HYD_MICRO_N','ELC_HYD_GRP',1.0,'');
 INSERT INTO "TechGroupWeight" VALUES ('ELC_HYD_MINI_N','ELC_HYD_GRP',1.0,'');
-INSERT INTO "TechGroupWeight" VALUES ('STG_ELC_HYD_PUM_E','ELC_HYD_GRP',1.0,'');
+-- INSERT INTO "TechGroupWeight" VALUES ('STG_ELC_HYD_PUM_E','ELC_HYD_GRP',1.0,'');
 INSERT INTO "TechGroupWeight" VALUES ('ELC_GEO_E','ELC_GEO_GRP',1.0,'');
 INSERT INTO "TechGroupWeight" VALUES ('ELC_GEO_HENT_N','ELC_GEO_GRP',1.0,'');
 INSERT INTO "TechGroupWeight" VALUES ('ELC_GEO_LENT_N','ELC_GEO_GRP',1.0,'');
@@ -826,16 +833,16 @@ INSERT INTO "MinActivityGroup" VALUES ('ES', 2024, 'ELC_BIO_GRP', 19.1484 * 0.95
 INSERT INTO "MinActivityGroup" VALUES ('ES', 2030, 'ELC_BIO_GRP', 22.5000 * 0.95, 'PJ'); 
 INSERT INTO "MinActivityGroup" VALUES ('ES', 2050, 'ELC_BIO_GRP', 25.0000 * 0.95, 'PJ'); 
 --HYDROPOWER, dati storici, con piccolissima crescita futura
-INSERT INTO "MinActivityGroup" VALUES ('ES',2007,'ELC_HYD_GRP',109.8792*0.95,'PJ');
-INSERT INTO "MinActivityGroup" VALUES ('ES',2010,'ELC_HYD_GRP',163.8396*0.95,'PJ');
-INSERT INTO "MinActivityGroup" VALUES ('ES',2012,'ELC_HYD_GRP',86.9832*0.95,'PJ');
-INSERT INTO "MinActivityGroup" VALUES ('ES',2014,'ELC_HYD_GRP',154.6884*0.95,'PJ');
-INSERT INTO "MinActivityGroup" VALUES ('ES',2016,'ELC_HYD_GRP',143.5140*0.95,'PJ');
-INSERT INTO "MinActivityGroup" VALUES ('ES',2020,'ELC_HYD_GRP',122.3928*0.95,'PJ');
-INSERT INTO "MinActivityGroup" VALUES ('ES',2022,'ELC_HYD_GRP',79.5672*0.95,'PJ');
-INSERT INTO "MinActivityGroup" VALUES ('ES',2024,'ELC_HYD_GRP',146.9556*0.95,'PJ');
-INSERT INTO "MinActivityGroup" VALUES ('ES',2030,'ELC_HYD_GRP',150.0000*0.95,'PJ');
-INSERT INTO "MinActivityGroup" VALUES ('ES',2050,'ELC_HYD_GRP',160.0000*0.95,'PJ');
+INSERT INTO "MinActivityGroup" VALUES ('ES',2007,'ELC_HYD_GRP',109.8792,'PJ');
+INSERT INTO "MinActivityGroup" VALUES ('ES',2010,'ELC_HYD_GRP',163.8396,'PJ');
+INSERT INTO "MinActivityGroup" VALUES ('ES',2012,'ELC_HYD_GRP',86.9832,'PJ');
+INSERT INTO "MinActivityGroup" VALUES ('ES',2014,'ELC_HYD_GRP',154.6884,'PJ');
+INSERT INTO "MinActivityGroup" VALUES ('ES',2016,'ELC_HYD_GRP',143.5140,'PJ');
+INSERT INTO "MinActivityGroup" VALUES ('ES',2020,'ELC_HYD_GRP',122.3928,'PJ');
+INSERT INTO "MinActivityGroup" VALUES ('ES',2022,'ELC_HYD_GRP',79.5672,'PJ');
+INSERT INTO "MinActivityGroup" VALUES ('ES',2024,'ELC_HYD_GRP',146.9556,'PJ');
+INSERT INTO "MinActivityGroup" VALUES ('ES',2030,'ELC_HYD_GRP',150.0000,'PJ');
+INSERT INTO "MinActivityGroup" VALUES ('ES',2050,'ELC_HYD_GRP',160.0000,'PJ');
 -- SOLAR, dati storici *0.95, con trend crescente per i futuri
 INSERT INTO "MinActivityGroup" VALUES ('ES',2007,'ELC_SOL_GRP',(1.8252+0.0288)*0.95,'PJ');
 INSERT INTO "MinActivityGroup" VALUES ('ES',2010,'ELC_SOL_GRP',25.8696*0.95,'PJ');
@@ -886,7 +893,8 @@ INSERT INTO "MinActivityGroup" VALUES ('ES',2050,'ELC_NGA_GRP',0.0000*0.95,'PJ')
 INSERT INTO "MinActivityGroup" VALUES ('ES',2007,'ELC_OIL_GRP',66.6288*0.95,'PJ');
 INSERT INTO "MinActivityGroup" VALUES ('ES',2010,'ELC_OIL_GRP',59.6232*0.95,'PJ');
 INSERT INTO "MinActivityGroup" VALUES ('ES',2012,'ELC_OIL_GRP',55.1556*0.95,'PJ');
-INSERT INTO "MinActivityGroup" VALUES ('ES',2014,'ELC_OIL_GRP',62.0676*0.95,'PJ');
+-- INSERT INTO "MinActivityGroup" VALUES ('ES',2014,'ELC_OIL_GRP',62.0676*0.95,'PJ');
+INSERT INTO "MinActivityGroup" VALUES ('ES',2014,'ELC_OIL_GRP',50.8356*0.95,'PJ');
 INSERT INTO "MinActivityGroup" VALUES ('ES',2016,'ELC_OIL_GRP',56.7576*0.95,'PJ');
 INSERT INTO "MinActivityGroup" VALUES ('ES',2018,'ELC_OIL_GRP',52.1928*0.95,'PJ');
 INSERT INTO "MinActivityGroup" VALUES ('ES',2020,'ELC_OIL_GRP',38.5344*0.95,'PJ');
@@ -1006,12 +1014,12 @@ INSERT INTO "MaxActivityGroup" VALUES ('ES',2024,'ELC_OIL_GRP',32.8428*1.1,'PJ')
 INSERT INTO "MaxActivityGroup" VALUES ('ES',2007,'ELC_NGA_GRP',341.2764*1.1,'PJ');
 INSERT INTO "MaxActivityGroup" VALUES ('ES',2010,'ELC_NGA_GRP',341.4636*1.1,'PJ');
 INSERT INTO "MaxActivityGroup" VALUES ('ES',2012,'ELC_NGA_GRP',263.9088*1.1,'PJ');
-INSERT INTO "MaxActivityGroup" VALUES ('ES',2014,'ELC_NGA_GRP',188.9928*1.1,'PJ');
+INSERT INTO "MaxActivityGroup" VALUES ('ES',2014,'ELC_NGA_GRP',170.183*1.1,'PJ');
 INSERT INTO "MaxActivityGroup" VALUES ('ES',2016,'ELC_NGA_GRP',230.5332*1.1,'PJ');
 INSERT INTO "MaxActivityGroup" VALUES ('ES',2018,'ELC_NGA_GRP',208.8144*1.1,'PJ');
 INSERT INTO "MaxActivityGroup" VALUES ('ES',2020,'ELC_NGA_GRP',251.0604*1.1,'PJ');
 INSERT INTO "MaxActivityGroup" VALUES ('ES',2022,'ELC_NGA_GRP',309.5100*1.1,'PJ');
-----INSERT INTO "MaxActivityGroup" VALUES ('ES',2024,'ELC_NGA_GRP',188.3844*1.1,'PJ');
+INSERT INTO "MaxActivityGroup" VALUES ('ES',2024,'ELC_NGA_GRP',188.3844*1.1,'PJ');
 ----INSERT INTO "MaxActivityGroup" VALUES ('ES',2050,'ELC_NGA_GRP',100.00*1.1,'PJ');
 ----Hydropower
 INSERT INTO "MaxActivityGroup" VALUES ('ES',2007,'ELC_HYD_GRP',109.8792*1.1,'PJ');
@@ -1034,6 +1042,8 @@ INSERT INTO "MaxActivityGroup" VALUES ('ES',2020,'ELC_NUC_GRP',209.88 * 1.1,'PJ'
 INSERT INTO "MaxActivityGroup" VALUES ('ES',2024,'ELC_NUC_GRP',196.31 * 1.1,'PJ');
 INSERT INTO "MaxActivityGroup" VALUES ('ES',2030,'ELC_NUC_GRP',195.00 * 0.7,'PJ');   -- Mid Phase out
 INSERT INTO "MaxActivityGroup" VALUES ('ES',2050,'ELC_NUC_GRP',190.00 * 0,'PJ');   -- Phase out
+-- SOLAR
+-- INSERT INTO "MaxActivityGroup" VALUES ('ES',2014,'ELC_SOL_GRP',49.2156*1.1,'PJ');
 
 CREATE TABLE "MinCapacityGroup" (
 	"regions"	text,
@@ -1372,6 +1382,13 @@ INSERT INTO "MaxCapacity" VALUES ('ES',2050,'ELC_PV_GRO_SUD_N',150,'GW','');
 --INSERT INTO "MaxCapacity" VALUES ('ES',2030,'ELC_BIO_12C_N',0.83,'GW','TIMES-Italy');
 --INSERT INTO "MaxCapacity" VALUES ('ES',2040,'ELC_BIO_12C_N',0.61,'GW','TIMES-Italy');
 --INSERT INTO "MaxCapacity" VALUES ('ES',2050,'ELC_BIO_12C_N',1.20,'GW','TIMES-Italy');
+INSERT INTO "MaxCapacity" VALUES ('ES',2010,'ELC_CHP_NGA_CC_N',0.0,'GW','Assumption for realism');
+INSERT INTO "MaxCapacity" VALUES ('ES',2025,'ELC_CHP_NGA_CC_N',1.0,'GW','Assumption for realism');
+INSERT INTO "MaxCapacity" VALUES ('ES',2010,'ELC_CHP_NGA_CP_N',0.0,'GW','Assumption for realism');
+INSERT INTO "MaxCapacity" VALUES ('ES',2025,'ELC_CHP_NGA_CP_N',1.0,'GW','Assumption for realism');
+
+
+
 
 CREATE TABLE "DiscreteCapacity" (
 	"tech"	text,
@@ -1539,10 +1556,10 @@ INSERT INTO "MaxActivity" VALUES ('ES',2050,'ELC_FT_NGA',1.172E+04,'PJ','');
 --INSERT INTO "MaxActivity" VALUES ('ES',2022,'ELC_COA_OIL_E',13.79,'PJ','');
 --INSERT INTO "MaxActivity" VALUES ('ES',2025,'ELC_COA_OIL_E',12.65,'PJ','');
 --INSERT INTO "MaxActivity" VALUES ('ES',2030,'ELC_COA_OIL_E',0.00,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('ES',2007,'ELC_DERGAS_CC_E',9.45,'PJ','');
-INSERT INTO "MaxActivity" VALUES ('ES',2018,'ELC_DERGAS_CC_E',5.99,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2010,'ELC_DERGAS_CC_E',0.6,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2018,'ELC_DERGAS_CC_E',0.34,'PJ','');
 INSERT INTO "MaxActivity" VALUES ('ES',2050,'ELC_DERGAS_CC_E',0.00,'PJ','');
---INSERT INTO "MaxActivity" VALUES ('ES',2007,'ELC_DST_TURB_E',0.53,'PJ','');
+INSERT INTO "MaxActivity" VALUES ('ES',2010,'ELC_DST_TURB_E',0.53,'PJ','');
 --INSERT INTO "MaxActivity" VALUES ('ES',2008,'ELC_DST_TURB_E',0.48,'PJ','');
 --INSERT INTO "MaxActivity" VALUES ('ES',2012,'ELC_DST_TURB_E',0.48,'PJ','');
 --INSERT INTO "MaxActivity" VALUES ('ES',2014,'ELC_DST_TURB_E',0.45,'PJ','');
@@ -2009,7 +2026,7 @@ INSERT INTO "Efficiency" VALUES ('ES','ELC_OIL','ELC_NGA_OIL_STM_E',2010,'ELC_CE
 INSERT INTO "Efficiency" VALUES ('ES','ELC_BGS','ELC_BGS_E',2006,'ELC_DST',0.36,'Eurostat nrg_bal_c');
 INSERT INTO "Efficiency" VALUES ('ES','ELC_SLB','ELC_BIO_CEN_E',2006,'ELC_CEN',0.26,'Eurostat nrg_bal_c');
 INSERT INTO "Efficiency" VALUES ('ES','ELC_SLB','ELC_BIO_DST_E',2006,'ELC_DST',0.26,'Eurostat nrg_bal_c');
--- INSERT INTO "Efficiency" VALUES ('ES','ELC_GEO','ELC_GEO_E',2006,'ELC_CEN',0.10,'No existining GEO in Spain, remove?');
+INSERT INTO "Efficiency" VALUES ('ES','ELC_GEO','ELC_GEO_E',2006,'ELC_CEN',0.10,'No existining GEO in Spain, remove?');
 INSERT INTO "Efficiency" VALUES ('ES','ELC_SOL','ELC_SOL_E',2006,'ELC_DST',1.00,'');
 INSERT INTO "Efficiency" VALUES ('ES','ELC_WIN','ELC_WIN_E',2006,'ELC_CEN',1.00,'');
 INSERT INTO "Efficiency" VALUES ('ES','ELC_HYD','ELC_HYD_E',2006,'ELC_CEN',1.00,'');
@@ -2111,8 +2128,8 @@ INSERT INTO "Efficiency" VALUES ('ES','ELC_CEN','STG_ELC_HYD_PUM_E',2050,'ELC_CE
 INSERT INTO "Efficiency" VALUES ('ES','ELC_CEN','STG_ELC_CEN_BTT',2020,'ELC_CEN',0.85,'ATB 2022');
 INSERT INTO "Efficiency" VALUES ('ES','ELC_DST','STG_ELC_DST_BTT',2020,'ELC_DST',0.85,'ATB 2022');
 -- Distrib and demand
-INSERT INTO "Efficiency" VALUES ('ES','ELC_CEN','DISTR_ELC',2007,'ELC_DST',0.95,'');
-INSERT INTO "Efficiency" VALUES ('ES','ELC_DST','END_USES_ELC',2007,'ELC_DEM',1.00,'');
+INSERT INTO "Efficiency" VALUES ('ES','ELC_CEN','DISTR_ELC',2007,'ELC_DST',0.95,'Plant net output');
+INSERT INTO "Efficiency" VALUES ('ES','ELC_DST','END_USES_ELC',2007,'ELC_DEM',0.95,'Distribution losses, REE');
 -- Dummy
 INSERT INTO "Efficiency" VALUES ('ES','ethos','DMY_OUT_TECH',2007,'DMY_OUT',1.00,'');
 -- Other sectors and dummies (not required in the whole database)
@@ -2401,6 +2418,7 @@ INSERT INTO "Demand" VALUES ('ES',2016,'ELC_DEM',249.680*3.6,'PJ','REE');
 INSERT INTO "Demand" VALUES ('ES',2018,'ELC_DEM',253.566*3.6,'PJ','REE');
 INSERT INTO "Demand" VALUES ('ES',2020,'ELC_DEM',236.697*3.6,'PJ','REE');
 INSERT INTO "Demand" VALUES ('ES',2022,'ELC_DEM',250.421*3.6,'PJ','REE');
+INSERT INTO "Demand" VALUES ('ES',2024,'ELC_DEM',248.811*3.6,'PJ','REE');
 INSERT INTO "Demand" VALUES ('ES',2025,'ELC_DEM',256.086*3.6,'PJ','REE');
 
 -- Decarbonization scenario demand
