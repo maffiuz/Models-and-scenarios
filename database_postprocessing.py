@@ -71,9 +71,10 @@ tech_list = [
 'ELC_CHP_NGA_CP_N',
 'ELC_CHP_NGA_TAP_N',
 'UPS_IMP_ELC',
-'UPS_EXP_ELC'
-
-
+'UPS_EXP_ELC',
+'STG_ELC_HYD_PUM_E',
+'STG_ELC_DST_BTT',
+'STG_ELC_CEN_BTT'
 ]
 input_comm_list = []
 output_comm_list = [

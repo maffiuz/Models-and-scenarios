@@ -123,19 +123,12 @@ ELC_FT_SOL
 ELC_FT_WIN
 ELC_FT_H2
 ELC_COA_COND_E
-ELC_COA_OIL_E
 ELC_DERGAS_CC_E
 ELC_NGA_CC_E
 ELC_NGA_E
-ELC_NGA_STM_REP_E
-ELC_NGA_TURB_E
-ELC_NGA_MIN_E
-ELC_DST_TURB_E
 ELC_NGA_OIL_STM_E
 ELC_BGS_E
 ELC_BIO_CEN_E
-ELC_BIO_DST_E
-ELC_GEO_E
 ELC_SOL_E
 ELC_WIN_E
 ELC_HYD_E
@@ -224,13 +217,10 @@ MAT_SUP_ZIR
 
 set tech_baseload := 
 ELC_COA_COND_E
-ELC_COA_OIL_E
 ELC_DERGAS_CC_E
-ELC_DST_TURB_E
 ELC_NGA_OIL_STM_E
 ELC_BGS_E
 ELC_BIO_CEN_E
-ELC_BIO_DST_E
 ELC_NUC_LWR_E
 ELC_COA_STM_P
 ELC_COA_STM_N
@@ -360,18 +350,13 @@ ELC_BGS_LAN_N
 ELC_BIO_12C_N
 ELC_BIO_5C_N
 ELC_BIO_CEN_E
-ELC_BIO_DST_E
 ELC_BLQ_N
 ELC_CHP_BMU_N
 ELC_COA_COND_E
-ELC_COA_OIL_E
 ELC_COA_STM_P
 ELC_COA_STM_N
 ELC_NGA_CC_E
 ELC_NGA_E
-ELC_NGA_STM_REP_E
-ELC_NGA_TURB_E
-ELC_NGA_MIN_E
 ELC_NGA_CT_N
 ELC_NGA_CC_N
 ELC_NGA_OIL_STM_N
@@ -383,7 +368,6 @@ ELC_HYD_E
 ELC_HYD_L10MW_E
 ELC_HYD_MICRO_N
 ELC_HYD_MINI_N
-ELC_GEO_E
 ELC_GEO_HENT_N
 ELC_GEO_LENT_N
 ELC_WIN_E
@@ -451,17 +435,12 @@ param TechGroupWeight :=
     ELC_BIO_12C_N             ELC_BIO_GRP         1.0    
     ELC_BIO_5C_N             ELC_BIO_GRP         1.0    
     ELC_BIO_CEN_E             ELC_BIO_GRP         1.0    
-    ELC_BIO_DST_E             ELC_BIO_GRP         1.0    
     ELC_BLQ_N             ELC_BIO_GRP         1.0    
     ELC_COA_COND_E             ELC_COA_GRP         1.0    
-    ELC_COA_OIL_E             ELC_COA_GRP         1.0    
     ELC_COA_STM_P             ELC_COA_GRP         1.0    
     ELC_COA_STM_N             ELC_COA_GRP         1.0    
     ELC_NGA_CC_E             ELC_NGA_GRP         1.0    
     ELC_NGA_E             ELC_NGA_GRP         1.0    
-    ELC_NGA_STM_REP_E             ELC_NGA_GRP         1.0    
-    ELC_NGA_TURB_E             ELC_NGA_GRP         1.0    
-    ELC_NGA_MIN_E             ELC_NGA_GRP         1.0    
     ELC_NGA_CT_N             ELC_NGA_GRP         1.0    
     ELC_NGA_CC_N             ELC_NGA_GRP         1.0    
     ELC_CHP_NGA_CC_N             ELC_NGA_GRP         1.0    
@@ -473,7 +452,7 @@ param TechGroupWeight :=
     ELC_HYD_L10MW_E             ELC_HYD_GRP         1.0    
     ELC_HYD_MICRO_N             ELC_HYD_GRP         1.0    
     ELC_HYD_MINI_N             ELC_HYD_GRP         1.0    
-    ELC_GEO_E             ELC_GEO_GRP         1.0    
+    STG_ELC_HYD_PUM_E             ELC_HYD_GRP         1.0    
     ELC_GEO_HENT_N             ELC_GEO_GRP         1.0    
     ELC_GEO_LENT_N             ELC_GEO_GRP         1.0    
     ELC_WIN_E             ELC_WIN_GRP         1.0    
@@ -558,8 +537,8 @@ param MinActivityGroup :=
     ES         2040         ELC_WIN_GRP         275.5    
     ES         2045         ELC_WIN_GRP         289.75    
     ES         2050         ELC_WIN_GRP         304.0    
-    ES         2007         ELC_COA_GRP         253.37449999999995    
-    ES         2008         ELC_COA_GRP         198.92366666666663    
+    ES         2007         ELC_COA_GRP         266.71    
+    ES         2008         ELC_COA_GRP         207.814    
     ES         2010         ELC_COA_GRP         90.022    
     ES         2012         ELC_COA_GRP         191.49149999999997    
     ES         2014         ELC_COA_GRP         159.79    
@@ -574,8 +553,8 @@ param MinActivityGroup :=
     ES         2040         ELC_COA_GRP         0.95    
     ES         2045         ELC_COA_GRP         0.47499999999999987    
     ES         2050         ELC_COA_GRP         0.0    
-    ES         2007         ELC_NGA_GRP         324.21258    
-    ES         2008         ELC_NGA_GRP         324.27186    
+    ES         2007         ELC_NGA_GRP         341.2764    
+    ES         2008         ELC_NGA_GRP         335.64774    
     ES         2010         ELC_NGA_GRP         324.39041999999995    
     ES         2012         ELC_NGA_GRP         250.71335999999997    
     ES         2014         ELC_NGA_GRP         179.54315999999997    
@@ -590,8 +569,8 @@ param MinActivityGroup :=
     ES         2040         ELC_NGA_GRP         23.75    
     ES         2045         ELC_NGA_GRP         11.875    
     ES         2050         ELC_NGA_GRP         0.0    
-    ES         2007         ELC_OIL_GRP         63.29736    
-    ES         2008         ELC_OIL_GRP         61.07892    
+    ES         2007         ELC_OIL_GRP         66.6288    
+    ES         2008         ELC_OIL_GRP         63.299879999999995    
     ES         2010         ELC_OIL_GRP         56.642039999999994    
     ES         2012         ELC_OIL_GRP         52.397819999999996    
     ES         2014         ELC_OIL_GRP         48.29382    
@@ -606,8 +585,8 @@ param MinActivityGroup :=
     ES         2040         ELC_OIL_GRP         4.75    
     ES         2045         ELC_OIL_GRP         2.375    
     ES         2050         ELC_OIL_GRP         0.0    
-    ES         2007         ELC_NUC_GRP         188.45149999999998    
-    ES         2008         ELC_NUC_GRP         196.30166666666665    
+    ES         2007         ELC_NUC_GRP         198.37    
+    ES         2008         ELC_NUC_GRP         202.914    
     ES         2010         ELC_NUC_GRP         212.00199999999998    
     ES         2012         ELC_NUC_GRP         210.22549999999998    
     ES         2014         ELC_NUC_GRP         195.985    
@@ -691,15 +670,15 @@ param MaxActivityGroup :=
     ES         2008         ELC_OIL_GRP         70.72296    
     ES         2010         ELC_OIL_GRP         65.58552    
     ES         2012         ELC_OIL_GRP         60.67116000000001    
-    ES         2014         ELC_OIL_GRP         68.27436    
+    ES         2014         ELC_OIL_GRP         55.919160000000005    
     ES         2016         ELC_OIL_GRP         62.43336    
     ES         2018         ELC_OIL_GRP         57.41208    
     ES         2020         ELC_OIL_GRP         42.387840000000004    
     ES         2022         ELC_OIL_GRP         41.936400000000006    
     ES         2024         ELC_OIL_GRP         36.12708    
     ES         2007         ELC_NGA_GRP         375.40404000000007    
-    ES         2008         ELC_NGA_GRP         375.47268    
-    ES         2010         ELC_NGA_GRP         375.60996    
+    ES         2008         ELC_NGA_GRP         364.09056000000004    
+    ES         2010         ELC_NGA_GRP         341.4636    
     ES         2012         ELC_NGA_GRP         290.29968    
     ES         2014         ELC_NGA_GRP         187.2013    
     ES         2016         ELC_NGA_GRP         253.58652    
@@ -733,10 +712,10 @@ param MaxActivityGroup :=
     ES         2024         ELC_NUC_GRP         215.94100000000003    
     ES         2025         ELC_NUC_GRP         202.70083333333335    
     ES         2030         ELC_NUC_GRP         136.5    
-    ES         2035         ELC_NUC_GRP         102.375    
-    ES         2040         ELC_NUC_GRP         68.25    
-    ES         2045         ELC_NUC_GRP         34.125    
-    ES         2050         ELC_NUC_GRP         0.0    
+    ES         2035         ELC_NUC_GRP         135.625    
+    ES         2040         ELC_NUC_GRP         134.75    
+    ES         2045         ELC_NUC_GRP         133.875    
+    ES         2050         ELC_NUC_GRP         133.0    
 ;
 
 param MinInputGroup := 
@@ -1008,19 +987,12 @@ param CapacityToActivity :=
     ES             UPS_IMP_ELC_CEN         31.536    
     ES             UPS_EXP_ELC_CEN         31.536    
     ES             ELC_COA_COND_E         31.536    
-    ES             ELC_COA_OIL_E         31.536    
     ES             ELC_DERGAS_CC_E         31.536    
     ES             ELC_NGA_CC_E         31.536    
     ES             ELC_NGA_E         31.536    
-    ES             ELC_NGA_STM_REP_E         31.536    
-    ES             ELC_NGA_TURB_E         31.536    
-    ES             ELC_NGA_MIN_E         31.536    
-    ES             ELC_DST_TURB_E         31.536    
     ES             ELC_NGA_OIL_STM_E         31.536    
     ES             ELC_BGS_E         31.536    
     ES             ELC_BIO_CEN_E         31.536    
-    ES             ELC_BIO_DST_E         31.536    
-    ES             ELC_GEO_E         31.536    
     ES             ELC_SOL_E         31.536    
     ES             ELC_WIN_E         31.536    
     ES             ELC_HYD_E         31.536    
@@ -1920,57 +1892,6 @@ param EmissionActivity :=
     ES             ELC_N2O             ELC_SLB             ELC_BIO_CEN_E         2040         ELC_CEN         15.384615384615383    
     ES             ELC_N2O             ELC_SLB             ELC_BIO_CEN_E         2045         ELC_CEN         15.384615384615383    
     ES             ELC_N2O             ELC_SLB             ELC_BIO_CEN_E         2050         ELC_CEN         15.384615384615383    
-    ES             ELC_CH4             ELC_SLB             ELC_BIO_DST_E         2006         ELC_DST         115.38461538461539    
-    ES             ELC_CH4             ELC_SLB             ELC_BIO_DST_E         2007         ELC_DST         115.38461538461539    
-    ES             ELC_CH4             ELC_SLB             ELC_BIO_DST_E         2008         ELC_DST         115.38461538461539    
-    ES             ELC_CH4             ELC_SLB             ELC_BIO_DST_E         2010         ELC_DST         115.38461538461539    
-    ES             ELC_CH4             ELC_SLB             ELC_BIO_DST_E         2012         ELC_DST         115.38461538461539    
-    ES             ELC_CH4             ELC_SLB             ELC_BIO_DST_E         2014         ELC_DST         115.38461538461539    
-    ES             ELC_CH4             ELC_SLB             ELC_BIO_DST_E         2016         ELC_DST         115.38461538461539    
-    ES             ELC_CH4             ELC_SLB             ELC_BIO_DST_E         2018         ELC_DST         115.38461538461539    
-    ES             ELC_CH4             ELC_SLB             ELC_BIO_DST_E         2020         ELC_DST         115.38461538461539    
-    ES             ELC_CH4             ELC_SLB             ELC_BIO_DST_E         2022         ELC_DST         115.38461538461539    
-    ES             ELC_CH4             ELC_SLB             ELC_BIO_DST_E         2024         ELC_DST         115.38461538461539    
-    ES             ELC_CH4             ELC_SLB             ELC_BIO_DST_E         2025         ELC_DST         115.38461538461539    
-    ES             ELC_CH4             ELC_SLB             ELC_BIO_DST_E         2030         ELC_DST         115.38461538461539    
-    ES             ELC_CH4             ELC_SLB             ELC_BIO_DST_E         2035         ELC_DST         115.38461538461539    
-    ES             ELC_CH4             ELC_SLB             ELC_BIO_DST_E         2040         ELC_DST         115.38461538461539    
-    ES             ELC_CH4             ELC_SLB             ELC_BIO_DST_E         2045         ELC_DST         115.38461538461539    
-    ES             ELC_CH4             ELC_SLB             ELC_BIO_DST_E         2050         ELC_DST         115.38461538461539    
-    ES             ELC_CO2             ELC_SLB             ELC_BIO_DST_E         2006         ELC_DST         0.0    
-    ES             ELC_CO2             ELC_SLB             ELC_BIO_DST_E         2007         ELC_DST         0.0    
-    ES             ELC_CO2             ELC_SLB             ELC_BIO_DST_E         2008         ELC_DST         0.0    
-    ES             ELC_CO2             ELC_SLB             ELC_BIO_DST_E         2010         ELC_DST         0.0    
-    ES             ELC_CO2             ELC_SLB             ELC_BIO_DST_E         2012         ELC_DST         0.0    
-    ES             ELC_CO2             ELC_SLB             ELC_BIO_DST_E         2014         ELC_DST         0.0    
-    ES             ELC_CO2             ELC_SLB             ELC_BIO_DST_E         2016         ELC_DST         0.0    
-    ES             ELC_CO2             ELC_SLB             ELC_BIO_DST_E         2018         ELC_DST         0.0    
-    ES             ELC_CO2             ELC_SLB             ELC_BIO_DST_E         2020         ELC_DST         0.0    
-    ES             ELC_CO2             ELC_SLB             ELC_BIO_DST_E         2022         ELC_DST         0.0    
-    ES             ELC_CO2             ELC_SLB             ELC_BIO_DST_E         2024         ELC_DST         0.0    
-    ES             ELC_CO2             ELC_SLB             ELC_BIO_DST_E         2025         ELC_DST         0.0    
-    ES             ELC_CO2             ELC_SLB             ELC_BIO_DST_E         2030         ELC_DST         0.0    
-    ES             ELC_CO2             ELC_SLB             ELC_BIO_DST_E         2035         ELC_DST         0.0    
-    ES             ELC_CO2             ELC_SLB             ELC_BIO_DST_E         2040         ELC_DST         0.0    
-    ES             ELC_CO2             ELC_SLB             ELC_BIO_DST_E         2045         ELC_DST         0.0    
-    ES             ELC_CO2             ELC_SLB             ELC_BIO_DST_E         2050         ELC_DST         0.0    
-    ES             ELC_N2O             ELC_SLB             ELC_BIO_DST_E         2006         ELC_DST         15.384615384615383    
-    ES             ELC_N2O             ELC_SLB             ELC_BIO_DST_E         2007         ELC_DST         15.384615384615383    
-    ES             ELC_N2O             ELC_SLB             ELC_BIO_DST_E         2008         ELC_DST         15.384615384615383    
-    ES             ELC_N2O             ELC_SLB             ELC_BIO_DST_E         2010         ELC_DST         15.384615384615383    
-    ES             ELC_N2O             ELC_SLB             ELC_BIO_DST_E         2012         ELC_DST         15.384615384615383    
-    ES             ELC_N2O             ELC_SLB             ELC_BIO_DST_E         2014         ELC_DST         15.384615384615383    
-    ES             ELC_N2O             ELC_SLB             ELC_BIO_DST_E         2016         ELC_DST         15.384615384615383    
-    ES             ELC_N2O             ELC_SLB             ELC_BIO_DST_E         2018         ELC_DST         15.384615384615383    
-    ES             ELC_N2O             ELC_SLB             ELC_BIO_DST_E         2020         ELC_DST         15.384615384615383    
-    ES             ELC_N2O             ELC_SLB             ELC_BIO_DST_E         2022         ELC_DST         15.384615384615383    
-    ES             ELC_N2O             ELC_SLB             ELC_BIO_DST_E         2024         ELC_DST         15.384615384615383    
-    ES             ELC_N2O             ELC_SLB             ELC_BIO_DST_E         2025         ELC_DST         15.384615384615383    
-    ES             ELC_N2O             ELC_SLB             ELC_BIO_DST_E         2030         ELC_DST         15.384615384615383    
-    ES             ELC_N2O             ELC_SLB             ELC_BIO_DST_E         2035         ELC_DST         15.384615384615383    
-    ES             ELC_N2O             ELC_SLB             ELC_BIO_DST_E         2040         ELC_DST         15.384615384615383    
-    ES             ELC_N2O             ELC_SLB             ELC_BIO_DST_E         2045         ELC_DST         15.384615384615383    
-    ES             ELC_N2O             ELC_SLB             ELC_BIO_DST_E         2050         ELC_DST         15.384615384615383    
     ES             ELC_CH4             ELC_BMU             ELC_CHP_BMU_N         2007         ELC_CEN         0.05263157894736842    
     ES             ELC_CH4             ELC_BMU             ELC_CHP_BMU_N         2008         ELC_CEN         0.05263157894736842    
     ES             ELC_CH4             ELC_BMU             ELC_CHP_BMU_N         2010         ELC_CEN         0.05263157894736842    
@@ -2358,108 +2279,6 @@ param EmissionActivity :=
     ES             ELC_N2O             ELC_COA             ELC_COA_COND_E         2040         ELC_CEN         4.897435897435897    
     ES             ELC_N2O             ELC_COA             ELC_COA_COND_E         2045         ELC_CEN         4.897435897435897    
     ES             ELC_N2O             ELC_COA             ELC_COA_COND_E         2050         ELC_CEN         4.897435897435897    
-    ES             ELC_CH4             ELC_COA             ELC_COA_OIL_E         2006         ELC_CEN         3.026315789473684    
-    ES             ELC_CH4             ELC_COA             ELC_COA_OIL_E         2007         ELC_CEN         3.026315789473684    
-    ES             ELC_CH4             ELC_COA             ELC_COA_OIL_E         2008         ELC_CEN         3.026315789473684    
-    ES             ELC_CH4             ELC_COA             ELC_COA_OIL_E         2010         ELC_CEN         3.026315789473684    
-    ES             ELC_CH4             ELC_COA             ELC_COA_OIL_E         2012         ELC_CEN         3.026315789473684    
-    ES             ELC_CH4             ELC_COA             ELC_COA_OIL_E         2014         ELC_CEN         3.026315789473684    
-    ES             ELC_CH4             ELC_COA             ELC_COA_OIL_E         2016         ELC_CEN         3.026315789473684    
-    ES             ELC_CH4             ELC_COA             ELC_COA_OIL_E         2018         ELC_CEN         3.026315789473684    
-    ES             ELC_CH4             ELC_COA             ELC_COA_OIL_E         2020         ELC_CEN         3.026315789473684    
-    ES             ELC_CH4             ELC_COA             ELC_COA_OIL_E         2022         ELC_CEN         3.026315789473684    
-    ES             ELC_CH4             ELC_COA             ELC_COA_OIL_E         2024         ELC_CEN         3.026315789473684    
-    ES             ELC_CH4             ELC_COA             ELC_COA_OIL_E         2025         ELC_CEN         3.026315789473684    
-    ES             ELC_CH4             ELC_COA             ELC_COA_OIL_E         2030         ELC_CEN         3.026315789473684    
-    ES             ELC_CH4             ELC_COA             ELC_COA_OIL_E         2035         ELC_CEN         3.026315789473684    
-    ES             ELC_CH4             ELC_COA             ELC_COA_OIL_E         2040         ELC_CEN         3.026315789473684    
-    ES             ELC_CH4             ELC_COA             ELC_COA_OIL_E         2045         ELC_CEN         3.026315789473684    
-    ES             ELC_CH4             ELC_COA             ELC_COA_OIL_E         2050         ELC_CEN         3.026315789473684    
-    ES             ELC_CH4             ELC_OIL             ELC_COA_OIL_E         2006         ELC_CEN         2.1315789473684212    
-    ES             ELC_CH4             ELC_OIL             ELC_COA_OIL_E         2007         ELC_CEN         2.1315789473684212    
-    ES             ELC_CH4             ELC_OIL             ELC_COA_OIL_E         2008         ELC_CEN         2.1315789473684212    
-    ES             ELC_CH4             ELC_OIL             ELC_COA_OIL_E         2010         ELC_CEN         2.1315789473684212    
-    ES             ELC_CH4             ELC_OIL             ELC_COA_OIL_E         2012         ELC_CEN         2.1315789473684212    
-    ES             ELC_CH4             ELC_OIL             ELC_COA_OIL_E         2014         ELC_CEN         2.1315789473684212    
-    ES             ELC_CH4             ELC_OIL             ELC_COA_OIL_E         2016         ELC_CEN         2.1315789473684212    
-    ES             ELC_CH4             ELC_OIL             ELC_COA_OIL_E         2018         ELC_CEN         2.1315789473684212    
-    ES             ELC_CH4             ELC_OIL             ELC_COA_OIL_E         2020         ELC_CEN         2.1315789473684212    
-    ES             ELC_CH4             ELC_OIL             ELC_COA_OIL_E         2022         ELC_CEN         2.1315789473684212    
-    ES             ELC_CH4             ELC_OIL             ELC_COA_OIL_E         2024         ELC_CEN         2.1315789473684212    
-    ES             ELC_CH4             ELC_OIL             ELC_COA_OIL_E         2025         ELC_CEN         2.1315789473684212    
-    ES             ELC_CH4             ELC_OIL             ELC_COA_OIL_E         2030         ELC_CEN         2.1315789473684212    
-    ES             ELC_CH4             ELC_OIL             ELC_COA_OIL_E         2035         ELC_CEN         2.1315789473684212    
-    ES             ELC_CH4             ELC_OIL             ELC_COA_OIL_E         2040         ELC_CEN         2.1315789473684212    
-    ES             ELC_CH4             ELC_OIL             ELC_COA_OIL_E         2045         ELC_CEN         2.1315789473684212    
-    ES             ELC_CH4             ELC_OIL             ELC_COA_OIL_E         2050         ELC_CEN         2.1315789473684212    
-    ES             ELC_CO2             ELC_COA             ELC_COA_OIL_E         2006         ELC_CEN         266.2105263157895    
-    ES             ELC_CO2             ELC_COA             ELC_COA_OIL_E         2007         ELC_CEN         266.2105263157895    
-    ES             ELC_CO2             ELC_COA             ELC_COA_OIL_E         2008         ELC_CEN         266.2105263157895    
-    ES             ELC_CO2             ELC_COA             ELC_COA_OIL_E         2010         ELC_CEN         266.2105263157895    
-    ES             ELC_CO2             ELC_COA             ELC_COA_OIL_E         2012         ELC_CEN         266.2105263157895    
-    ES             ELC_CO2             ELC_COA             ELC_COA_OIL_E         2014         ELC_CEN         266.2105263157895    
-    ES             ELC_CO2             ELC_COA             ELC_COA_OIL_E         2016         ELC_CEN         266.2105263157895    
-    ES             ELC_CO2             ELC_COA             ELC_COA_OIL_E         2018         ELC_CEN         266.2105263157895    
-    ES             ELC_CO2             ELC_COA             ELC_COA_OIL_E         2020         ELC_CEN         266.2105263157895    
-    ES             ELC_CO2             ELC_COA             ELC_COA_OIL_E         2022         ELC_CEN         266.2105263157895    
-    ES             ELC_CO2             ELC_COA             ELC_COA_OIL_E         2024         ELC_CEN         266.2105263157895    
-    ES             ELC_CO2             ELC_COA             ELC_COA_OIL_E         2025         ELC_CEN         266.2105263157895    
-    ES             ELC_CO2             ELC_COA             ELC_COA_OIL_E         2030         ELC_CEN         266.2105263157895    
-    ES             ELC_CO2             ELC_COA             ELC_COA_OIL_E         2035         ELC_CEN         266.2105263157895    
-    ES             ELC_CO2             ELC_COA             ELC_COA_OIL_E         2040         ELC_CEN         266.2105263157895    
-    ES             ELC_CO2             ELC_COA             ELC_COA_OIL_E         2045         ELC_CEN         266.2105263157895    
-    ES             ELC_CO2             ELC_COA             ELC_COA_OIL_E         2050         ELC_CEN         266.2105263157895    
-    ES             ELC_CO2             ELC_OIL             ELC_COA_OIL_E         2006         ELC_CEN         209.3421052631579    
-    ES             ELC_CO2             ELC_OIL             ELC_COA_OIL_E         2007         ELC_CEN         209.3421052631579    
-    ES             ELC_CO2             ELC_OIL             ELC_COA_OIL_E         2008         ELC_CEN         209.3421052631579    
-    ES             ELC_CO2             ELC_OIL             ELC_COA_OIL_E         2010         ELC_CEN         209.3421052631579    
-    ES             ELC_CO2             ELC_OIL             ELC_COA_OIL_E         2012         ELC_CEN         209.3421052631579    
-    ES             ELC_CO2             ELC_OIL             ELC_COA_OIL_E         2014         ELC_CEN         209.3421052631579    
-    ES             ELC_CO2             ELC_OIL             ELC_COA_OIL_E         2016         ELC_CEN         209.3421052631579    
-    ES             ELC_CO2             ELC_OIL             ELC_COA_OIL_E         2018         ELC_CEN         209.3421052631579    
-    ES             ELC_CO2             ELC_OIL             ELC_COA_OIL_E         2020         ELC_CEN         209.3421052631579    
-    ES             ELC_CO2             ELC_OIL             ELC_COA_OIL_E         2022         ELC_CEN         209.3421052631579    
-    ES             ELC_CO2             ELC_OIL             ELC_COA_OIL_E         2024         ELC_CEN         209.3421052631579    
-    ES             ELC_CO2             ELC_OIL             ELC_COA_OIL_E         2025         ELC_CEN         209.3421052631579    
-    ES             ELC_CO2             ELC_OIL             ELC_COA_OIL_E         2030         ELC_CEN         209.3421052631579    
-    ES             ELC_CO2             ELC_OIL             ELC_COA_OIL_E         2035         ELC_CEN         209.3421052631579    
-    ES             ELC_CO2             ELC_OIL             ELC_COA_OIL_E         2040         ELC_CEN         209.3421052631579    
-    ES             ELC_CO2             ELC_OIL             ELC_COA_OIL_E         2045         ELC_CEN         209.3421052631579    
-    ES             ELC_CO2             ELC_OIL             ELC_COA_OIL_E         2050         ELC_CEN         209.3421052631579    
-    ES             ELC_N2O             ELC_COA             ELC_COA_OIL_E         2006         ELC_CEN         5.026315789473684    
-    ES             ELC_N2O             ELC_COA             ELC_COA_OIL_E         2007         ELC_CEN         5.026315789473684    
-    ES             ELC_N2O             ELC_COA             ELC_COA_OIL_E         2008         ELC_CEN         5.026315789473684    
-    ES             ELC_N2O             ELC_COA             ELC_COA_OIL_E         2010         ELC_CEN         5.026315789473684    
-    ES             ELC_N2O             ELC_COA             ELC_COA_OIL_E         2012         ELC_CEN         5.026315789473684    
-    ES             ELC_N2O             ELC_COA             ELC_COA_OIL_E         2014         ELC_CEN         5.026315789473684    
-    ES             ELC_N2O             ELC_COA             ELC_COA_OIL_E         2016         ELC_CEN         5.026315789473684    
-    ES             ELC_N2O             ELC_COA             ELC_COA_OIL_E         2018         ELC_CEN         5.026315789473684    
-    ES             ELC_N2O             ELC_COA             ELC_COA_OIL_E         2020         ELC_CEN         5.026315789473684    
-    ES             ELC_N2O             ELC_COA             ELC_COA_OIL_E         2022         ELC_CEN         5.026315789473684    
-    ES             ELC_N2O             ELC_COA             ELC_COA_OIL_E         2024         ELC_CEN         5.026315789473684    
-    ES             ELC_N2O             ELC_COA             ELC_COA_OIL_E         2025         ELC_CEN         5.026315789473684    
-    ES             ELC_N2O             ELC_COA             ELC_COA_OIL_E         2030         ELC_CEN         5.026315789473684    
-    ES             ELC_N2O             ELC_COA             ELC_COA_OIL_E         2035         ELC_CEN         5.026315789473684    
-    ES             ELC_N2O             ELC_COA             ELC_COA_OIL_E         2040         ELC_CEN         5.026315789473684    
-    ES             ELC_N2O             ELC_COA             ELC_COA_OIL_E         2045         ELC_CEN         5.026315789473684    
-    ES             ELC_N2O             ELC_COA             ELC_COA_OIL_E         2050         ELC_CEN         5.026315789473684    
-    ES             ELC_N2O             ELC_OIL             ELC_COA_OIL_E         2006         ELC_CEN         8.368421052631579    
-    ES             ELC_N2O             ELC_OIL             ELC_COA_OIL_E         2007         ELC_CEN         8.368421052631579    
-    ES             ELC_N2O             ELC_OIL             ELC_COA_OIL_E         2008         ELC_CEN         8.368421052631579    
-    ES             ELC_N2O             ELC_OIL             ELC_COA_OIL_E         2010         ELC_CEN         8.368421052631579    
-    ES             ELC_N2O             ELC_OIL             ELC_COA_OIL_E         2012         ELC_CEN         8.368421052631579    
-    ES             ELC_N2O             ELC_OIL             ELC_COA_OIL_E         2014         ELC_CEN         8.368421052631579    
-    ES             ELC_N2O             ELC_OIL             ELC_COA_OIL_E         2016         ELC_CEN         8.368421052631579    
-    ES             ELC_N2O             ELC_OIL             ELC_COA_OIL_E         2018         ELC_CEN         8.368421052631579    
-    ES             ELC_N2O             ELC_OIL             ELC_COA_OIL_E         2020         ELC_CEN         8.368421052631579    
-    ES             ELC_N2O             ELC_OIL             ELC_COA_OIL_E         2022         ELC_CEN         8.368421052631579    
-    ES             ELC_N2O             ELC_OIL             ELC_COA_OIL_E         2024         ELC_CEN         8.368421052631579    
-    ES             ELC_N2O             ELC_OIL             ELC_COA_OIL_E         2025         ELC_CEN         8.368421052631579    
-    ES             ELC_N2O             ELC_OIL             ELC_COA_OIL_E         2030         ELC_CEN         8.368421052631579    
-    ES             ELC_N2O             ELC_OIL             ELC_COA_OIL_E         2035         ELC_CEN         8.368421052631579    
-    ES             ELC_N2O             ELC_OIL             ELC_COA_OIL_E         2040         ELC_CEN         8.368421052631579    
-    ES             ELC_N2O             ELC_OIL             ELC_COA_OIL_E         2045         ELC_CEN         8.368421052631579    
-    ES             ELC_N2O             ELC_OIL             ELC_COA_OIL_E         2050         ELC_CEN         8.368421052631579    
     ES             ELC_CH4             ELC_COA             ELC_COA_STM_N         2007         ELC_CEN         2.8749999999999996    
     ES             ELC_CH4             ELC_COA             ELC_COA_STM_N         2008         ELC_CEN         2.8689217758985195    
     ES             ELC_CH4             ELC_COA             ELC_COA_STM_N         2010         ELC_CEN         2.85676532769556    
@@ -2556,57 +2375,6 @@ param EmissionActivity :=
     ES             ELC_N2O             ELC_COA             ELC_COA_STM_P         2040         ELC_CEN         4.5476190476190474    
     ES             ELC_N2O             ELC_COA             ELC_COA_STM_P         2045         ELC_CEN         4.5476190476190474    
     ES             ELC_N2O             ELC_COA             ELC_COA_STM_P         2050         ELC_CEN         4.5476190476190474    
-    ES             ELC_CH4             ELC_OIL             ELC_DST_TURB_E         2006         ELC_CEN         2.3142857142857145    
-    ES             ELC_CH4             ELC_OIL             ELC_DST_TURB_E         2007         ELC_CEN         2.3142857142857145    
-    ES             ELC_CH4             ELC_OIL             ELC_DST_TURB_E         2008         ELC_CEN         2.3142857142857145    
-    ES             ELC_CH4             ELC_OIL             ELC_DST_TURB_E         2010         ELC_CEN         2.3142857142857145    
-    ES             ELC_CH4             ELC_OIL             ELC_DST_TURB_E         2012         ELC_CEN         2.3142857142857145    
-    ES             ELC_CH4             ELC_OIL             ELC_DST_TURB_E         2014         ELC_CEN         2.3142857142857145    
-    ES             ELC_CH4             ELC_OIL             ELC_DST_TURB_E         2016         ELC_CEN         2.3142857142857145    
-    ES             ELC_CH4             ELC_OIL             ELC_DST_TURB_E         2018         ELC_CEN         2.3142857142857145    
-    ES             ELC_CH4             ELC_OIL             ELC_DST_TURB_E         2020         ELC_CEN         2.3142857142857145    
-    ES             ELC_CH4             ELC_OIL             ELC_DST_TURB_E         2022         ELC_CEN         2.3142857142857145    
-    ES             ELC_CH4             ELC_OIL             ELC_DST_TURB_E         2024         ELC_CEN         2.3142857142857145    
-    ES             ELC_CH4             ELC_OIL             ELC_DST_TURB_E         2025         ELC_CEN         2.3142857142857145    
-    ES             ELC_CH4             ELC_OIL             ELC_DST_TURB_E         2030         ELC_CEN         2.3142857142857145    
-    ES             ELC_CH4             ELC_OIL             ELC_DST_TURB_E         2035         ELC_CEN         2.3142857142857145    
-    ES             ELC_CH4             ELC_OIL             ELC_DST_TURB_E         2040         ELC_CEN         2.3142857142857145    
-    ES             ELC_CH4             ELC_OIL             ELC_DST_TURB_E         2045         ELC_CEN         2.3142857142857145    
-    ES             ELC_CH4             ELC_OIL             ELC_DST_TURB_E         2050         ELC_CEN         2.3142857142857145    
-    ES             ELC_CO2             ELC_OIL             ELC_DST_TURB_E         2006         ELC_CEN         227.2857142857143    
-    ES             ELC_CO2             ELC_OIL             ELC_DST_TURB_E         2007         ELC_CEN         227.2857142857143    
-    ES             ELC_CO2             ELC_OIL             ELC_DST_TURB_E         2008         ELC_CEN         227.2857142857143    
-    ES             ELC_CO2             ELC_OIL             ELC_DST_TURB_E         2010         ELC_CEN         227.2857142857143    
-    ES             ELC_CO2             ELC_OIL             ELC_DST_TURB_E         2012         ELC_CEN         227.2857142857143    
-    ES             ELC_CO2             ELC_OIL             ELC_DST_TURB_E         2014         ELC_CEN         227.2857142857143    
-    ES             ELC_CO2             ELC_OIL             ELC_DST_TURB_E         2016         ELC_CEN         227.2857142857143    
-    ES             ELC_CO2             ELC_OIL             ELC_DST_TURB_E         2018         ELC_CEN         227.2857142857143    
-    ES             ELC_CO2             ELC_OIL             ELC_DST_TURB_E         2020         ELC_CEN         227.2857142857143    
-    ES             ELC_CO2             ELC_OIL             ELC_DST_TURB_E         2022         ELC_CEN         227.2857142857143    
-    ES             ELC_CO2             ELC_OIL             ELC_DST_TURB_E         2024         ELC_CEN         227.2857142857143    
-    ES             ELC_CO2             ELC_OIL             ELC_DST_TURB_E         2025         ELC_CEN         227.2857142857143    
-    ES             ELC_CO2             ELC_OIL             ELC_DST_TURB_E         2030         ELC_CEN         227.2857142857143    
-    ES             ELC_CO2             ELC_OIL             ELC_DST_TURB_E         2035         ELC_CEN         227.2857142857143    
-    ES             ELC_CO2             ELC_OIL             ELC_DST_TURB_E         2040         ELC_CEN         227.2857142857143    
-    ES             ELC_CO2             ELC_OIL             ELC_DST_TURB_E         2045         ELC_CEN         227.2857142857143    
-    ES             ELC_CO2             ELC_OIL             ELC_DST_TURB_E         2050         ELC_CEN         227.2857142857143    
-    ES             ELC_N2O             ELC_OIL             ELC_DST_TURB_E         2006         ELC_CEN         9.085714285714287    
-    ES             ELC_N2O             ELC_OIL             ELC_DST_TURB_E         2007         ELC_CEN         9.085714285714287    
-    ES             ELC_N2O             ELC_OIL             ELC_DST_TURB_E         2008         ELC_CEN         9.085714285714287    
-    ES             ELC_N2O             ELC_OIL             ELC_DST_TURB_E         2010         ELC_CEN         9.085714285714287    
-    ES             ELC_N2O             ELC_OIL             ELC_DST_TURB_E         2012         ELC_CEN         9.085714285714287    
-    ES             ELC_N2O             ELC_OIL             ELC_DST_TURB_E         2014         ELC_CEN         9.085714285714287    
-    ES             ELC_N2O             ELC_OIL             ELC_DST_TURB_E         2016         ELC_CEN         9.085714285714287    
-    ES             ELC_N2O             ELC_OIL             ELC_DST_TURB_E         2018         ELC_CEN         9.085714285714287    
-    ES             ELC_N2O             ELC_OIL             ELC_DST_TURB_E         2020         ELC_CEN         9.085714285714287    
-    ES             ELC_N2O             ELC_OIL             ELC_DST_TURB_E         2022         ELC_CEN         9.085714285714287    
-    ES             ELC_N2O             ELC_OIL             ELC_DST_TURB_E         2024         ELC_CEN         9.085714285714287    
-    ES             ELC_N2O             ELC_OIL             ELC_DST_TURB_E         2025         ELC_CEN         9.085714285714287    
-    ES             ELC_N2O             ELC_OIL             ELC_DST_TURB_E         2030         ELC_CEN         9.085714285714287    
-    ES             ELC_N2O             ELC_OIL             ELC_DST_TURB_E         2035         ELC_CEN         9.085714285714287    
-    ES             ELC_N2O             ELC_OIL             ELC_DST_TURB_E         2040         ELC_CEN         9.085714285714287    
-    ES             ELC_N2O             ELC_OIL             ELC_DST_TURB_E         2045         ELC_CEN         9.085714285714287    
-    ES             ELC_N2O             ELC_OIL             ELC_DST_TURB_E         2050         ELC_CEN         9.085714285714287    
     ES             ELC_CO2             BIO_METH             ELC_FT_NGA         2007         ELC_NGA         -56.1    
     ES             ELC_CO2             BIO_METH             ELC_FT_NGA         2008         ELC_NGA         -56.1    
     ES             ELC_CO2             BIO_METH             ELC_FT_NGA         2010         ELC_NGA         -56.1    
@@ -2878,57 +2646,6 @@ param EmissionActivity :=
     ES             ELC_N2O             ELC_NGA             ELC_NGA_E         2040         ELC_CEN         1.35    
     ES             ELC_N2O             ELC_NGA             ELC_NGA_E         2045         ELC_CEN         1.35    
     ES             ELC_N2O             ELC_NGA             ELC_NGA_E         2050         ELC_CEN         1.35    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_MIN_E         2006         ELC_CEN         0.37142857142857144    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_MIN_E         2007         ELC_CEN         0.37142857142857144    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_MIN_E         2008         ELC_CEN         0.37142857142857144    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_MIN_E         2010         ELC_CEN         0.37142857142857144    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_MIN_E         2012         ELC_CEN         0.37142857142857144    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_MIN_E         2014         ELC_CEN         0.37142857142857144    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_MIN_E         2016         ELC_CEN         0.37142857142857144    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_MIN_E         2018         ELC_CEN         0.37142857142857144    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_MIN_E         2020         ELC_CEN         0.37142857142857144    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_MIN_E         2022         ELC_CEN         0.37142857142857144    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_MIN_E         2024         ELC_CEN         0.37142857142857144    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_MIN_E         2025         ELC_CEN         0.37142857142857144    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_MIN_E         2030         ELC_CEN         0.37142857142857144    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_MIN_E         2035         ELC_CEN         0.37142857142857144    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_MIN_E         2040         ELC_CEN         0.37142857142857144    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_MIN_E         2045         ELC_CEN         0.37142857142857144    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_MIN_E         2050         ELC_CEN         0.37142857142857144    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_MIN_E         2006         ELC_CEN         160.2857142857143    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_MIN_E         2007         ELC_CEN         160.2857142857143    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_MIN_E         2008         ELC_CEN         160.2857142857143    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_MIN_E         2010         ELC_CEN         160.2857142857143    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_MIN_E         2012         ELC_CEN         160.2857142857143    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_MIN_E         2014         ELC_CEN         160.2857142857143    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_MIN_E         2016         ELC_CEN         160.2857142857143    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_MIN_E         2018         ELC_CEN         160.2857142857143    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_MIN_E         2020         ELC_CEN         160.2857142857143    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_MIN_E         2022         ELC_CEN         160.2857142857143    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_MIN_E         2024         ELC_CEN         160.2857142857143    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_MIN_E         2025         ELC_CEN         160.2857142857143    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_MIN_E         2030         ELC_CEN         160.2857142857143    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_MIN_E         2035         ELC_CEN         160.2857142857143    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_MIN_E         2040         ELC_CEN         160.2857142857143    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_MIN_E         2045         ELC_CEN         160.2857142857143    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_MIN_E         2050         ELC_CEN         160.2857142857143    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_MIN_E         2006         ELC_CEN         1.5428571428571431    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_MIN_E         2007         ELC_CEN         1.5428571428571431    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_MIN_E         2008         ELC_CEN         1.5428571428571431    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_MIN_E         2010         ELC_CEN         1.5428571428571431    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_MIN_E         2012         ELC_CEN         1.5428571428571431    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_MIN_E         2014         ELC_CEN         1.5428571428571431    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_MIN_E         2016         ELC_CEN         1.5428571428571431    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_MIN_E         2018         ELC_CEN         1.5428571428571431    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_MIN_E         2020         ELC_CEN         1.5428571428571431    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_MIN_E         2022         ELC_CEN         1.5428571428571431    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_MIN_E         2024         ELC_CEN         1.5428571428571431    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_MIN_E         2025         ELC_CEN         1.5428571428571431    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_MIN_E         2030         ELC_CEN         1.5428571428571431    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_MIN_E         2035         ELC_CEN         1.5428571428571431    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_MIN_E         2040         ELC_CEN         1.5428571428571431    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_MIN_E         2045         ELC_CEN         1.5428571428571431    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_MIN_E         2050         ELC_CEN         1.5428571428571431    
     ES             ELC_CH4             ELC_OIL             ELC_NGA_OIL_STM_E         2006         ELC_CEN         2.025    
     ES             ELC_CH4             ELC_OIL             ELC_NGA_OIL_STM_E         2007         ELC_CEN         2.0973214285714286    
     ES             ELC_CH4             ELC_OIL             ELC_NGA_OIL_STM_E         2008         ELC_CEN         2.169642857142857    
@@ -3028,108 +2745,6 @@ param EmissionActivity :=
     ES             ELC_N2O             ELC_OIL             ELC_NGA_OIL_STM_N         2040         ELC_CEN         7.395348837209302    
     ES             ELC_N2O             ELC_OIL             ELC_NGA_OIL_STM_N         2045         ELC_CEN         7.311310782241014    
     ES             ELC_N2O             ELC_OIL             ELC_NGA_OIL_STM_N         2050         ELC_CEN         7.227272727272727    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_STM_REP_E         2006         ELC_CEN         0.2888888888888889    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_STM_REP_E         2007         ELC_CEN         0.2888888888888889    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_STM_REP_E         2008         ELC_CEN         0.2888888888888889    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_STM_REP_E         2010         ELC_CEN         0.2888888888888889    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_STM_REP_E         2012         ELC_CEN         0.2888888888888889    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_STM_REP_E         2014         ELC_CEN         0.2888888888888889    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_STM_REP_E         2016         ELC_CEN         0.2888888888888889    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_STM_REP_E         2018         ELC_CEN         0.2888888888888889    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_STM_REP_E         2020         ELC_CEN         0.2888888888888889    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_STM_REP_E         2022         ELC_CEN         0.2888888888888889    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_STM_REP_E         2024         ELC_CEN         0.2888888888888889    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_STM_REP_E         2025         ELC_CEN         0.2888888888888889    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_STM_REP_E         2030         ELC_CEN         0.2888888888888889    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_STM_REP_E         2035         ELC_CEN         0.2888888888888889    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_STM_REP_E         2040         ELC_CEN         0.2888888888888889    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_STM_REP_E         2045         ELC_CEN         0.2888888888888889    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_STM_REP_E         2050         ELC_CEN         0.2888888888888889    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_STM_REP_E         2006         ELC_CEN         124.66666666666667    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_STM_REP_E         2007         ELC_CEN         124.66666666666667    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_STM_REP_E         2008         ELC_CEN         124.66666666666667    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_STM_REP_E         2010         ELC_CEN         124.66666666666667    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_STM_REP_E         2012         ELC_CEN         124.66666666666667    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_STM_REP_E         2014         ELC_CEN         124.66666666666667    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_STM_REP_E         2016         ELC_CEN         124.66666666666667    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_STM_REP_E         2018         ELC_CEN         124.66666666666667    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_STM_REP_E         2020         ELC_CEN         124.66666666666667    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_STM_REP_E         2022         ELC_CEN         124.66666666666667    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_STM_REP_E         2024         ELC_CEN         124.66666666666667    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_STM_REP_E         2025         ELC_CEN         124.66666666666667    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_STM_REP_E         2030         ELC_CEN         124.66666666666667    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_STM_REP_E         2035         ELC_CEN         124.66666666666667    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_STM_REP_E         2040         ELC_CEN         124.66666666666667    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_STM_REP_E         2045         ELC_CEN         124.66666666666667    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_STM_REP_E         2050         ELC_CEN         124.66666666666667    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_STM_REP_E         2006         ELC_CEN         1.2    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_STM_REP_E         2007         ELC_CEN         1.2    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_STM_REP_E         2008         ELC_CEN         1.2    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_STM_REP_E         2010         ELC_CEN         1.2    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_STM_REP_E         2012         ELC_CEN         1.2    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_STM_REP_E         2014         ELC_CEN         1.2    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_STM_REP_E         2016         ELC_CEN         1.2    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_STM_REP_E         2018         ELC_CEN         1.2    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_STM_REP_E         2020         ELC_CEN         1.2    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_STM_REP_E         2022         ELC_CEN         1.2    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_STM_REP_E         2024         ELC_CEN         1.2    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_STM_REP_E         2025         ELC_CEN         1.2    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_STM_REP_E         2030         ELC_CEN         1.2    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_STM_REP_E         2035         ELC_CEN         1.2    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_STM_REP_E         2040         ELC_CEN         1.2    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_STM_REP_E         2045         ELC_CEN         1.2    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_STM_REP_E         2050         ELC_CEN         1.2    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_TURB_E         2006         ELC_CEN         0.2888888888888889    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_TURB_E         2007         ELC_CEN         0.2888888888888889    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_TURB_E         2008         ELC_CEN         0.2888888888888889    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_TURB_E         2010         ELC_CEN         0.2888888888888889    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_TURB_E         2012         ELC_CEN         0.2888888888888889    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_TURB_E         2014         ELC_CEN         0.2888888888888889    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_TURB_E         2016         ELC_CEN         0.2888888888888889    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_TURB_E         2018         ELC_CEN         0.2888888888888889    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_TURB_E         2020         ELC_CEN         0.2888888888888889    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_TURB_E         2022         ELC_CEN         0.2888888888888889    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_TURB_E         2024         ELC_CEN         0.2888888888888889    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_TURB_E         2025         ELC_CEN         0.2888888888888889    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_TURB_E         2030         ELC_CEN         0.2888888888888889    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_TURB_E         2035         ELC_CEN         0.2888888888888889    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_TURB_E         2040         ELC_CEN         0.2888888888888889    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_TURB_E         2045         ELC_CEN         0.2888888888888889    
-    ES             ELC_CH4             ELC_NGA             ELC_NGA_TURB_E         2050         ELC_CEN         0.2888888888888889    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_TURB_E         2006         ELC_CEN         124.66666666666667    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_TURB_E         2007         ELC_CEN         124.66666666666667    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_TURB_E         2008         ELC_CEN         124.66666666666667    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_TURB_E         2010         ELC_CEN         124.66666666666667    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_TURB_E         2012         ELC_CEN         124.66666666666667    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_TURB_E         2014         ELC_CEN         124.66666666666667    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_TURB_E         2016         ELC_CEN         124.66666666666667    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_TURB_E         2018         ELC_CEN         124.66666666666667    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_TURB_E         2020         ELC_CEN         124.66666666666667    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_TURB_E         2022         ELC_CEN         124.66666666666667    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_TURB_E         2024         ELC_CEN         124.66666666666667    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_TURB_E         2025         ELC_CEN         124.66666666666667    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_TURB_E         2030         ELC_CEN         124.66666666666667    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_TURB_E         2035         ELC_CEN         124.66666666666667    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_TURB_E         2040         ELC_CEN         124.66666666666667    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_TURB_E         2045         ELC_CEN         124.66666666666667    
-    ES             ELC_CO2             ELC_NGA             ELC_NGA_TURB_E         2050         ELC_CEN         124.66666666666667    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_TURB_E         2006         ELC_CEN         1.2    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_TURB_E         2007         ELC_CEN         1.2    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_TURB_E         2008         ELC_CEN         1.2    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_TURB_E         2010         ELC_CEN         1.2    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_TURB_E         2012         ELC_CEN         1.2    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_TURB_E         2014         ELC_CEN         1.2    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_TURB_E         2016         ELC_CEN         1.2    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_TURB_E         2018         ELC_CEN         1.2    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_TURB_E         2020         ELC_CEN         1.2    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_TURB_E         2022         ELC_CEN         1.2    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_TURB_E         2024         ELC_CEN         1.2    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_TURB_E         2025         ELC_CEN         1.2    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_TURB_E         2030         ELC_CEN         1.2    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_TURB_E         2035         ELC_CEN         1.2    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_TURB_E         2040         ELC_CEN         1.2    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_TURB_E         2045         ELC_CEN         1.2    
-    ES             ELC_N2O             ELC_NGA             ELC_NGA_TURB_E         2050         ELC_CEN         1.2    
 ;
 
 param Demand := 
@@ -3314,38 +2929,6 @@ param TechInputSplit :=
     ES         2040         BIO_BIN             ELC_FT_BMU         0.01930232558139535    
     ES         2045         BIO_BIN             ELC_FT_BMU         0.014651162790697676    
     ES         2050         BIO_BIN             ELC_FT_BMU         0.01    
-    ES         2007         ELC_COA             ELC_COA_OIL_E         0.85    
-    ES         2008         ELC_COA             ELC_COA_OIL_E         0.85    
-    ES         2010         ELC_COA             ELC_COA_OIL_E         0.85    
-    ES         2012         ELC_COA             ELC_COA_OIL_E         0.85    
-    ES         2014         ELC_COA             ELC_COA_OIL_E         0.85    
-    ES         2016         ELC_COA             ELC_COA_OIL_E         0.85    
-    ES         2018         ELC_COA             ELC_COA_OIL_E         0.85    
-    ES         2020         ELC_COA             ELC_COA_OIL_E         0.85    
-    ES         2022         ELC_COA             ELC_COA_OIL_E         0.85    
-    ES         2024         ELC_COA             ELC_COA_OIL_E         0.85    
-    ES         2025         ELC_COA             ELC_COA_OIL_E         0.85    
-    ES         2030         ELC_COA             ELC_COA_OIL_E         0.85    
-    ES         2035         ELC_COA             ELC_COA_OIL_E         0.85    
-    ES         2040         ELC_COA             ELC_COA_OIL_E         0.85    
-    ES         2045         ELC_COA             ELC_COA_OIL_E         0.85    
-    ES         2050         ELC_COA             ELC_COA_OIL_E         0.85    
-    ES         2007         ELC_OIL             ELC_COA_OIL_E         0.15    
-    ES         2008         ELC_OIL             ELC_COA_OIL_E         0.15    
-    ES         2010         ELC_OIL             ELC_COA_OIL_E         0.15    
-    ES         2012         ELC_OIL             ELC_COA_OIL_E         0.15    
-    ES         2014         ELC_OIL             ELC_COA_OIL_E         0.15    
-    ES         2016         ELC_OIL             ELC_COA_OIL_E         0.15    
-    ES         2018         ELC_OIL             ELC_COA_OIL_E         0.15    
-    ES         2020         ELC_OIL             ELC_COA_OIL_E         0.15    
-    ES         2022         ELC_OIL             ELC_COA_OIL_E         0.15    
-    ES         2024         ELC_OIL             ELC_COA_OIL_E         0.15    
-    ES         2025         ELC_OIL             ELC_COA_OIL_E         0.15    
-    ES         2030         ELC_OIL             ELC_COA_OIL_E         0.15    
-    ES         2035         ELC_OIL             ELC_COA_OIL_E         0.15    
-    ES         2040         ELC_OIL             ELC_COA_OIL_E         0.15    
-    ES         2045         ELC_OIL             ELC_COA_OIL_E         0.15    
-    ES         2050         ELC_OIL             ELC_COA_OIL_E         0.15    
 ;
 
 param MinCapacity := 
@@ -3422,6 +3005,18 @@ param MaxCapacity :=
     ES         2040         ELC_CHP_NGA_CP_N         1.0    #     Assumption for realism            
     ES         2045         ELC_CHP_NGA_CP_N         1.0    #     Assumption for realism            
     ES         2050         ELC_CHP_NGA_CP_N         1.0    #     Assumption for realism            
+    ES         2025         ELC_CHP_NGA_TAP_N         4.0    #     Assumption for realism            
+    ES         2030         ELC_CHP_NGA_TAP_N         4.0    #     Assumption for realism            
+    ES         2035         ELC_CHP_NGA_TAP_N         4.0    #     Assumption for realism            
+    ES         2040         ELC_CHP_NGA_TAP_N         4.0    #     Assumption for realism            
+    ES         2045         ELC_CHP_NGA_TAP_N         4.0    #     Assumption for realism            
+    ES         2050         ELC_CHP_NGA_TAP_N         4.0    #     Assumption for realism            
+    ES         2025         ELC_CHP_NGA_CC_P         2.0    #     Assumption for realism            
+    ES         2030         ELC_CHP_NGA_CC_P         2.0    #     Assumption for realism            
+    ES         2035         ELC_CHP_NGA_CC_P         2.0    #     Assumption for realism            
+    ES         2040         ELC_CHP_NGA_CC_P         2.0    #     Assumption for realism            
+    ES         2045         ELC_CHP_NGA_CC_P         2.0    #     Assumption for realism            
+    ES         2050         ELC_CHP_NGA_CC_P         2.0    #     Assumption for realism            
 ;
 
 param MaxActivity := 
@@ -3466,6 +3061,12 @@ param MaxActivity :=
     ES         2040         ELC_FT_NGA         8204.0    
     ES         2045         ELC_FT_NGA         9962.0    
     ES         2050         ELC_FT_NGA         11720.0    
+    ES         2025         ELC_COA_COND_E         47.304    
+    ES         2030         ELC_COA_COND_E         0.0    
+    ES         2035         ELC_COA_COND_E         0.0    
+    ES         2040         ELC_COA_COND_E         0.0    
+    ES         2045         ELC_COA_COND_E         0.0    
+    ES         2050         ELC_COA_COND_E         0.0    
     ES         2010         ELC_DERGAS_CC_E         0.6    
     ES         2012         ELC_DERGAS_CC_E         0.535    
     ES         2014         ELC_DERGAS_CC_E         0.47    
@@ -3480,84 +3081,44 @@ param MaxActivity :=
     ES         2040         ELC_DERGAS_CC_E         0.10625000000000001    
     ES         2045         ELC_DERGAS_CC_E         0.05312499999999998    
     ES         2050         ELC_DERGAS_CC_E         0.0    
-    ES         2010         ELC_DST_TURB_E         0.53    
-    ES         2012         ELC_DST_TURB_E         0.53    
-    ES         2014         ELC_DST_TURB_E         0.53    
-    ES         2016         ELC_DST_TURB_E         0.53    
-    ES         2018         ELC_DST_TURB_E         0.53    
-    ES         2020         ELC_DST_TURB_E         0.53    
-    ES         2022         ELC_DST_TURB_E         0.53    
-    ES         2024         ELC_DST_TURB_E         0.53    
-    ES         2025         ELC_DST_TURB_E         0.53    
-    ES         2030         ELC_DST_TURB_E         0.53    
-    ES         2035         ELC_DST_TURB_E         0.53    
-    ES         2040         ELC_DST_TURB_E         0.53    
-    ES         2045         ELC_DST_TURB_E         0.53    
-    ES         2050         ELC_DST_TURB_E         0.53    
-    ES         2007         ELC_HYD_E         200.0    
-    ES         2008         ELC_HYD_E         200.0    
-    ES         2010         ELC_HYD_E         200.0    
-    ES         2012         ELC_HYD_E         200.0    
-    ES         2014         ELC_HYD_E         200.0    
-    ES         2016         ELC_HYD_E         200.0    
-    ES         2018         ELC_HYD_E         200.0    
-    ES         2020         ELC_HYD_E         200.0    
-    ES         2022         ELC_HYD_E         200.0    
-    ES         2024         ELC_HYD_E         200.0    
-    ES         2025         ELC_HYD_E         200.0    
-    ES         2030         ELC_HYD_E         200.0    
-    ES         2035         ELC_HYD_E         200.0    
-    ES         2040         ELC_HYD_E         200.0    
-    ES         2045         ELC_HYD_E         200.0    
-    ES         2050         ELC_HYD_E         200.0    
-    ES         2007         ELC_HYD_L10MW_E         26.6    
-    ES         2008         ELC_HYD_L10MW_E         28.973333333333333    
-    ES         2010         ELC_HYD_L10MW_E         33.72    
-    ES         2012         ELC_HYD_L10MW_E         33.72    
-    ES         2014         ELC_HYD_L10MW_E         27.23    
-    ES         2016         ELC_HYD_L10MW_E         27.75    
-    ES         2018         ELC_HYD_L10MW_E         28.27    
-    ES         2020         ELC_HYD_L10MW_E         28.79    
-    ES         2022         ELC_HYD_L10MW_E         28.845333333333333    
-    ES         2024         ELC_HYD_L10MW_E         28.900666666666666    
-    ES         2025         ELC_HYD_L10MW_E         28.928333333333335    
-    ES         2030         ELC_HYD_L10MW_E         29.066666666666666    
-    ES         2035         ELC_HYD_L10MW_E         29.205    
-    ES         2040         ELC_HYD_L10MW_E         29.343333333333334    
-    ES         2045         ELC_HYD_L10MW_E         29.48166666666667    
-    ES         2050         ELC_HYD_L10MW_E         29.62    
-    ES         2007         ELC_NGA_CC_E         1056.74    
-    ES         2008         ELC_NGA_CC_E         1016.74    
-    ES         2010         ELC_NGA_CC_E         936.74    
-    ES         2012         ELC_NGA_CC_E         856.74    
-    ES         2014         ELC_NGA_CC_E         556.53    
-    ES         2016         ELC_NGA_CC_E         356.32    
-    ES         2018         ELC_NGA_CC_E         306.32    
-    ES         2020         ELC_NGA_CC_E         256.32    
-    ES         2022         ELC_NGA_CC_E         256.08    
-    ES         2024         ELC_NGA_CC_E         250.17333333333332    
+    ES         2007         ELC_HYD_E         536.1120000000001    
+    ES         2008         ELC_HYD_E         536.1120000000001    
+    ES         2010         ELC_HYD_E         536.1120000000001    
+    ES         2012         ELC_HYD_E         536.1120000000001    
+    ES         2014         ELC_HYD_E         536.1120000000001    
+    ES         2016         ELC_HYD_E         536.1120000000001    
+    ES         2018         ELC_HYD_E         536.1120000000001    
+    ES         2020         ELC_HYD_E         536.1120000000001    
+    ES         2022         ELC_HYD_E         536.1120000000001    
+    ES         2024         ELC_HYD_E         536.1120000000001    
+    ES         2025         ELC_HYD_E         536.1120000000001    
+    ES         2030         ELC_HYD_E         536.1120000000001    
+    ES         2035         ELC_HYD_E         536.1120000000001    
+    ES         2040         ELC_HYD_E         536.1120000000001    
+    ES         2045         ELC_HYD_E         536.1120000000001    
+    ES         2050         ELC_HYD_E         536.1120000000001    
+    ES         2007         ELC_HYD_L10MW_E         56.7648    
+    ES         2008         ELC_HYD_L10MW_E         56.7648    
+    ES         2010         ELC_HYD_L10MW_E         56.7648    
+    ES         2012         ELC_HYD_L10MW_E         56.7648    
+    ES         2014         ELC_HYD_L10MW_E         56.7648    
+    ES         2016         ELC_HYD_L10MW_E         56.7648    
+    ES         2018         ELC_HYD_L10MW_E         56.7648    
+    ES         2020         ELC_HYD_L10MW_E         56.7648    
+    ES         2022         ELC_HYD_L10MW_E         56.7648    
+    ES         2024         ELC_HYD_L10MW_E         56.7648    
+    ES         2025         ELC_HYD_L10MW_E         56.7648    
+    ES         2030         ELC_HYD_L10MW_E         56.7648    
+    ES         2035         ELC_HYD_L10MW_E         56.7648    
+    ES         2040         ELC_HYD_L10MW_E         56.7648    
+    ES         2045         ELC_HYD_L10MW_E         56.7648    
+    ES         2050         ELC_HYD_L10MW_E         56.7648    
     ES         2025         ELC_NGA_CC_E         247.22    
     ES         2030         ELC_NGA_CC_E         221.22    
     ES         2035         ELC_NGA_CC_E         124.21    
     ES         2040         ELC_NGA_CC_E         27.2    
     ES         2045         ELC_NGA_CC_E         13.6    
     ES         2050         ELC_NGA_CC_E         0.0    
-    ES         2007         ELC_NGA_MIN_E         4.89    
-    ES         2008         ELC_NGA_MIN_E         4.89    
-    ES         2010         ELC_NGA_MIN_E         4.89    
-    ES         2012         ELC_NGA_MIN_E         4.89    
-    ES         2014         ELC_NGA_MIN_E         4.82    
-    ES         2016         ELC_NGA_MIN_E         4.76    
-    ES         2018         ELC_NGA_MIN_E         4.733333333333333    
-    ES         2020         ELC_NGA_MIN_E         4.706666666666666    
-    ES         2022         ELC_NGA_MIN_E         4.68    
-    ES         2024         ELC_NGA_MIN_E         4.653333333333333    
-    ES         2025         ELC_NGA_MIN_E         4.64    
-    ES         2030         ELC_NGA_MIN_E         3.68    
-    ES         2035         ELC_NGA_MIN_E         1.8399999999999999    
-    ES         2040         ELC_NGA_MIN_E         0.0    
-    ES         2045         ELC_NGA_MIN_E         0.0    
-    ES         2050         ELC_NGA_MIN_E         0.0    
     ES         2007         ELC_NGA_E         116.08    
     ES         2008         ELC_NGA_E         116.08    
     ES         2010         ELC_NGA_E         115.13    
@@ -3574,38 +3135,6 @@ param MaxActivity :=
     ES         2040         ELC_NGA_E         5.0    
     ES         2045         ELC_NGA_E         2.5    
     ES         2050         ELC_NGA_E         0.0    
-    ES         2007         ELC_NGA_STM_REP_E         100.29    
-    ES         2008         ELC_NGA_STM_REP_E         98.4718181818182    
-    ES         2010         ELC_NGA_STM_REP_E         94.83545454545455    
-    ES         2012         ELC_NGA_STM_REP_E         91.19909090909091    
-    ES         2014         ELC_NGA_STM_REP_E         87.56272727272727    
-    ES         2016         ELC_NGA_STM_REP_E         83.92636363636365    
-    ES         2018         ELC_NGA_STM_REP_E         80.29    
-    ES         2020         ELC_NGA_STM_REP_E         60.0    
-    ES         2022         ELC_NGA_STM_REP_E         54.0    
-    ES         2024         ELC_NGA_STM_REP_E         48.0    
-    ES         2025         ELC_NGA_STM_REP_E         45.0    
-    ES         2030         ELC_NGA_STM_REP_E         30.0    
-    ES         2035         ELC_NGA_STM_REP_E         15.0    
-    ES         2040         ELC_NGA_STM_REP_E         0.0    
-    ES         2045         ELC_NGA_STM_REP_E         0.0    
-    ES         2050         ELC_NGA_STM_REP_E         0.0    
-    ES         2007         ELC_NGA_TURB_E         5.42    
-    ES         2008         ELC_NGA_TURB_E         5.86    
-    ES         2010         ELC_NGA_TURB_E         5.86    
-    ES         2012         ELC_NGA_TURB_E         5.86    
-    ES         2014         ELC_NGA_TURB_E         5.68    
-    ES         2016         ELC_NGA_TURB_E         5.5    
-    ES         2018         ELC_NGA_TURB_E         5.46    
-    ES         2020         ELC_NGA_TURB_E         4.35    
-    ES         2022         ELC_NGA_TURB_E         4.21    
-    ES         2024         ELC_NGA_TURB_E         3.4033333333333333    
-    ES         2025         ELC_NGA_TURB_E         3.0    
-    ES         2030         ELC_NGA_TURB_E         0.0    
-    ES         2035         ELC_NGA_TURB_E         0.0    
-    ES         2040         ELC_NGA_TURB_E         0.0    
-    ES         2045         ELC_NGA_TURB_E         0.0    
-    ES         2050         ELC_NGA_TURB_E         0.0    
     ES         2007         ELC_SOL_E         20.09    
     ES         2008         ELC_SOL_E         20.09    
     ES         2010         ELC_SOL_E         20.1    
@@ -3638,6 +3167,11 @@ param MaxActivity :=
     ES         2040         ELC_WIN_E         12.0    
     ES         2045         ELC_WIN_E         12.0    
     ES         2050         ELC_WIN_E         12.0    
+    ES         2030         ELC_NUC_LWR_E         201.51504    
+    ES         2035         ELC_NUC_LWR_E         190.31976    
+    ES         2040         ELC_NUC_LWR_E         179.12448    
+    ES         2045         ELC_NUC_LWR_E         167.92919999999998    
+    ES         2050         ELC_NUC_LWR_E         156.73391999999998    
 ;
 
 param MinActivity := 
@@ -3761,23 +3295,6 @@ param CapacityFactor :=
     ES             ELC_COA_COND_E         2040     0.88    
     ES             ELC_COA_COND_E         2045     0.88    
     ES             ELC_COA_COND_E         2050     0.88    
-    ES             ELC_COA_OIL_E         2006     0.9    
-    ES             ELC_COA_OIL_E         2007     0.895    
-    ES             ELC_COA_OIL_E         2008     0.89    
-    ES             ELC_COA_OIL_E         2010     0.88    
-    ES             ELC_COA_OIL_E         2012     0.88    
-    ES             ELC_COA_OIL_E         2014     0.88    
-    ES             ELC_COA_OIL_E         2016     0.88    
-    ES             ELC_COA_OIL_E         2018     0.88    
-    ES             ELC_COA_OIL_E         2020     0.88    
-    ES             ELC_COA_OIL_E         2022     0.88    
-    ES             ELC_COA_OIL_E         2024     0.88    
-    ES             ELC_COA_OIL_E         2025     0.88    
-    ES             ELC_COA_OIL_E         2030     0.88    
-    ES             ELC_COA_OIL_E         2035     0.88    
-    ES             ELC_COA_OIL_E         2040     0.88    
-    ES             ELC_COA_OIL_E         2045     0.88    
-    ES             ELC_COA_OIL_E         2050     0.88    
     ES             ELC_DERGAS_CC_E         2006     0.9    
     ES             ELC_DERGAS_CC_E         2007     0.895    
     ES             ELC_DERGAS_CC_E         2008     0.89    
@@ -3829,74 +3346,6 @@ param CapacityFactor :=
     ES             ELC_NGA_E         2040     0.9    
     ES             ELC_NGA_E         2045     0.9    
     ES             ELC_NGA_E         2050     0.9    
-    ES             ELC_NGA_STM_REP_E         2006     0.35    
-    ES             ELC_NGA_STM_REP_E         2007     0.35    
-    ES             ELC_NGA_STM_REP_E         2008     0.35    
-    ES             ELC_NGA_STM_REP_E         2010     0.35    
-    ES             ELC_NGA_STM_REP_E         2012     0.44999999999999996    
-    ES             ELC_NGA_STM_REP_E         2014     0.55    
-    ES             ELC_NGA_STM_REP_E         2016     0.6499999999999999    
-    ES             ELC_NGA_STM_REP_E         2018     0.75    
-    ES             ELC_NGA_STM_REP_E         2020     0.85    
-    ES             ELC_NGA_STM_REP_E         2022     0.85    
-    ES             ELC_NGA_STM_REP_E         2024     0.85    
-    ES             ELC_NGA_STM_REP_E         2025     0.85    
-    ES             ELC_NGA_STM_REP_E         2030     0.85    
-    ES             ELC_NGA_STM_REP_E         2035     0.85    
-    ES             ELC_NGA_STM_REP_E         2040     0.85    
-    ES             ELC_NGA_STM_REP_E         2045     0.85    
-    ES             ELC_NGA_STM_REP_E         2050     0.85    
-    ES             ELC_NGA_TURB_E         2006     0.03    
-    ES             ELC_NGA_TURB_E         2007     0.03    
-    ES             ELC_NGA_TURB_E         2008     0.03    
-    ES             ELC_NGA_TURB_E         2010     0.03    
-    ES             ELC_NGA_TURB_E         2012     0.184    
-    ES             ELC_NGA_TURB_E         2014     0.33799999999999997    
-    ES             ELC_NGA_TURB_E         2016     0.492    
-    ES             ELC_NGA_TURB_E         2018     0.646    
-    ES             ELC_NGA_TURB_E         2020     0.8    
-    ES             ELC_NGA_TURB_E         2022     0.8    
-    ES             ELC_NGA_TURB_E         2024     0.8    
-    ES             ELC_NGA_TURB_E         2025     0.8    
-    ES             ELC_NGA_TURB_E         2030     0.8    
-    ES             ELC_NGA_TURB_E         2035     0.8    
-    ES             ELC_NGA_TURB_E         2040     0.8    
-    ES             ELC_NGA_TURB_E         2045     0.8    
-    ES             ELC_NGA_TURB_E         2050     0.8    
-    ES             ELC_NGA_MIN_E         2006     0.11    
-    ES             ELC_NGA_MIN_E         2007     0.1492857142857143    
-    ES             ELC_NGA_MIN_E         2008     0.18857142857142858    
-    ES             ELC_NGA_MIN_E         2010     0.2671428571428572    
-    ES             ELC_NGA_MIN_E         2012     0.34571428571428575    
-    ES             ELC_NGA_MIN_E         2014     0.4242857142857143    
-    ES             ELC_NGA_MIN_E         2016     0.5028571428571429    
-    ES             ELC_NGA_MIN_E         2018     0.5814285714285715    
-    ES             ELC_NGA_MIN_E         2020     0.66    
-    ES             ELC_NGA_MIN_E         2022     0.66    
-    ES             ELC_NGA_MIN_E         2024     0.66    
-    ES             ELC_NGA_MIN_E         2025     0.66    
-    ES             ELC_NGA_MIN_E         2030     0.66    
-    ES             ELC_NGA_MIN_E         2035     0.66    
-    ES             ELC_NGA_MIN_E         2040     0.66    
-    ES             ELC_NGA_MIN_E         2045     0.66    
-    ES             ELC_NGA_MIN_E         2050     0.66    
-    ES             ELC_DST_TURB_E         2006     0.03    
-    ES             ELC_DST_TURB_E         2007     0.1225    
-    ES             ELC_DST_TURB_E         2008     0.215    
-    ES             ELC_DST_TURB_E         2010     0.4    
-    ES             ELC_DST_TURB_E         2012     0.48000000000000004    
-    ES             ELC_DST_TURB_E         2014     0.56    
-    ES             ELC_DST_TURB_E         2016     0.6400000000000001    
-    ES             ELC_DST_TURB_E         2018     0.72    
-    ES             ELC_DST_TURB_E         2020     0.8    
-    ES             ELC_DST_TURB_E         2022     0.8    
-    ES             ELC_DST_TURB_E         2024     0.8    
-    ES             ELC_DST_TURB_E         2025     0.8    
-    ES             ELC_DST_TURB_E         2030     0.8    
-    ES             ELC_DST_TURB_E         2035     0.8    
-    ES             ELC_DST_TURB_E         2040     0.8    
-    ES             ELC_DST_TURB_E         2045     0.8    
-    ES             ELC_DST_TURB_E         2050     0.8    
     ES             ELC_NGA_OIL_STM_E         2006     0.9    
     ES             ELC_NGA_OIL_STM_E         2007     0.9    
     ES             ELC_NGA_OIL_STM_E         2008     0.9    
@@ -3948,40 +3397,6 @@ param CapacityFactor :=
     ES             ELC_BIO_CEN_E         2040     0.55    
     ES             ELC_BIO_CEN_E         2045     0.55    
     ES             ELC_BIO_CEN_E         2050     0.55    
-    ES             ELC_BIO_DST_E         2006     0.55    
-    ES             ELC_BIO_DST_E         2007     0.55    
-    ES             ELC_BIO_DST_E         2008     0.55    
-    ES             ELC_BIO_DST_E         2010     0.55    
-    ES             ELC_BIO_DST_E         2012     0.55    
-    ES             ELC_BIO_DST_E         2014     0.55    
-    ES             ELC_BIO_DST_E         2016     0.55    
-    ES             ELC_BIO_DST_E         2018     0.55    
-    ES             ELC_BIO_DST_E         2020     0.55    
-    ES             ELC_BIO_DST_E         2022     0.55    
-    ES             ELC_BIO_DST_E         2024     0.55    
-    ES             ELC_BIO_DST_E         2025     0.55    
-    ES             ELC_BIO_DST_E         2030     0.55    
-    ES             ELC_BIO_DST_E         2035     0.55    
-    ES             ELC_BIO_DST_E         2040     0.55    
-    ES             ELC_BIO_DST_E         2045     0.55    
-    ES             ELC_BIO_DST_E         2050     0.55    
-    ES             ELC_GEO_E         2006     0.75    
-    ES             ELC_GEO_E         2007     0.75    
-    ES             ELC_GEO_E         2008     0.75    
-    ES             ELC_GEO_E         2010     0.75    
-    ES             ELC_GEO_E         2012     0.75    
-    ES             ELC_GEO_E         2014     0.75    
-    ES             ELC_GEO_E         2016     0.75    
-    ES             ELC_GEO_E         2018     0.75    
-    ES             ELC_GEO_E         2020     0.75    
-    ES             ELC_GEO_E         2022     0.75    
-    ES             ELC_GEO_E         2024     0.75    
-    ES             ELC_GEO_E         2025     0.75    
-    ES             ELC_GEO_E         2030     0.75    
-    ES             ELC_GEO_E         2035     0.75    
-    ES             ELC_GEO_E         2040     0.75    
-    ES             ELC_GEO_E         2045     0.75    
-    ES             ELC_GEO_E         2050     0.75    
     ES             ELC_NUC_LWR_E         2006     0.9    
     ES             ELC_NUC_LWR_E         2007     0.9    
     ES             ELC_NUC_LWR_E         2008     0.9    
@@ -5543,40 +4958,6 @@ param Efficiency :=
     ES             ELC_COA             ELC_COA_COND_E         2040         ELC_CEN         0.39    
     ES             ELC_COA             ELC_COA_COND_E         2045         ELC_CEN         0.39    
     ES             ELC_COA             ELC_COA_COND_E         2050         ELC_CEN         0.39    
-    ES             ELC_COA             ELC_COA_OIL_E         2006         ELC_CEN         0.38    
-    ES             ELC_COA             ELC_COA_OIL_E         2007         ELC_CEN         0.38    
-    ES             ELC_COA             ELC_COA_OIL_E         2008         ELC_CEN         0.38    
-    ES             ELC_COA             ELC_COA_OIL_E         2010         ELC_CEN         0.38    
-    ES             ELC_COA             ELC_COA_OIL_E         2012         ELC_CEN         0.38    
-    ES             ELC_COA             ELC_COA_OIL_E         2014         ELC_CEN         0.38    
-    ES             ELC_COA             ELC_COA_OIL_E         2016         ELC_CEN         0.38    
-    ES             ELC_COA             ELC_COA_OIL_E         2018         ELC_CEN         0.38    
-    ES             ELC_COA             ELC_COA_OIL_E         2020         ELC_CEN         0.38    
-    ES             ELC_COA             ELC_COA_OIL_E         2022         ELC_CEN         0.38    
-    ES             ELC_COA             ELC_COA_OIL_E         2024         ELC_CEN         0.38    
-    ES             ELC_COA             ELC_COA_OIL_E         2025         ELC_CEN         0.38    
-    ES             ELC_COA             ELC_COA_OIL_E         2030         ELC_CEN         0.38    
-    ES             ELC_COA             ELC_COA_OIL_E         2035         ELC_CEN         0.38    
-    ES             ELC_COA             ELC_COA_OIL_E         2040         ELC_CEN         0.38    
-    ES             ELC_COA             ELC_COA_OIL_E         2045         ELC_CEN         0.38    
-    ES             ELC_COA             ELC_COA_OIL_E         2050         ELC_CEN         0.38    
-    ES             ELC_OIL             ELC_COA_OIL_E         2006         ELC_CEN         0.38    
-    ES             ELC_OIL             ELC_COA_OIL_E         2007         ELC_CEN         0.38    
-    ES             ELC_OIL             ELC_COA_OIL_E         2008         ELC_CEN         0.38    
-    ES             ELC_OIL             ELC_COA_OIL_E         2010         ELC_CEN         0.38    
-    ES             ELC_OIL             ELC_COA_OIL_E         2012         ELC_CEN         0.38    
-    ES             ELC_OIL             ELC_COA_OIL_E         2014         ELC_CEN         0.38    
-    ES             ELC_OIL             ELC_COA_OIL_E         2016         ELC_CEN         0.38    
-    ES             ELC_OIL             ELC_COA_OIL_E         2018         ELC_CEN         0.38    
-    ES             ELC_OIL             ELC_COA_OIL_E         2020         ELC_CEN         0.38    
-    ES             ELC_OIL             ELC_COA_OIL_E         2022         ELC_CEN         0.38    
-    ES             ELC_OIL             ELC_COA_OIL_E         2024         ELC_CEN         0.38    
-    ES             ELC_OIL             ELC_COA_OIL_E         2025         ELC_CEN         0.38    
-    ES             ELC_OIL             ELC_COA_OIL_E         2030         ELC_CEN         0.38    
-    ES             ELC_OIL             ELC_COA_OIL_E         2035         ELC_CEN         0.38    
-    ES             ELC_OIL             ELC_COA_OIL_E         2040         ELC_CEN         0.38    
-    ES             ELC_OIL             ELC_COA_OIL_E         2045         ELC_CEN         0.38    
-    ES             ELC_OIL             ELC_COA_OIL_E         2050         ELC_CEN         0.38    
     ES             ELC_GASDER             ELC_DERGAS_CC_E         2006         ELC_CEN         0.37    
     ES             ELC_GASDER             ELC_DERGAS_CC_E         2007         ELC_CEN         0.37    
     ES             ELC_GASDER             ELC_DERGAS_CC_E         2008         ELC_CEN         0.37    
@@ -5628,74 +5009,6 @@ param Efficiency :=
     ES             ELC_NGA             ELC_NGA_E         2040         ELC_CEN         0.4    
     ES             ELC_NGA             ELC_NGA_E         2045         ELC_CEN         0.4    
     ES             ELC_NGA             ELC_NGA_E         2050         ELC_CEN         0.4    
-    ES             ELC_NGA             ELC_NGA_STM_REP_E         2006         ELC_CEN         0.45    
-    ES             ELC_NGA             ELC_NGA_STM_REP_E         2007         ELC_CEN         0.45    
-    ES             ELC_NGA             ELC_NGA_STM_REP_E         2008         ELC_CEN         0.45    
-    ES             ELC_NGA             ELC_NGA_STM_REP_E         2010         ELC_CEN         0.45    
-    ES             ELC_NGA             ELC_NGA_STM_REP_E         2012         ELC_CEN         0.45    
-    ES             ELC_NGA             ELC_NGA_STM_REP_E         2014         ELC_CEN         0.45    
-    ES             ELC_NGA             ELC_NGA_STM_REP_E         2016         ELC_CEN         0.45    
-    ES             ELC_NGA             ELC_NGA_STM_REP_E         2018         ELC_CEN         0.45    
-    ES             ELC_NGA             ELC_NGA_STM_REP_E         2020         ELC_CEN         0.45    
-    ES             ELC_NGA             ELC_NGA_STM_REP_E         2022         ELC_CEN         0.45    
-    ES             ELC_NGA             ELC_NGA_STM_REP_E         2024         ELC_CEN         0.45    
-    ES             ELC_NGA             ELC_NGA_STM_REP_E         2025         ELC_CEN         0.45    
-    ES             ELC_NGA             ELC_NGA_STM_REP_E         2030         ELC_CEN         0.45    
-    ES             ELC_NGA             ELC_NGA_STM_REP_E         2035         ELC_CEN         0.45    
-    ES             ELC_NGA             ELC_NGA_STM_REP_E         2040         ELC_CEN         0.45    
-    ES             ELC_NGA             ELC_NGA_STM_REP_E         2045         ELC_CEN         0.45    
-    ES             ELC_NGA             ELC_NGA_STM_REP_E         2050         ELC_CEN         0.45    
-    ES             ELC_NGA             ELC_NGA_TURB_E         2006         ELC_CEN         0.45    
-    ES             ELC_NGA             ELC_NGA_TURB_E         2007         ELC_CEN         0.45    
-    ES             ELC_NGA             ELC_NGA_TURB_E         2008         ELC_CEN         0.45    
-    ES             ELC_NGA             ELC_NGA_TURB_E         2010         ELC_CEN         0.45    
-    ES             ELC_NGA             ELC_NGA_TURB_E         2012         ELC_CEN         0.45    
-    ES             ELC_NGA             ELC_NGA_TURB_E         2014         ELC_CEN         0.45    
-    ES             ELC_NGA             ELC_NGA_TURB_E         2016         ELC_CEN         0.45    
-    ES             ELC_NGA             ELC_NGA_TURB_E         2018         ELC_CEN         0.45    
-    ES             ELC_NGA             ELC_NGA_TURB_E         2020         ELC_CEN         0.45    
-    ES             ELC_NGA             ELC_NGA_TURB_E         2022         ELC_CEN         0.45    
-    ES             ELC_NGA             ELC_NGA_TURB_E         2024         ELC_CEN         0.45    
-    ES             ELC_NGA             ELC_NGA_TURB_E         2025         ELC_CEN         0.45    
-    ES             ELC_NGA             ELC_NGA_TURB_E         2030         ELC_CEN         0.45    
-    ES             ELC_NGA             ELC_NGA_TURB_E         2035         ELC_CEN         0.45    
-    ES             ELC_NGA             ELC_NGA_TURB_E         2040         ELC_CEN         0.45    
-    ES             ELC_NGA             ELC_NGA_TURB_E         2045         ELC_CEN         0.45    
-    ES             ELC_NGA             ELC_NGA_TURB_E         2050         ELC_CEN         0.45    
-    ES             ELC_NGA             ELC_NGA_MIN_E         2006         ELC_CEN         0.35    
-    ES             ELC_NGA             ELC_NGA_MIN_E         2007         ELC_CEN         0.35    
-    ES             ELC_NGA             ELC_NGA_MIN_E         2008         ELC_CEN         0.35    
-    ES             ELC_NGA             ELC_NGA_MIN_E         2010         ELC_CEN         0.35    
-    ES             ELC_NGA             ELC_NGA_MIN_E         2012         ELC_CEN         0.35    
-    ES             ELC_NGA             ELC_NGA_MIN_E         2014         ELC_CEN         0.35    
-    ES             ELC_NGA             ELC_NGA_MIN_E         2016         ELC_CEN         0.35    
-    ES             ELC_NGA             ELC_NGA_MIN_E         2018         ELC_CEN         0.35    
-    ES             ELC_NGA             ELC_NGA_MIN_E         2020         ELC_CEN         0.35    
-    ES             ELC_NGA             ELC_NGA_MIN_E         2022         ELC_CEN         0.35    
-    ES             ELC_NGA             ELC_NGA_MIN_E         2024         ELC_CEN         0.35    
-    ES             ELC_NGA             ELC_NGA_MIN_E         2025         ELC_CEN         0.35    
-    ES             ELC_NGA             ELC_NGA_MIN_E         2030         ELC_CEN         0.35    
-    ES             ELC_NGA             ELC_NGA_MIN_E         2035         ELC_CEN         0.35    
-    ES             ELC_NGA             ELC_NGA_MIN_E         2040         ELC_CEN         0.35    
-    ES             ELC_NGA             ELC_NGA_MIN_E         2045         ELC_CEN         0.35    
-    ES             ELC_NGA             ELC_NGA_MIN_E         2050         ELC_CEN         0.35    
-    ES             ELC_OIL             ELC_DST_TURB_E         2006         ELC_CEN         0.35    
-    ES             ELC_OIL             ELC_DST_TURB_E         2007         ELC_CEN         0.35    
-    ES             ELC_OIL             ELC_DST_TURB_E         2008         ELC_CEN         0.35    
-    ES             ELC_OIL             ELC_DST_TURB_E         2010         ELC_CEN         0.35    
-    ES             ELC_OIL             ELC_DST_TURB_E         2012         ELC_CEN         0.35    
-    ES             ELC_OIL             ELC_DST_TURB_E         2014         ELC_CEN         0.35    
-    ES             ELC_OIL             ELC_DST_TURB_E         2016         ELC_CEN         0.35    
-    ES             ELC_OIL             ELC_DST_TURB_E         2018         ELC_CEN         0.35    
-    ES             ELC_OIL             ELC_DST_TURB_E         2020         ELC_CEN         0.35    
-    ES             ELC_OIL             ELC_DST_TURB_E         2022         ELC_CEN         0.35    
-    ES             ELC_OIL             ELC_DST_TURB_E         2024         ELC_CEN         0.35    
-    ES             ELC_OIL             ELC_DST_TURB_E         2025         ELC_CEN         0.35    
-    ES             ELC_OIL             ELC_DST_TURB_E         2030         ELC_CEN         0.35    
-    ES             ELC_OIL             ELC_DST_TURB_E         2035         ELC_CEN         0.35    
-    ES             ELC_OIL             ELC_DST_TURB_E         2040         ELC_CEN         0.35    
-    ES             ELC_OIL             ELC_DST_TURB_E         2045         ELC_CEN         0.35    
-    ES             ELC_OIL             ELC_DST_TURB_E         2050         ELC_CEN         0.35    
     ES             ELC_OIL             ELC_NGA_OIL_STM_E         2006         ELC_CEN         0.4    
     ES             ELC_OIL             ELC_NGA_OIL_STM_E         2007         ELC_CEN         0.3875    
     ES             ELC_OIL             ELC_NGA_OIL_STM_E         2008         ELC_CEN         0.375    
@@ -5747,40 +5060,6 @@ param Efficiency :=
     ES             ELC_SLB             ELC_BIO_CEN_E         2040         ELC_CEN         0.26    
     ES             ELC_SLB             ELC_BIO_CEN_E         2045         ELC_CEN         0.26    
     ES             ELC_SLB             ELC_BIO_CEN_E         2050         ELC_CEN         0.26    
-    ES             ELC_SLB             ELC_BIO_DST_E         2006         ELC_DST         0.26    
-    ES             ELC_SLB             ELC_BIO_DST_E         2007         ELC_DST         0.26    
-    ES             ELC_SLB             ELC_BIO_DST_E         2008         ELC_DST         0.26    
-    ES             ELC_SLB             ELC_BIO_DST_E         2010         ELC_DST         0.26    
-    ES             ELC_SLB             ELC_BIO_DST_E         2012         ELC_DST         0.26    
-    ES             ELC_SLB             ELC_BIO_DST_E         2014         ELC_DST         0.26    
-    ES             ELC_SLB             ELC_BIO_DST_E         2016         ELC_DST         0.26    
-    ES             ELC_SLB             ELC_BIO_DST_E         2018         ELC_DST         0.26    
-    ES             ELC_SLB             ELC_BIO_DST_E         2020         ELC_DST         0.26    
-    ES             ELC_SLB             ELC_BIO_DST_E         2022         ELC_DST         0.26    
-    ES             ELC_SLB             ELC_BIO_DST_E         2024         ELC_DST         0.26    
-    ES             ELC_SLB             ELC_BIO_DST_E         2025         ELC_DST         0.26    
-    ES             ELC_SLB             ELC_BIO_DST_E         2030         ELC_DST         0.26    
-    ES             ELC_SLB             ELC_BIO_DST_E         2035         ELC_DST         0.26    
-    ES             ELC_SLB             ELC_BIO_DST_E         2040         ELC_DST         0.26    
-    ES             ELC_SLB             ELC_BIO_DST_E         2045         ELC_DST         0.26    
-    ES             ELC_SLB             ELC_BIO_DST_E         2050         ELC_DST         0.26    
-    ES             ELC_GEO             ELC_GEO_E         2006         ELC_CEN         0.1    
-    ES             ELC_GEO             ELC_GEO_E         2007         ELC_CEN         0.1    
-    ES             ELC_GEO             ELC_GEO_E         2008         ELC_CEN         0.1    
-    ES             ELC_GEO             ELC_GEO_E         2010         ELC_CEN         0.1    
-    ES             ELC_GEO             ELC_GEO_E         2012         ELC_CEN         0.1    
-    ES             ELC_GEO             ELC_GEO_E         2014         ELC_CEN         0.1    
-    ES             ELC_GEO             ELC_GEO_E         2016         ELC_CEN         0.1    
-    ES             ELC_GEO             ELC_GEO_E         2018         ELC_CEN         0.1    
-    ES             ELC_GEO             ELC_GEO_E         2020         ELC_CEN         0.1    
-    ES             ELC_GEO             ELC_GEO_E         2022         ELC_CEN         0.1    
-    ES             ELC_GEO             ELC_GEO_E         2024         ELC_CEN         0.1    
-    ES             ELC_GEO             ELC_GEO_E         2025         ELC_CEN         0.1    
-    ES             ELC_GEO             ELC_GEO_E         2030         ELC_CEN         0.1    
-    ES             ELC_GEO             ELC_GEO_E         2035         ELC_CEN         0.1    
-    ES             ELC_GEO             ELC_GEO_E         2040         ELC_CEN         0.1    
-    ES             ELC_GEO             ELC_GEO_E         2045         ELC_CEN         0.1    
-    ES             ELC_GEO             ELC_GEO_E         2050         ELC_CEN         0.1    
     ES             ELC_SOL             ELC_SOL_E         2006         ELC_DST         1.0    
     ES             ELC_SOL             ELC_SOL_E         2007         ELC_DST         1.0    
     ES             ELC_SOL             ELC_SOL_E         2008         ELC_DST         1.0    
@@ -6741,22 +6020,22 @@ param Efficiency :=
     ES             ELC_DST             STG_ELC_DST_BTT         2040         ELC_DST         0.85    
     ES             ELC_DST             STG_ELC_DST_BTT         2045         ELC_DST         0.85    
     ES             ELC_DST             STG_ELC_DST_BTT         2050         ELC_DST         0.85    
-    ES             ELC_CEN             DISTR_ELC         2007         ELC_DST         0.95    
-    ES             ELC_CEN             DISTR_ELC         2008         ELC_DST         0.95    
-    ES             ELC_CEN             DISTR_ELC         2010         ELC_DST         0.95    
-    ES             ELC_CEN             DISTR_ELC         2012         ELC_DST         0.95    
-    ES             ELC_CEN             DISTR_ELC         2014         ELC_DST         0.95    
-    ES             ELC_CEN             DISTR_ELC         2016         ELC_DST         0.95    
-    ES             ELC_CEN             DISTR_ELC         2018         ELC_DST         0.95    
-    ES             ELC_CEN             DISTR_ELC         2020         ELC_DST         0.95    
-    ES             ELC_CEN             DISTR_ELC         2022         ELC_DST         0.95    
-    ES             ELC_CEN             DISTR_ELC         2024         ELC_DST         0.95    
-    ES             ELC_CEN             DISTR_ELC         2025         ELC_DST         0.95    
-    ES             ELC_CEN             DISTR_ELC         2030         ELC_DST         0.95    
-    ES             ELC_CEN             DISTR_ELC         2035         ELC_DST         0.95    
-    ES             ELC_CEN             DISTR_ELC         2040         ELC_DST         0.95    
-    ES             ELC_CEN             DISTR_ELC         2045         ELC_DST         0.95    
-    ES             ELC_CEN             DISTR_ELC         2050         ELC_DST         0.95    
+    ES             ELC_CEN             DISTR_ELC         2007         ELC_DST         1.0    
+    ES             ELC_CEN             DISTR_ELC         2008         ELC_DST         1.0    
+    ES             ELC_CEN             DISTR_ELC         2010         ELC_DST         1.0    
+    ES             ELC_CEN             DISTR_ELC         2012         ELC_DST         1.0    
+    ES             ELC_CEN             DISTR_ELC         2014         ELC_DST         1.0    
+    ES             ELC_CEN             DISTR_ELC         2016         ELC_DST         1.0    
+    ES             ELC_CEN             DISTR_ELC         2018         ELC_DST         1.0    
+    ES             ELC_CEN             DISTR_ELC         2020         ELC_DST         1.0    
+    ES             ELC_CEN             DISTR_ELC         2022         ELC_DST         1.0    
+    ES             ELC_CEN             DISTR_ELC         2024         ELC_DST         1.0    
+    ES             ELC_CEN             DISTR_ELC         2025         ELC_DST         1.0    
+    ES             ELC_CEN             DISTR_ELC         2030         ELC_DST         1.0    
+    ES             ELC_CEN             DISTR_ELC         2035         ELC_DST         1.0    
+    ES             ELC_CEN             DISTR_ELC         2040         ELC_DST         1.0    
+    ES             ELC_CEN             DISTR_ELC         2045         ELC_DST         1.0    
+    ES             ELC_CEN             DISTR_ELC         2050         ELC_DST         1.0    
     ES             ELC_DST             END_USES_ELC         2007         ELC_DEM         0.95    
     ES             ELC_DST             END_USES_ELC         2008         ELC_DEM         0.95    
     ES             ELC_DST             END_USES_ELC         2010         ELC_DEM         0.95    
@@ -19127,198 +18406,6 @@ param MaterialIntensity :=
     ES             NIC             ELC_NGA_E         2040     15.8    #     10.1016/j.mtener.2025.101805            
     ES             NIC             ELC_NGA_E         2045     15.8    #     10.1016/j.mtener.2025.101805            
     ES             NIC             ELC_NGA_E         2050     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_STM_REP_E         2007     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_STM_REP_E         2008     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_STM_REP_E         2010     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_STM_REP_E         2012     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_STM_REP_E         2014     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_STM_REP_E         2016     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_STM_REP_E         2018     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_STM_REP_E         2020     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_STM_REP_E         2022     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_STM_REP_E         2024     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_STM_REP_E         2025     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_STM_REP_E         2030     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_STM_REP_E         2035     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_STM_REP_E         2040     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_STM_REP_E         2045     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_STM_REP_E         2050     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_STM_REP_E         2007     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_STM_REP_E         2008     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_STM_REP_E         2010     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_STM_REP_E         2012     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_STM_REP_E         2014     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_STM_REP_E         2016     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_STM_REP_E         2018     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_STM_REP_E         2020     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_STM_REP_E         2022     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_STM_REP_E         2024     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_STM_REP_E         2025     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_STM_REP_E         2030     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_STM_REP_E         2035     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_STM_REP_E         2040     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_STM_REP_E         2045     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_STM_REP_E         2050     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_STM_REP_E         2007     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_STM_REP_E         2008     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_STM_REP_E         2010     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_STM_REP_E         2012     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_STM_REP_E         2014     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_STM_REP_E         2016     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_STM_REP_E         2018     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_STM_REP_E         2020     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_STM_REP_E         2022     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_STM_REP_E         2024     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_STM_REP_E         2025     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_STM_REP_E         2030     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_STM_REP_E         2035     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_STM_REP_E         2040     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_STM_REP_E         2045     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_STM_REP_E         2050     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_TURB_E         2007     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_TURB_E         2008     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_TURB_E         2010     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_TURB_E         2012     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_TURB_E         2014     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_TURB_E         2016     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_TURB_E         2018     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_TURB_E         2020     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_TURB_E         2022     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_TURB_E         2024     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_TURB_E         2025     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_TURB_E         2030     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_TURB_E         2035     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_TURB_E         2040     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_TURB_E         2045     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_TURB_E         2050     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_TURB_E         2007     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_TURB_E         2008     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_TURB_E         2010     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_TURB_E         2012     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_TURB_E         2014     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_TURB_E         2016     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_TURB_E         2018     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_TURB_E         2020     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_TURB_E         2022     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_TURB_E         2024     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_TURB_E         2025     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_TURB_E         2030     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_TURB_E         2035     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_TURB_E         2040     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_TURB_E         2045     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_TURB_E         2050     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_TURB_E         2007     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_TURB_E         2008     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_TURB_E         2010     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_TURB_E         2012     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_TURB_E         2014     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_TURB_E         2016     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_TURB_E         2018     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_TURB_E         2020     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_TURB_E         2022     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_TURB_E         2024     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_TURB_E         2025     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_TURB_E         2030     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_TURB_E         2035     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_TURB_E         2040     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_TURB_E         2045     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_TURB_E         2050     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_MIN_E         2007     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_MIN_E         2008     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_MIN_E         2010     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_MIN_E         2012     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_MIN_E         2014     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_MIN_E         2016     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_MIN_E         2018     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_MIN_E         2020     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_MIN_E         2022     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_MIN_E         2024     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_MIN_E         2025     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_MIN_E         2030     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_MIN_E         2035     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_MIN_E         2040     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_MIN_E         2045     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_NGA_MIN_E         2050     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_MIN_E         2007     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_MIN_E         2008     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_MIN_E         2010     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_MIN_E         2012     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_MIN_E         2014     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_MIN_E         2016     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_MIN_E         2018     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_MIN_E         2020     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_MIN_E         2022     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_MIN_E         2024     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_MIN_E         2025     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_MIN_E         2030     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_MIN_E         2035     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_MIN_E         2040     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_MIN_E         2045     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_NGA_MIN_E         2050     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_MIN_E         2007     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_MIN_E         2008     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_MIN_E         2010     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_MIN_E         2012     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_MIN_E         2014     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_MIN_E         2016     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_MIN_E         2018     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_MIN_E         2020     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_MIN_E         2022     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_MIN_E         2024     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_MIN_E         2025     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_MIN_E         2030     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_MIN_E         2035     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_MIN_E         2040     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_MIN_E         2045     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_NGA_MIN_E         2050     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_DST_TURB_E         2007     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_DST_TURB_E         2008     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_DST_TURB_E         2010     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_DST_TURB_E         2012     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_DST_TURB_E         2014     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_DST_TURB_E         2016     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_DST_TURB_E         2018     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_DST_TURB_E         2020     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_DST_TURB_E         2022     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_DST_TURB_E         2024     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_DST_TURB_E         2025     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_DST_TURB_E         2030     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_DST_TURB_E         2035     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_DST_TURB_E         2040     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_DST_TURB_E         2045     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_DST_TURB_E         2050     48.3    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_DST_TURB_E         2007     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_DST_TURB_E         2008     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_DST_TURB_E         2010     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_DST_TURB_E         2012     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_DST_TURB_E         2014     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_DST_TURB_E         2016     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_DST_TURB_E         2018     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_DST_TURB_E         2020     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_DST_TURB_E         2022     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_DST_TURB_E         2024     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_DST_TURB_E         2025     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_DST_TURB_E         2030     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_DST_TURB_E         2035     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_DST_TURB_E         2040     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_DST_TURB_E         2045     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_DST_TURB_E         2050     1100.0    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_DST_TURB_E         2007     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_DST_TURB_E         2008     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_DST_TURB_E         2010     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_DST_TURB_E         2012     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_DST_TURB_E         2014     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_DST_TURB_E         2016     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_DST_TURB_E         2018     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_DST_TURB_E         2020     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_DST_TURB_E         2022     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_DST_TURB_E         2024     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_DST_TURB_E         2025     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_DST_TURB_E         2030     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_DST_TURB_E         2035     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_DST_TURB_E         2040     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_DST_TURB_E         2045     15.8    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_DST_TURB_E         2050     15.8    #     10.1016/j.mtener.2025.101805            
     ES             CHR             ELC_NGA_OIL_STM_E         2007     48.3    #     10.1016/j.mtener.2025.101805            
     ES             CHR             ELC_NGA_OIL_STM_E         2008     48.3    #     10.1016/j.mtener.2025.101805            
     ES             CHR             ELC_NGA_OIL_STM_E         2010     48.3    #     10.1016/j.mtener.2025.101805            
@@ -19927,86 +19014,6 @@ param MaterialIntensity :=
     ES             NIC             ELC_COA_COND_E         2040     721.0    #     10.1016/j.mtener.2025.101805            
     ES             NIC             ELC_COA_COND_E         2045     721.0    #     10.1016/j.mtener.2025.101805            
     ES             NIC             ELC_COA_COND_E         2050     721.0    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_COA_OIL_E         2007     308.0    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_COA_OIL_E         2008     308.0    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_COA_OIL_E         2010     308.0    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_COA_OIL_E         2012     308.0    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_COA_OIL_E         2014     308.0    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_COA_OIL_E         2016     308.0    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_COA_OIL_E         2018     308.0    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_COA_OIL_E         2020     308.0    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_COA_OIL_E         2022     308.0    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_COA_OIL_E         2024     308.0    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_COA_OIL_E         2025     308.0    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_COA_OIL_E         2030     308.0    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_COA_OIL_E         2035     308.0    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_COA_OIL_E         2040     308.0    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_COA_OIL_E         2045     308.0    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_COA_OIL_E         2050     308.0    #     10.1016/j.mtener.2025.101805            
-    ES             COB             ELC_COA_OIL_E         2007     202.0    #     10.1016/j.mtener.2025.101805            
-    ES             COB             ELC_COA_OIL_E         2008     202.0    #     10.1016/j.mtener.2025.101805            
-    ES             COB             ELC_COA_OIL_E         2010     202.0    #     10.1016/j.mtener.2025.101805            
-    ES             COB             ELC_COA_OIL_E         2012     202.0    #     10.1016/j.mtener.2025.101805            
-    ES             COB             ELC_COA_OIL_E         2014     202.0    #     10.1016/j.mtener.2025.101805            
-    ES             COB             ELC_COA_OIL_E         2016     202.0    #     10.1016/j.mtener.2025.101805            
-    ES             COB             ELC_COA_OIL_E         2018     202.0    #     10.1016/j.mtener.2025.101805            
-    ES             COB             ELC_COA_OIL_E         2020     202.0    #     10.1016/j.mtener.2025.101805            
-    ES             COB             ELC_COA_OIL_E         2022     202.0    #     10.1016/j.mtener.2025.101805            
-    ES             COB             ELC_COA_OIL_E         2024     202.0    #     10.1016/j.mtener.2025.101805            
-    ES             COB             ELC_COA_OIL_E         2025     202.0    #     10.1016/j.mtener.2025.101805            
-    ES             COB             ELC_COA_OIL_E         2030     202.0    #     10.1016/j.mtener.2025.101805            
-    ES             COB             ELC_COA_OIL_E         2035     202.0    #     10.1016/j.mtener.2025.101805            
-    ES             COB             ELC_COA_OIL_E         2040     202.0    #     10.1016/j.mtener.2025.101805            
-    ES             COB             ELC_COA_OIL_E         2045     202.0    #     10.1016/j.mtener.2025.101805            
-    ES             COB             ELC_COA_OIL_E         2050     202.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_COA_OIL_E         2007     1150.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_COA_OIL_E         2008     1150.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_COA_OIL_E         2010     1150.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_COA_OIL_E         2012     1150.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_COA_OIL_E         2014     1150.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_COA_OIL_E         2016     1150.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_COA_OIL_E         2018     1150.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_COA_OIL_E         2020     1150.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_COA_OIL_E         2022     1150.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_COA_OIL_E         2024     1150.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_COA_OIL_E         2025     1150.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_COA_OIL_E         2030     1150.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_COA_OIL_E         2035     1150.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_COA_OIL_E         2040     1150.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_COA_OIL_E         2045     1150.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_COA_OIL_E         2050     1150.0    #     10.1016/j.mtener.2025.101805            
-    ES             MOL             ELC_COA_OIL_E         2007     66.3    #     10.1016/j.mtener.2025.101805            
-    ES             MOL             ELC_COA_OIL_E         2008     66.3    #     10.1016/j.mtener.2025.101805            
-    ES             MOL             ELC_COA_OIL_E         2010     66.3    #     10.1016/j.mtener.2025.101805            
-    ES             MOL             ELC_COA_OIL_E         2012     66.3    #     10.1016/j.mtener.2025.101805            
-    ES             MOL             ELC_COA_OIL_E         2014     66.3    #     10.1016/j.mtener.2025.101805            
-    ES             MOL             ELC_COA_OIL_E         2016     66.3    #     10.1016/j.mtener.2025.101805            
-    ES             MOL             ELC_COA_OIL_E         2018     66.3    #     10.1016/j.mtener.2025.101805            
-    ES             MOL             ELC_COA_OIL_E         2020     66.3    #     10.1016/j.mtener.2025.101805            
-    ES             MOL             ELC_COA_OIL_E         2022     66.3    #     10.1016/j.mtener.2025.101805            
-    ES             MOL             ELC_COA_OIL_E         2024     66.3    #     10.1016/j.mtener.2025.101805            
-    ES             MOL             ELC_COA_OIL_E         2025     66.3    #     10.1016/j.mtener.2025.101805            
-    ES             MOL             ELC_COA_OIL_E         2030     66.3    #     10.1016/j.mtener.2025.101805            
-    ES             MOL             ELC_COA_OIL_E         2035     66.3    #     10.1016/j.mtener.2025.101805            
-    ES             MOL             ELC_COA_OIL_E         2040     66.3    #     10.1016/j.mtener.2025.101805            
-    ES             MOL             ELC_COA_OIL_E         2045     66.3    #     10.1016/j.mtener.2025.101805            
-    ES             MOL             ELC_COA_OIL_E         2050     66.3    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_COA_OIL_E         2007     721.0    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_COA_OIL_E         2008     721.0    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_COA_OIL_E         2010     721.0    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_COA_OIL_E         2012     721.0    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_COA_OIL_E         2014     721.0    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_COA_OIL_E         2016     721.0    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_COA_OIL_E         2018     721.0    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_COA_OIL_E         2020     721.0    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_COA_OIL_E         2022     721.0    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_COA_OIL_E         2024     721.0    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_COA_OIL_E         2025     721.0    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_COA_OIL_E         2030     721.0    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_COA_OIL_E         2035     721.0    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_COA_OIL_E         2040     721.0    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_COA_OIL_E         2045     721.0    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_COA_OIL_E         2050     721.0    #     10.1016/j.mtener.2025.101805            
     ES             CHR             ELC_COA_STM_P         2007     308.0    #     10.1016/j.mtener.2025.101805            
     ES             CHR             ELC_COA_STM_P         2008     308.0    #     10.1016/j.mtener.2025.101805            
     ES             CHR             ELC_COA_STM_P         2010     308.0    #     10.1016/j.mtener.2025.101805            
@@ -20231,38 +19238,6 @@ param MaterialIntensity :=
     ES             TIT             ELC_BIO_CEN_E         2040     400.0    #     10.1016/j.mtener.2025.101805            
     ES             TIT             ELC_BIO_CEN_E         2045     400.0    #     10.1016/j.mtener.2025.101805            
     ES             TIT             ELC_BIO_CEN_E         2050     400.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_BIO_DST_E         2007     2270.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_BIO_DST_E         2008     2270.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_BIO_DST_E         2010     2270.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_BIO_DST_E         2012     2270.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_BIO_DST_E         2014     2270.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_BIO_DST_E         2016     2270.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_BIO_DST_E         2018     2270.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_BIO_DST_E         2020     2270.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_BIO_DST_E         2022     2270.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_BIO_DST_E         2024     2270.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_BIO_DST_E         2025     2270.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_BIO_DST_E         2030     2270.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_BIO_DST_E         2035     2270.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_BIO_DST_E         2040     2270.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_BIO_DST_E         2045     2270.0    #     10.1016/j.mtener.2025.101805            
-    ES             COP             ELC_BIO_DST_E         2050     2270.0    #     10.1016/j.mtener.2025.101805            
-    ES             TIT             ELC_BIO_DST_E         2007     400.0    #     10.1016/j.mtener.2025.101805            
-    ES             TIT             ELC_BIO_DST_E         2008     400.0    #     10.1016/j.mtener.2025.101805            
-    ES             TIT             ELC_BIO_DST_E         2010     400.0    #     10.1016/j.mtener.2025.101805            
-    ES             TIT             ELC_BIO_DST_E         2012     400.0    #     10.1016/j.mtener.2025.101805            
-    ES             TIT             ELC_BIO_DST_E         2014     400.0    #     10.1016/j.mtener.2025.101805            
-    ES             TIT             ELC_BIO_DST_E         2016     400.0    #     10.1016/j.mtener.2025.101805            
-    ES             TIT             ELC_BIO_DST_E         2018     400.0    #     10.1016/j.mtener.2025.101805            
-    ES             TIT             ELC_BIO_DST_E         2020     400.0    #     10.1016/j.mtener.2025.101805            
-    ES             TIT             ELC_BIO_DST_E         2022     400.0    #     10.1016/j.mtener.2025.101805            
-    ES             TIT             ELC_BIO_DST_E         2024     400.0    #     10.1016/j.mtener.2025.101805            
-    ES             TIT             ELC_BIO_DST_E         2025     400.0    #     10.1016/j.mtener.2025.101805            
-    ES             TIT             ELC_BIO_DST_E         2030     400.0    #     10.1016/j.mtener.2025.101805            
-    ES             TIT             ELC_BIO_DST_E         2035     400.0    #     10.1016/j.mtener.2025.101805            
-    ES             TIT             ELC_BIO_DST_E         2040     400.0    #     10.1016/j.mtener.2025.101805            
-    ES             TIT             ELC_BIO_DST_E         2045     400.0    #     10.1016/j.mtener.2025.101805            
-    ES             TIT             ELC_BIO_DST_E         2050     400.0    #     10.1016/j.mtener.2025.101805            
     ES             COP             ELC_BLQ_N         2007     2270.0    #     10.1016/j.mtener.2025.101805            
     ES             COP             ELC_BLQ_N         2008     2270.0    #     10.1016/j.mtener.2025.101805            
     ES             COP             ELC_BLQ_N         2010     2270.0    #     10.1016/j.mtener.2025.101805            
@@ -20908,38 +19883,6 @@ param MaterialIntensity :=
     ES             NIC             ELC_HYD_MINI_N         2040     30.0    #     10.1016/j.mtener.2025.101805            
     ES             NIC             ELC_HYD_MINI_N         2045     30.0    #     10.1016/j.mtener.2025.101805            
     ES             NIC             ELC_HYD_MINI_N         2050     30.0    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_GEO_E         2007     62000.0    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_GEO_E         2008     62000.0    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_GEO_E         2010     62000.0    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_GEO_E         2012     62000.0    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_GEO_E         2014     62000.0    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_GEO_E         2016     62000.0    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_GEO_E         2018     62000.0    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_GEO_E         2020     62000.0    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_GEO_E         2022     62000.0    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_GEO_E         2024     62000.0    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_GEO_E         2025     62000.0    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_GEO_E         2030     62000.0    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_GEO_E         2035     62000.0    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_GEO_E         2040     62000.0    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_GEO_E         2045     62000.0    #     10.1016/j.mtener.2025.101805            
-    ES             CHR             ELC_GEO_E         2050     62000.0    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_GEO_E         2007     120000.0    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_GEO_E         2008     120000.0    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_GEO_E         2010     120000.0    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_GEO_E         2012     120000.0    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_GEO_E         2014     120000.0    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_GEO_E         2016     120000.0    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_GEO_E         2018     120000.0    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_GEO_E         2020     120000.0    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_GEO_E         2022     120000.0    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_GEO_E         2024     120000.0    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_GEO_E         2025     120000.0    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_GEO_E         2030     120000.0    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_GEO_E         2035     120000.0    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_GEO_E         2040     120000.0    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_GEO_E         2045     120000.0    #     10.1016/j.mtener.2025.101805            
-    ES             NIC             ELC_GEO_E         2050     120000.0    #     10.1016/j.mtener.2025.101805            
     ES             CHR             ELC_GEO_HENT_N         2007     62000.0    #     10.1016/j.mtener.2025.101805            
     ES             CHR             ELC_GEO_HENT_N         2008     62000.0    #     10.1016/j.mtener.2025.101805            
     ES             CHR             ELC_GEO_HENT_N         2010     62000.0    #     10.1016/j.mtener.2025.101805            
