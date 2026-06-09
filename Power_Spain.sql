@@ -515,7 +515,6 @@ CREATE TABLE "TechnologyMaterialSupplyRisk" (
 	FOREIGN KEY("vintage") REFERENCES "time_periods"("t_periods")
 );
 
--- TODO (chiedere) - CHP si può rimuovere con dovute precauzioni/ipotesi (es aggiustare le efficiency)
 CREATE TABLE "TechOutputSplit" (
 	"regions"	TEXT,
 	"periods"	integer,
@@ -556,7 +555,7 @@ INSERT INTO "TechOutputSplit" VALUES ('ES',2007,'ELC_CHP_NGA_CP_N','ELC_CEN',0.2
 INSERT INTO "TechOutputSplit" VALUES ('ES',2007,'ELC_CHP_NGA_TAP_N','ELC_CEN',0.28,'TIMES-Italy');
 INSERT INTO "TechOutputSplit" VALUES ('ES',2040,'ELC_CHP_NGA_TAP_N','ELC_CEN',0.30,'TIMES-Italy');
 
--- TODO (chiedere) - solo per tech che prendono più di un input
+-- solo per tech che prendono più di un input
 CREATE TABLE "TechInputSplit" (
 	"regions"	TEXT,
 	"periods"	integer,
@@ -1081,7 +1080,6 @@ CREATE TABLE "MaxCapacityGroup" (
 --INSERT INTO "MaxCapacityGroup" VALUES ('ES',2035,'ELC_NUC_GRP',0.00,'GW');
 --INSERT INTO "MaxCapacityGroup" VALUES ('ES',2050,'ELC_NUC_GRP',0.00,'GW');
 
--- TODO (chiedere)
 CREATE TABLE "MinInputGroup" (
 	"regions"	      text,
 	"periods"	      integer,
@@ -1099,7 +1097,7 @@ INSERT INTO "MinInputGroup" VALUES ('ES',2020,'ELC_CEN','ELC_FT_H2_GRP',0.06,'')
 INSERT INTO "MinInputGroup" VALUES ('ES',2050,'ELC_CEN','ELC_FT_H2_GRP',0.06,'');
 -- Almeno il 6% del consumo sul trasporto di H2 richiede elettricità
 
--- TODO (chiedere) massimo input in gruppo di tech
+-- massimo input in gruppo di tech
 CREATE TABLE "MaxInputGroup" (
 	"regions"	      text,
 	"periods"	      integer,
@@ -1993,25 +1991,25 @@ INSERT INTO "Efficiency" VALUES ('ES','H2','ELC_FT_H2',2020,'ELC_H2',0.94,'PJ/PJ
 INSERT INTO "Efficiency" VALUES ('ES','H2_EL','ELC_FT_H2',2020,'ELC_H2',0.94,'PJ/PJ');
 INSERT INTO "Efficiency" VALUES ('ES','ELC_CEN','ELC_FT_H2',2020,'ELC_H2',0.94,'PJ/PJ');
 -- Base year technologies
-INSERT INTO "Efficiency" VALUES ('ES','ELC_COA','ELC_COA_COND_E',2006,'ELC_CEN',0.29,'Eurostat nrg_bal_c');
-INSERT INTO "Efficiency" VALUES ('ES','ELC_COA','ELC_COA_COND_E',2010,'ELC_CEN',0.25,'Eurostat nrg_bal_c');
-INSERT INTO "Efficiency" VALUES ('ES','ELC_COA','ELC_COA_OIL_E',2006,'ELC_CEN',0.28,'Eurostat nrg_bal_c');
-INSERT INTO "Efficiency" VALUES ('ES','ELC_OIL','ELC_COA_OIL_E',2006,'ELC_CEN',0.28,'Eurostat nrg_bal_c');
+INSERT INTO "Efficiency" VALUES ('ES','ELC_COA','ELC_COA_COND_E',2006,'ELC_CEN',0.36,'Eurostat nrg_bal_c');
+INSERT INTO "Efficiency" VALUES ('ES','ELC_COA','ELC_COA_COND_E',2010,'ELC_CEN',0.39,'Eurostat nrg_bal_c');
+INSERT INTO "Efficiency" VALUES ('ES','ELC_COA','ELC_COA_OIL_E',2006,'ELC_CEN',0.38,'Eurostat nrg_bal_c');
+INSERT INTO "Efficiency" VALUES ('ES','ELC_OIL','ELC_COA_OIL_E',2006,'ELC_CEN',0.38,'Eurostat nrg_bal_c');
 INSERT INTO "Efficiency" VALUES ('ES','ELC_GASDER','ELC_DERGAS_CC_E',2006,'ELC_CEN',0.37,'Eurostat nrg_bal_c');
-INSERT INTO "Efficiency" VALUES ('ES','ELC_NGA','ELC_NGA_CC_E',2006,'ELC_CEN',0.50,'');
-INSERT INTO "Efficiency" VALUES ('ES','ELC_NGA','ELC_NGA_CC_E',2010,'ELC_CEN',0.46,'');
-INSERT INTO "Efficiency" VALUES ('ES','ELC_NGA','ELC_NGA_E',2006,'ELC_CEN',0.39,'');
-INSERT INTO "Efficiency" VALUES ('ES','ELC_NGA','ELC_NGA_E',2010,'ELC_CEN',0.30,'');
-INSERT INTO "Efficiency" VALUES ('ES','ELC_NGA','ELC_NGA_STM_REP_E',2006,'ELC_CEN',0.42,'');
-INSERT INTO "Efficiency" VALUES ('ES','ELC_NGA','ELC_NGA_TURB_E',2006,'ELC_CEN',0.42,'');
-INSERT INTO "Efficiency" VALUES ('ES','ELC_NGA','ELC_NGA_MIN_E',2006,'ELC_CEN',0.35,'');
-INSERT INTO "Efficiency" VALUES ('ES','ELC_OIL','ELC_DST_TURB_E',2006,'ELC_CEN',0.27,'');
-INSERT INTO "Efficiency" VALUES ('ES','ELC_OIL','ELC_NGA_OIL_STM_E',2006,'ELC_CEN',0.36,'');
-INSERT INTO "Efficiency" VALUES ('ES','ELC_OIL','ELC_NGA_OIL_STM_E',2010,'ELC_CEN',0.27,'');
+INSERT INTO "Efficiency" VALUES ('ES','ELC_NGA','ELC_NGA_CC_E',2006,'ELC_CEN',0.55,'Eurostat nrg_bal_c + assumption');
+INSERT INTO "Efficiency" VALUES ('ES','ELC_NGA','ELC_NGA_CC_E',2010,'ELC_CEN',0.55,'Eurostat nrg_bal_c + assumption');
+INSERT INTO "Efficiency" VALUES ('ES','ELC_NGA','ELC_NGA_E',2006,'ELC_CEN',0.42,'Eurostat nrg_bal_c + assumption');
+INSERT INTO "Efficiency" VALUES ('ES','ELC_NGA','ELC_NGA_E',2010,'ELC_CEN',0.40,'Eurostat nrg_bal_c + assumption');
+INSERT INTO "Efficiency" VALUES ('ES','ELC_NGA','ELC_NGA_STM_REP_E',2006,'ELC_CEN',0.45,'Eurostat nrg_bal_c + assumption');
+INSERT INTO "Efficiency" VALUES ('ES','ELC_NGA','ELC_NGA_TURB_E',2006,'ELC_CEN',0.45,'Eurostat nrg_bal_c + assumption');
+INSERT INTO "Efficiency" VALUES ('ES','ELC_NGA','ELC_NGA_MIN_E',2006,'ELC_CEN',0.35,'Eurostat nrg_bal_c + assumption');
+INSERT INTO "Efficiency" VALUES ('ES','ELC_OIL','ELC_DST_TURB_E',2006,'ELC_CEN',0.35,'Eurostat nrg_bal_c');
+INSERT INTO "Efficiency" VALUES ('ES','ELC_OIL','ELC_NGA_OIL_STM_E',2006,'ELC_CEN',0.40,'Eurostat nrg_bal_c + assumption');
+INSERT INTO "Efficiency" VALUES ('ES','ELC_OIL','ELC_NGA_OIL_STM_E',2010,'ELC_CEN',0.35,'Eurostat nrg_bal_c + assumption');
 INSERT INTO "Efficiency" VALUES ('ES','ELC_BGS','ELC_BGS_E',2006,'ELC_DST',0.36,'Eurostat nrg_bal_c');
 INSERT INTO "Efficiency" VALUES ('ES','ELC_SLB','ELC_BIO_CEN_E',2006,'ELC_CEN',0.26,'Eurostat nrg_bal_c');
 INSERT INTO "Efficiency" VALUES ('ES','ELC_SLB','ELC_BIO_DST_E',2006,'ELC_DST',0.26,'Eurostat nrg_bal_c');
-INSERT INTO "Efficiency" VALUES ('ES','ELC_GEO','ELC_GEO_E',2006,'ELC_CEN',0.10,'No existining GEO in Spain, remove?');
+-- INSERT INTO "Efficiency" VALUES ('ES','ELC_GEO','ELC_GEO_E',2006,'ELC_CEN',0.10,'No existining GEO in Spain, remove?');
 INSERT INTO "Efficiency" VALUES ('ES','ELC_SOL','ELC_SOL_E',2006,'ELC_DST',1.00,'');
 INSERT INTO "Efficiency" VALUES ('ES','ELC_WIN','ELC_WIN_E',2006,'ELC_CEN',1.00,'');
 INSERT INTO "Efficiency" VALUES ('ES','ELC_HYD','ELC_HYD_E',2006,'ELC_CEN',1.00,'');
@@ -2028,7 +2026,6 @@ INSERT INTO "Efficiency" VALUES ('ES','ELC_HYD','ELC_HYD_L10MW_E',2006,'ELC_DST'
 --INSERT INTO "Efficiency" VALUES ('ES','ELC_BGS','ELC_CHP_BGS_COG_E',2006,'ELC_CEN',0.66,'');
 --INSERT INTO "Efficiency" VALUES ('ES','ELC_COA','ELC_CHP_COA_IGCC_E',2006,'ELC_CEN',0.47,'');
 --INSERT INTO "Efficiency" VALUES ('ES','ELC_SLB','ELC_CHP_BIO_CEN_E',2006,'ELC_CEN',0.49,'');
--- Nuclear da TEMOA  europe
 INSERT INTO "Efficiency" VALUES ('ES','ELC_NUC','ELC_NUC_LWR_E',2006,'ELC_CEN',0.33,'Eurostat nrg_bal_c');
 
 -- Planned technologies
@@ -2704,7 +2701,6 @@ INSERT INTO "CostInvest" VALUES ('ES','STG_ELC_DST_BTT',2050,1002,'M$/GW','ATB 2
 -- Distrib and demand
 INSERT INTO "CostInvest" VALUES ('ES','DISTR_ELC',2025,20,'M€/GW','Assumption');
 
--- TODO costi fissi nuclear?
 CREATE TABLE "CostFixed" (
 	"regions"	text NOT NULL,
 	"periods"	integer NOT NULL,
@@ -2752,7 +2748,8 @@ INSERT INTO "CostFixed" VALUES ('ES',2006,'ELC_HYD_L10MW_E',2006,33.65,'M€/GW'
 --INSERT INTO "CostFixed" VALUES ('ES',2006,'ELC_CHP_BGS_COG_E',2006,220.50,'M€/GW','');
 --INSERT INTO "CostFixed" VALUES ('ES',2006,'ELC_CHP_COA_IGCC_E',2006,220.50,'M€/GW','');
 --INSERT INTO "CostFixed" VALUES ('ES',2006,'ELC_CHP_BIO_CEN_E',2006,220.50,'M€/GW','');
--- Aggiungere nuclear (non c'è?) - operation and maint
+-- Nuclear - operation and maint
+INSERT INTO "CostFixed" VALUES ('ES',2006,'ELC_NUC_LWR_E',2006,60,'M$/GW','');
 -- Planned technologies
 INSERT INTO "CostFixed" VALUES ('ES',2007,'ELC_COA_STM_P',2007,32.04,'M€/GW','');
 INSERT INTO "CostFixed" VALUES ('ES',2007,'ELC_NGA_CC_P',2007,12.91,'M€/GW','');
@@ -3068,7 +3065,6 @@ INSERT INTO "CapacityToActivity" VALUES ('ES','STG_ELC_DST_BTT',31.536,'PJ/GW');
 INSERT INTO "CapacityToActivity" VALUES ('ES','DISTR_ELC',31.536,'PJ/GW');
 INSERT INTO "CapacityToActivity" VALUES ('ES','END_USES_ELC',31.536,'PJ/GW');
 
--- TODO
 CREATE TABLE "CapacityFactor" (
 	"regions"	text,
 	"tech"	text,
@@ -3152,7 +3148,6 @@ INSERT INTO "CapacityFactor" VALUES ('ES','ELC_GEO_E',2020,0.75,'https://www.pna
 --INSERT INTO "CapacityFactor" VALUES ('ES','ELC_CHP_OIL_STM_COND_DST_E',2020,0.56,'');
 --INSERT INTO "CapacityFactor" VALUES ('ES','ELC_CHP_BMU_E',2020,0.57,'');
 --INSERT INTO "CapacityFactor" VALUES ('ES','ELC_CHP_BGS_COG_E',2020,0.57,'');
--- Aggiungere nuclear (utlization factor è attorno a .92)
 -- Planned technologies, probably good
 INSERT INTO "CapacityFactor" VALUES ('ES','ELC_COA_STM_P',2007,0.70,'');
 INSERT INTO "CapacityFactor" VALUES ('ES','ELC_NGA_CC_P',2007,0.45,'');
@@ -3525,7 +3520,6 @@ CREATE TABLE "MaxMaterialReserve" (
 	PRIMARY KEY("regions","tech")
 );
 
--- TODO
 CREATE TABLE "MaterialIntensity" (
 	"regions"	text,
 	"comm_name" text,

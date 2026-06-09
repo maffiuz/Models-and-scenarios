@@ -5,7 +5,7 @@ import time
 
 # Input data and preliminary operations
 
-conn = sqlite3.connect("TEMOA_Europe.sqlite")
+conn = sqlite3.connect("Power_Spain.sqlite")
 
 lifetime_default = 40
 print_i = 0

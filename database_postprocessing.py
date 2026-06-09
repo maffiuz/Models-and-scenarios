@@ -12,43 +12,107 @@ excel_name = "database_postprocessing"
 
 # Input parameters to define the set of output to be postprocessed and their aggregation level
 
-file = []
+file = ['Power_Spain.sqlite']
 
 regions_list = []
-tech_list = []
+tech_list = [
+'ELC_COA_COND_E',
+'ELC_COA_OIL_E',
+'ELC_DERGAS_CC_E',
+'ELC_NGA_CC_E',
+'ELC_NGA_E',
+'ELC_NGA_STM_REP_E',
+'ELC_NGA_TURB_E',
+'ELC_NGA_MIN_E',
+'ELC_DST_TURB_E',
+'ELC_NGA_OIL_STM_E',
+'ELC_BGS_E',
+'ELC_BIO_CEN_E',
+'ELC_BIO_DST_E',
+'ELC_GEO_E',
+'ELC_SOL_E',
+'ELC_WIN_E',
+'ELC_HYD_E',
+'ELC_HYD_L10MW_E',
+'ELC_NUC_LWR_E',
+'ELC_COA_STM_P',
+'ELC_NGA_CC_P',
+'ELC_CHP_NGA_CC_P',
+'ELC_CHP_NGA_TURB_P',
+'ELC_WIN_P',
+'ELC_NGA_CT_N',
+'ELC_NGA_CC_N',
+'ELC_COA_STM_N',
+'ELC_NGA_OIL_STM_N',
+'ELC_BLQ_N',
+'ELC_BIO_5C_N',
+'ELC_BIO_12C_N',
+'ELC_BGS_AGR_N',
+'ELC_BGS_LAN_N',
+'ELC_HYD_MICRO_N',
+'ELC_HYD_MINI_N',
+'ELC_GEO_HENT_N',
+'ELC_GEO_LENT_N',
+'ELC_WIN_N',
+'ELC_WIN_OFF_N',
+'ELC_WIN_OFF_DEEP_N',
+'ELC_PV_GRO_NRD_N',
+'ELC_PV_GRO_CNT_N',
+'ELC_PV_GRO_SUD_N',
+'ELC_PV_ROOF_NRD_N',
+'ELC_PV_ROOF_CNT_N',
+'ELC_PV_ROOF_SUD_N',
+'ELC_H2_PEMFC_N',
+'ELC_NUC_LWR_N',
+'ELC_NUC_SMR_N',
+'ELC_CHP_BMU_N',
+'ELC_CHP_NGA_TURB_N',
+'ELC_CHP_NGA_CC_N',
+'ELC_CHP_NGA_CP_N',
+'ELC_CHP_NGA_TAP_N',
+'UPS_IMP_ELC',
+'UPS_EXP_ELC'
+
+
+]
 input_comm_list = []
-output_comm_list = []
+output_comm_list = [
+]
 material_comm_list = []
-emissions_comm_list = []
+emissions_comm_list = [
+'ELC_N2O',
+'ELC_CO2',
+'ELC_CH4',
+]
 periods_list = []
 
 tech_dummies = ['CCUS_SNK_BCKSTP', 'DMY_DEM_ANNUAL', 'DMY_PHY_ANNUAL', 'DMY_PHY_NON_ANNUAL']
 
 result_set = {
-    "Output_CapacityByPeriodAndTech": False,
+    "Output_CapacityByPeriodAndTech": True,
     "Output_V_Capacity": False,
     "Output_CostInvest": False,
     "Output_CostFixed": False,
     "Output_CostVariable": False,
     "Output_VFlow_In": False,
-    "Output_VFlow_Out": False,
+    "Output_VFlow_Out": True,
     "Output_VMat_Cons": False,
-    "Output_Emissions": False
+    "Output_Emissions": True
 }
 
 disaggregation = {
     "regions": False,
-    "capacity_tech": False,
+    "capacity_tech": True,
     "new_capacity_tech": False,
     "cost_tech": False,
     "input_tech": False,
     "input_comm": False,
-    "output_tech": False,
-    "output_comm": False,
+    "output_tech": True,
+    "output_comm": True,
     "material_tech": False,
     "material_comm": False,
-    "emissions_tech": False,
-    "emissions_comm": False
+    "emissions_tech": True,
+    "emissions_comm": True
 }
 
 # Assigning scenarios to the different processes
