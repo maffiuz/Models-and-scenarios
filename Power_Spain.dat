@@ -363,7 +363,10 @@ ELC_NGA_OIL_STM_N
 ELC_NGA_OIL_STM_E
 ELC_CHP_NGA_CP_N
 ELC_CHP_NGA_CC_N
+ELC_CHP_NGA_CC_P
 ELC_CHP_NGA_TAP_N
+ELC_CHP_NGA_TURB_N
+ELC_CHP_NGA_TURB_P
 ELC_HYD_E
 ELC_HYD_L10MW_E
 ELC_HYD_MICRO_N
@@ -443,9 +446,12 @@ param TechGroupWeight :=
     ELC_NGA_E             ELC_NGA_GRP         1.0    
     ELC_NGA_CT_N             ELC_NGA_GRP         1.0    
     ELC_NGA_CC_N             ELC_NGA_GRP         1.0    
+    ELC_CHP_NGA_CC_P             ELC_NGA_GRP         1.0    
     ELC_CHP_NGA_CC_N             ELC_NGA_GRP         1.0    
     ELC_CHP_NGA_CP_N             ELC_NGA_GRP         1.0    
     ELC_CHP_NGA_TAP_N             ELC_NGA_GRP         1.0    
+    ELC_CHP_NGA_TURB_P             ELC_NGA_GRP         1.0    
+    ELC_CHP_NGA_TURB_N             ELC_NGA_GRP         1.0    
     ELC_NGA_OIL_STM_N             ELC_OIL_GRP         1.0    
     ELC_NGA_OIL_STM_E             ELC_OIL_GRP         1.0    
     ELC_HYD_E             ELC_HYD_GRP         1.0    
@@ -476,10 +482,10 @@ param MinActivityGroup :=
     ES         2007         ELC_BIO_GRP         7.39062    
     ES         2008         ELC_BIO_GRP         8.75292    
     ES         2010         ELC_BIO_GRP         11.47752    
-    ES         2012         ELC_BIO_GRP         13.823640000000001    
+    ES         2012         ELC_BIO_GRP         14.576039999999999    
     ES         2014         ELC_BIO_GRP         16.16976    
-    ES         2016         ELC_BIO_GRP         16.2963    
-    ES         2018         ELC_BIO_GRP         16.422839999999997    
+    ES         2016         ELC_BIO_GRP         16.90164    
+    ES         2018         ELC_BIO_GRP         17.633519999999997    
     ES         2020         ELC_BIO_GRP         20.820959999999996    
     ES         2022         ELC_BIO_GRP         19.505969999999998    
     ES         2024         ELC_BIO_GRP         18.19098    
@@ -490,7 +496,7 @@ param MinActivityGroup :=
     ES         2045         ELC_BIO_GRP         23.15625    
     ES         2050         ELC_BIO_GRP         23.75    
     ES         2007         ELC_HYD_GRP         109.8792    
-    ES         2008         ELC_HYD_GRP         127.866    
+    ES         2008         ELC_HYD_GRP         94.1184    
     ES         2010         ELC_HYD_GRP         163.8396    
     ES         2012         ELC_HYD_GRP         86.9832    
     ES         2014         ELC_HYD_GRP         154.6884    
@@ -538,7 +544,7 @@ param MinActivityGroup :=
     ES         2045         ELC_WIN_GRP         289.75    
     ES         2050         ELC_WIN_GRP         304.0    
     ES         2007         ELC_COA_GRP         266.71    
-    ES         2008         ELC_COA_GRP         207.814    
+    ES         2008         ELC_COA_GRP         179.9028    
     ES         2010         ELC_COA_GRP         90.022    
     ES         2012         ELC_COA_GRP         191.49149999999997    
     ES         2014         ELC_COA_GRP         159.79    
@@ -554,11 +560,11 @@ param MinActivityGroup :=
     ES         2045         ELC_COA_GRP         0.47499999999999987    
     ES         2050         ELC_COA_GRP         0.0    
     ES         2007         ELC_NGA_GRP         341.2764    
-    ES         2008         ELC_NGA_GRP         335.64774    
+    ES         2008         ELC_NGA_GRP         434.8728    
     ES         2010         ELC_NGA_GRP         324.39041999999995    
-    ES         2012         ELC_NGA_GRP         250.71335999999997    
+    ES         2012         ELC_NGA_GRP         263.9088    
     ES         2014         ELC_NGA_GRP         179.54315999999997    
-    ES         2016         ELC_NGA_GRP         219.00653999999997    
+    ES         2016         ELC_NGA_GRP         180.6444    
     ES         2018         ELC_NGA_GRP         198.37368    
     ES         2020         ELC_NGA_GRP         238.50737999999998    
     ES         2022         ELC_NGA_GRP         294.0345    
@@ -574,7 +580,7 @@ param MinActivityGroup :=
     ES         2010         ELC_OIL_GRP         56.642039999999994    
     ES         2012         ELC_OIL_GRP         52.397819999999996    
     ES         2014         ELC_OIL_GRP         48.29382    
-    ES         2016         ELC_OIL_GRP         53.91971999999999    
+    ES         2016         ELC_OIL_GRP         57.86982    
     ES         2018         ELC_OIL_GRP         49.58316    
     ES         2020         ELC_OIL_GRP         36.607679999999995    
     ES         2022         ELC_OIL_GRP         36.217800000000004    
@@ -586,9 +592,9 @@ param MinActivityGroup :=
     ES         2045         ELC_OIL_GRP         2.375    
     ES         2050         ELC_OIL_GRP         0.0    
     ES         2007         ELC_NUC_GRP         198.37    
-    ES         2008         ELC_NUC_GRP         202.914    
+    ES         2008         ELC_NUC_GRP         212.3028    
     ES         2010         ELC_NUC_GRP         212.00199999999998    
-    ES         2012         ELC_NUC_GRP         210.22549999999998    
+    ES         2012         ELC_NUC_GRP         221.29    
     ES         2014         ELC_NUC_GRP         195.985    
     ES         2016         ELC_NUC_GRP         200.526    
     ES         2018         ELC_NUC_GRP         190.72199999999998    
@@ -651,8 +657,8 @@ param MaxActivityGroup :=
     ES         2045         ELC_WIN_GRP         544.8215384615385    
     ES         2050         ELC_WIN_GRP         616.0    
     ES         2007         ELC_COA_GRP         293.38100000000003    
-    ES         2008         ELC_COA_GRP         230.33266666666668    
-    ES         2010         ELC_COA_GRP         104.23600000000002    
+    ES         2008         ELC_COA_GRP         197.89308000000003    
+    ES         2010         ELC_COA_GRP         94.76    
     ES         2012         ELC_COA_GRP         221.727    
     ES         2014         ELC_COA_GRP         185.02    
     ES         2016         ELC_COA_GRP         148.31300000000002    
@@ -667,8 +673,8 @@ param MaxActivityGroup :=
     ES         2045         ELC_COA_GRP         2.200000000000001    
     ES         2050         ELC_COA_GRP         0.0    
     ES         2007         ELC_OIL_GRP         73.29168    
-    ES         2008         ELC_OIL_GRP         70.72296    
-    ES         2010         ELC_OIL_GRP         65.58552    
+    ES         2008         ELC_OIL_GRP         68.73552    
+    ES         2010         ELC_OIL_GRP         59.6232    
     ES         2012         ELC_OIL_GRP         60.67116000000001    
     ES         2014         ELC_OIL_GRP         55.919160000000005    
     ES         2016         ELC_OIL_GRP         62.43336    
@@ -677,17 +683,17 @@ param MaxActivityGroup :=
     ES         2022         ELC_OIL_GRP         41.936400000000006    
     ES         2024         ELC_OIL_GRP         36.12708    
     ES         2007         ELC_NGA_GRP         375.40404000000007    
-    ES         2008         ELC_NGA_GRP         364.09056000000004    
+    ES         2008         ELC_NGA_GRP         478.36008000000004    
     ES         2010         ELC_NGA_GRP         341.4636    
     ES         2012         ELC_NGA_GRP         290.29968    
     ES         2014         ELC_NGA_GRP         187.2013    
-    ES         2016         ELC_NGA_GRP         253.58652    
+    ES         2016         ELC_NGA_GRP         209.1672    
     ES         2018         ELC_NGA_GRP         229.69584000000003    
     ES         2020         ELC_NGA_GRP         276.16644    
     ES         2022         ELC_NGA_GRP         340.461    
     ES         2024         ELC_NGA_GRP         207.22284000000002    
     ES         2007         ELC_HYD_GRP         120.86712    
-    ES         2008         ELC_HYD_GRP         140.6526    
+    ES         2008         ELC_HYD_GRP         103.53024    
     ES         2010         ELC_HYD_GRP         180.22356    
     ES         2012         ELC_HYD_GRP         95.68152    
     ES         2014         ELC_HYD_GRP         170.15724    
@@ -965,20 +971,20 @@ param LinkedTechs :=
 ;
 
 param SegFrac := 
-    winter             night         0.08333    
-    winter             morning         0.05201    
+    winter             night         0.08332    
+    winter             morning         0.052    
     winter             noon         0.041667    
     winter             afternoon         0.072917    
     spring             night         0.083333    
-    spring             morning         0.05201    
+    spring             morning         0.052    
     spring             noon         0.041667    
     spring             afternoon         0.072917    
     summer             night         0.08333    
-    summer             morning         0.05201    
+    summer             morning         0.052    
     summer             noon         0.041667    
-    summer             afternoon         0.072917    
+    summer             afternoon         0.072916    
     fall             night         0.08333    
-    fall             morning         0.05201    
+    fall             morning         0.052    
     fall             noon         0.041667    
     fall             afternoon         0.072917    
 ;
@@ -3061,6 +3067,38 @@ param MaxActivity :=
     ES         2040         ELC_FT_NGA         8204.0    
     ES         2045         ELC_FT_NGA         9962.0    
     ES         2050         ELC_FT_NGA         11720.0    
+    ES         2007         ELC_BGS_E         5.0457600000000005    
+    ES         2008         ELC_BGS_E         4.928416744186047    
+    ES         2010         ELC_BGS_E         4.69373023255814    
+    ES         2012         ELC_BGS_E         4.459043720930233    
+    ES         2014         ELC_BGS_E         4.224357209302326    
+    ES         2016         ELC_BGS_E         3.989670697674419    
+    ES         2018         ELC_BGS_E         3.754984186046512    
+    ES         2020         ELC_BGS_E         3.5202976744186047    
+    ES         2022         ELC_BGS_E         3.285611162790698    
+    ES         2024         ELC_BGS_E         3.050924651162791    
+    ES         2025         ELC_BGS_E         2.9335813953488374    
+    ES         2030         ELC_BGS_E         2.3468651162790697    
+    ES         2035         ELC_BGS_E         1.7601488372093024    
+    ES         2040         ELC_BGS_E         1.173432558139535    
+    ES         2045         ELC_BGS_E         0.5867162790697673    
+    ES         2050         ELC_BGS_E         0.0    
+    ES         2007         ELC_BIO_CEN_E         12.614400000000002    
+    ES         2008         ELC_BIO_CEN_E         12.321041860465117    
+    ES         2010         ELC_BIO_CEN_E         11.73432558139535    
+    ES         2012         ELC_BIO_CEN_E         11.147609302325582    
+    ES         2014         ELC_BIO_CEN_E         10.560893023255815    
+    ES         2016         ELC_BIO_CEN_E         9.974176744186048    
+    ES         2018         ELC_BIO_CEN_E         9.38746046511628    
+    ES         2020         ELC_BIO_CEN_E         8.800744186046513    
+    ES         2022         ELC_BIO_CEN_E         8.214027906976746    
+    ES         2024         ELC_BIO_CEN_E         7.627311627906978    
+    ES         2025         ELC_BIO_CEN_E         7.333953488372094    
+    ES         2030         ELC_BIO_CEN_E         5.867162790697675    
+    ES         2035         ELC_BIO_CEN_E         4.400372093023256    
+    ES         2040         ELC_BIO_CEN_E         2.9335813953488383    
+    ES         2045         ELC_BIO_CEN_E         1.4667906976744192    
+    ES         2050         ELC_BIO_CEN_E         0.0    
     ES         2025         ELC_COA_COND_E         47.304    
     ES         2030         ELC_COA_COND_E         0.0    
     ES         2035         ELC_COA_COND_E         0.0    
@@ -3081,22 +3119,22 @@ param MaxActivity :=
     ES         2040         ELC_DERGAS_CC_E         0.10625000000000001    
     ES         2045         ELC_DERGAS_CC_E         0.05312499999999998    
     ES         2050         ELC_DERGAS_CC_E         0.0    
-    ES         2007         ELC_HYD_E         536.1120000000001    
-    ES         2008         ELC_HYD_E         536.1120000000001    
-    ES         2010         ELC_HYD_E         536.1120000000001    
-    ES         2012         ELC_HYD_E         536.1120000000001    
-    ES         2014         ELC_HYD_E         536.1120000000001    
-    ES         2016         ELC_HYD_E         536.1120000000001    
-    ES         2018         ELC_HYD_E         536.1120000000001    
-    ES         2020         ELC_HYD_E         536.1120000000001    
-    ES         2022         ELC_HYD_E         536.1120000000001    
-    ES         2024         ELC_HYD_E         536.1120000000001    
-    ES         2025         ELC_HYD_E         536.1120000000001    
-    ES         2030         ELC_HYD_E         536.1120000000001    
-    ES         2035         ELC_HYD_E         536.1120000000001    
-    ES         2040         ELC_HYD_E         536.1120000000001    
-    ES         2045         ELC_HYD_E         536.1120000000001    
-    ES         2050         ELC_HYD_E         536.1120000000001    
+    ES         2007         ELC_HYD_E         526.6512    
+    ES         2008         ELC_HYD_E         526.6512    
+    ES         2010         ELC_HYD_E         526.6512    
+    ES         2012         ELC_HYD_E         526.6512    
+    ES         2014         ELC_HYD_E         526.6512    
+    ES         2016         ELC_HYD_E         526.6512    
+    ES         2018         ELC_HYD_E         526.6512    
+    ES         2020         ELC_HYD_E         526.6512    
+    ES         2022         ELC_HYD_E         526.6512    
+    ES         2024         ELC_HYD_E         526.6512    
+    ES         2025         ELC_HYD_E         526.6512    
+    ES         2030         ELC_HYD_E         526.6512    
+    ES         2035         ELC_HYD_E         526.6512    
+    ES         2040         ELC_HYD_E         526.6512    
+    ES         2045         ELC_HYD_E         526.6512    
+    ES         2050         ELC_HYD_E         526.6512    
     ES         2007         ELC_HYD_L10MW_E         56.7648    
     ES         2008         ELC_HYD_L10MW_E         56.7648    
     ES         2010         ELC_HYD_L10MW_E         56.7648    
@@ -3135,38 +3173,54 @@ param MaxActivity :=
     ES         2040         ELC_NGA_E         5.0    
     ES         2045         ELC_NGA_E         2.5    
     ES         2050         ELC_NGA_E         0.0    
-    ES         2007         ELC_SOL_E         20.09    
-    ES         2008         ELC_SOL_E         20.09    
-    ES         2010         ELC_SOL_E         20.1    
-    ES         2012         ELC_SOL_E         20.11    
-    ES         2014         ELC_SOL_E         20.07    
-    ES         2016         ELC_SOL_E         20.07    
-    ES         2018         ELC_SOL_E         20.08    
-    ES         2020         ELC_SOL_E         20.04    
-    ES         2022         ELC_SOL_E         20.04    
-    ES         2024         ELC_SOL_E         20.02    
-    ES         2025         ELC_SOL_E         20.01    
-    ES         2030         ELC_SOL_E         10.0    
-    ES         2035         ELC_SOL_E         7.5    
-    ES         2040         ELC_SOL_E         5.0    
-    ES         2045         ELC_SOL_E         2.5    
+    ES         2007         ELC_NGA_OIL_STM_E         261.7488    
+    ES         2008         ELC_NGA_OIL_STM_E         252.4006285714286    
+    ES         2010         ELC_NGA_OIL_STM_E         233.70428571428573    
+    ES         2012         ELC_NGA_OIL_STM_E         215.00794285714287    
+    ES         2014         ELC_NGA_OIL_STM_E         196.3116    
+    ES         2016         ELC_NGA_OIL_STM_E         177.61525714285716    
+    ES         2018         ELC_NGA_OIL_STM_E         158.9189142857143    
+    ES         2020         ELC_NGA_OIL_STM_E         140.22257142857143    
+    ES         2022         ELC_NGA_OIL_STM_E         121.52622857142856    
+    ES         2024         ELC_NGA_OIL_STM_E         102.82988571428572    
+    ES         2025         ELC_NGA_OIL_STM_E         93.4817142857143    
+    ES         2030         ELC_NGA_OIL_STM_E         46.74085714285715    
+    ES         2035         ELC_NGA_OIL_STM_E         0.0    
+    ES         2040         ELC_NGA_OIL_STM_E         0.0    
+    ES         2045         ELC_NGA_OIL_STM_E         0.0    
+    ES         2050         ELC_NGA_OIL_STM_E         0.0    
+    ES         2007         ELC_SOL_E         4.41504    
+    ES         2008         ELC_SOL_E         4.3856064    
+    ES         2010         ELC_SOL_E         4.3267392000000005    
+    ES         2012         ELC_SOL_E         4.2678720000000006    
+    ES         2014         ELC_SOL_E         4.209004800000001    
+    ES         2016         ELC_SOL_E         4.1501376    
+    ES         2018         ELC_SOL_E         4.0912704    
+    ES         2020         ELC_SOL_E         4.0324032    
+    ES         2022         ELC_SOL_E         3.973536    
+    ES         2024         ELC_SOL_E         3.6792000000000002    
+    ES         2025         ELC_SOL_E         3.5320320000000005    
+    ES         2030         ELC_SOL_E         0.0    
+    ES         2035         ELC_SOL_E         0.0    
+    ES         2040         ELC_SOL_E         0.0    
+    ES         2045         ELC_SOL_E         0.0    
     ES         2050         ELC_SOL_E         0.0    
-    ES         2007         ELC_WIN_E         310.7    
-    ES         2008         ELC_WIN_E         311.34    
-    ES         2010         ELC_WIN_E         310.96    
-    ES         2012         ELC_WIN_E         311.2    
-    ES         2014         ELC_WIN_E         319.37    
-    ES         2016         ELC_WIN_E         317.17    
-    ES         2018         ELC_WIN_E         316.8    
-    ES         2020         ELC_WIN_E         311.0    
-    ES         2022         ELC_WIN_E         310.0    
-    ES         2024         ELC_WIN_E         235.5    
-    ES         2025         ELC_WIN_E         198.25    
-    ES         2030         ELC_WIN_E         12.0    
-    ES         2035         ELC_WIN_E         12.0    
-    ES         2040         ELC_WIN_E         12.0    
-    ES         2045         ELC_WIN_E         12.0    
-    ES         2050         ELC_WIN_E         12.0    
+    ES         2007         ELC_WIN_E         356.28900000000004    
+    ES         2008         ELC_WIN_E         345.4454217391305    
+    ES         2010         ELC_WIN_E         323.75826521739134    
+    ES         2012         ELC_WIN_E         302.07110869565224    
+    ES         2014         ELC_WIN_E         280.3839521739131    
+    ES         2016         ELC_WIN_E         258.69679565217393    
+    ES         2018         ELC_WIN_E         237.0096391304348    
+    ES         2020         ELC_WIN_E         215.32248260869568    
+    ES         2022         ELC_WIN_E         193.63532608695655    
+    ES         2024         ELC_WIN_E         171.94816956521743    
+    ES         2025         ELC_WIN_E         161.10459130434785    
+    ES         2030         ELC_WIN_E         106.8867    
+    ES         2035         ELC_WIN_E         80.16502500000001    
+    ES         2040         ELC_WIN_E         53.44335000000001    
+    ES         2045         ELC_WIN_E         26.721675000000005    
+    ES         2050         ELC_WIN_E         0.0    
     ES         2030         ELC_NUC_LWR_E         201.51504    
     ES         2035         ELC_NUC_LWR_E         190.31976    
     ES         2040         ELC_NUC_LWR_E         179.12448    
@@ -6036,22 +6090,22 @@ param Efficiency :=
     ES             ELC_CEN             DISTR_ELC         2040         ELC_DST         1.0    
     ES             ELC_CEN             DISTR_ELC         2045         ELC_DST         1.0    
     ES             ELC_CEN             DISTR_ELC         2050         ELC_DST         1.0    
-    ES             ELC_DST             END_USES_ELC         2007         ELC_DEM         0.95    
-    ES             ELC_DST             END_USES_ELC         2008         ELC_DEM         0.95    
-    ES             ELC_DST             END_USES_ELC         2010         ELC_DEM         0.95    
-    ES             ELC_DST             END_USES_ELC         2012         ELC_DEM         0.95    
-    ES             ELC_DST             END_USES_ELC         2014         ELC_DEM         0.95    
-    ES             ELC_DST             END_USES_ELC         2016         ELC_DEM         0.95    
-    ES             ELC_DST             END_USES_ELC         2018         ELC_DEM         0.95    
-    ES             ELC_DST             END_USES_ELC         2020         ELC_DEM         0.95    
-    ES             ELC_DST             END_USES_ELC         2022         ELC_DEM         0.95    
-    ES             ELC_DST             END_USES_ELC         2024         ELC_DEM         0.95    
-    ES             ELC_DST             END_USES_ELC         2025         ELC_DEM         0.95    
-    ES             ELC_DST             END_USES_ELC         2030         ELC_DEM         0.95    
-    ES             ELC_DST             END_USES_ELC         2035         ELC_DEM         0.95    
-    ES             ELC_DST             END_USES_ELC         2040         ELC_DEM         0.95    
-    ES             ELC_DST             END_USES_ELC         2045         ELC_DEM         0.95    
-    ES             ELC_DST             END_USES_ELC         2050         ELC_DEM         0.95    
+    ES             ELC_DST             END_USES_ELC         2007         ELC_DEM         0.94    
+    ES             ELC_DST             END_USES_ELC         2008         ELC_DEM         0.94    
+    ES             ELC_DST             END_USES_ELC         2010         ELC_DEM         0.94    
+    ES             ELC_DST             END_USES_ELC         2012         ELC_DEM         0.94    
+    ES             ELC_DST             END_USES_ELC         2014         ELC_DEM         0.94    
+    ES             ELC_DST             END_USES_ELC         2016         ELC_DEM         0.94    
+    ES             ELC_DST             END_USES_ELC         2018         ELC_DEM         0.94    
+    ES             ELC_DST             END_USES_ELC         2020         ELC_DEM         0.94    
+    ES             ELC_DST             END_USES_ELC         2022         ELC_DEM         0.94    
+    ES             ELC_DST             END_USES_ELC         2024         ELC_DEM         0.94    
+    ES             ELC_DST             END_USES_ELC         2025         ELC_DEM         0.94    
+    ES             ELC_DST             END_USES_ELC         2030         ELC_DEM         0.94    
+    ES             ELC_DST             END_USES_ELC         2035         ELC_DEM         0.94    
+    ES             ELC_DST             END_USES_ELC         2040         ELC_DEM         0.94    
+    ES             ELC_DST             END_USES_ELC         2045         ELC_DEM         0.94    
+    ES             ELC_DST             END_USES_ELC         2050         ELC_DEM         0.94    
     ES             ethos             DMY_OUT_TECH         2007         DMY_OUT         1.0    
     ES             ethos             DMY_OUT_TECH         2008         DMY_OUT         1.0    
     ES             ethos             DMY_OUT_TECH         2010         DMY_OUT         1.0    
