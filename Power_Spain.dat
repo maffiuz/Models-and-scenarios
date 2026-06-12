@@ -359,6 +359,7 @@ ELC_NGA_CC_E
 ELC_NGA_E
 ELC_NGA_CT_N
 ELC_NGA_CC_N
+ELC_NGA_CC_P
 ELC_NGA_OIL_STM_N
 ELC_NGA_OIL_STM_E
 ELC_CHP_NGA_CP_N
@@ -443,6 +444,7 @@ param TechGroupWeight :=
     ELC_COA_STM_P             ELC_COA_GRP         1.0    
     ELC_COA_STM_N             ELC_COA_GRP         1.0    
     ELC_NGA_CC_E             ELC_NGA_GRP         1.0    
+    ELC_NGA_CC_P             ELC_NGA_GRP         1.0    
     ELC_NGA_E             ELC_NGA_GRP         1.0    
     ELC_NGA_CT_N             ELC_NGA_GRP         1.0    
     ELC_NGA_CC_N             ELC_NGA_GRP         1.0    
@@ -514,11 +516,11 @@ param MinActivityGroup :=
     ES         2007         ELC_SOL_GRP         1.7612999999999999    
     ES         2008         ELC_SOL_GRP         9.36624    
     ES         2010         ELC_SOL_GRP         24.576119999999996    
-    ES         2012         ELC_SOL_GRP         40.92714    
+    ES         2012         ELC_SOL_GRP         43.0812    
     ES         2014         ELC_SOL_GRP         47.39778    
     ES         2016         ELC_SOL_GRP         49.237739999999995    
-    ES         2018         ELC_SOL_GRP         51.65226    
-    ES         2020         ELC_SOL_GRP         70.68114    
+    ES         2018         ELC_SOL_GRP         45.8784    
+    ES         2020         ELC_SOL_GRP         74.4012    
     ES         2022         ELC_SOL_GRP         122.17266    
     ES         2024         ELC_SOL_GRP         199.34496000000001    
     ES         2025         ELC_SOL_GRP         205.70413333333335    
@@ -565,8 +567,8 @@ param MinActivityGroup :=
     ES         2012         ELC_NGA_GRP         263.9088    
     ES         2014         ELC_NGA_GRP         179.54315999999997    
     ES         2016         ELC_NGA_GRP         180.6444    
-    ES         2018         ELC_NGA_GRP         198.37368    
-    ES         2020         ELC_NGA_GRP         238.50737999999998    
+    ES         2018         ELC_NGA_GRP         208.8144    
+    ES         2020         ELC_NGA_GRP         251.0604    
     ES         2022         ELC_NGA_GRP         294.0345    
     ES         2024         ELC_NGA_GRP         178.96518    
     ES         2025         ELC_NGA_GRP         157.05431666666667    
@@ -597,10 +599,10 @@ param MinActivityGroup :=
     ES         2012         ELC_NUC_GRP         221.29    
     ES         2014         ELC_NUC_GRP         195.985    
     ES         2016         ELC_NUC_GRP         200.526    
-    ES         2018         ELC_NUC_GRP         190.72199999999998    
-    ES         2020         ELC_NUC_GRP         199.386    
-    ES         2022         ELC_NUC_GRP         193.7316    
-    ES         2024         ELC_NUC_GRP         188.0772    
+    ES         2018         ELC_NUC_GRP         200.76    
+    ES         2020         ELC_NUC_GRP         209.88    
+    ES         2022         ELC_NUC_GRP         200.028    
+    ES         2024         ELC_NUC_GRP         190.176    
     ES         2025         ELC_NUC_GRP         185.25    
     ES         2030         ELC_NUC_GRP         0.0    
     ES         2035         ELC_NUC_GRP         0.0    
@@ -642,7 +644,7 @@ param MaxActivityGroup :=
     ES         2040         ELC_BIO_GRP         41.9474    
     ES         2045         ELC_BIO_GRP         48.47370000000001    
     ES         2050         ELC_BIO_GRP         55.00000000000001    
-    ES         2010         ELC_WIN_GRP         175.318    
+    ES         2010         ELC_WIN_GRP         159.38    
     ES         2012         ELC_WIN_GRP         195.91    
     ES         2014         ELC_WIN_GRP         205.97500000000002    
     ES         2016         ELC_WIN_GRP         193.66600000000003    
@@ -722,6 +724,7 @@ param MaxActivityGroup :=
     ES         2040         ELC_NUC_GRP         134.75    
     ES         2045         ELC_NUC_GRP         133.875    
     ES         2050         ELC_NUC_GRP         133.0    
+    ES         2018         ELC_SOL_GRP         45.88    
 ;
 
 param MinInputGroup := 
@@ -3011,12 +3014,12 @@ param MaxCapacity :=
     ES         2040         ELC_CHP_NGA_CP_N         1.0    #     Assumption for realism            
     ES         2045         ELC_CHP_NGA_CP_N         1.0    #     Assumption for realism            
     ES         2050         ELC_CHP_NGA_CP_N         1.0    #     Assumption for realism            
-    ES         2025         ELC_CHP_NGA_TAP_N         4.0    #     Assumption for realism            
-    ES         2030         ELC_CHP_NGA_TAP_N         4.0    #     Assumption for realism            
-    ES         2035         ELC_CHP_NGA_TAP_N         4.0    #     Assumption for realism            
-    ES         2040         ELC_CHP_NGA_TAP_N         4.0    #     Assumption for realism            
-    ES         2045         ELC_CHP_NGA_TAP_N         4.0    #     Assumption for realism            
-    ES         2050         ELC_CHP_NGA_TAP_N         4.0    #     Assumption for realism            
+    ES         2025         ELC_CHP_NGA_TAP_N         1.0    #     Assumption for realism            
+    ES         2030         ELC_CHP_NGA_TAP_N         1.0    #     Assumption for realism            
+    ES         2035         ELC_CHP_NGA_TAP_N         1.0    #     Assumption for realism            
+    ES         2040         ELC_CHP_NGA_TAP_N         1.0    #     Assumption for realism            
+    ES         2045         ELC_CHP_NGA_TAP_N         1.0    #     Assumption for realism            
+    ES         2050         ELC_CHP_NGA_TAP_N         1.0    #     Assumption for realism            
     ES         2025         ELC_CHP_NGA_CC_P         2.0    #     Assumption for realism            
     ES         2030         ELC_CHP_NGA_CC_P         2.0    #     Assumption for realism            
     ES         2035         ELC_CHP_NGA_CC_P         2.0    #     Assumption for realism            

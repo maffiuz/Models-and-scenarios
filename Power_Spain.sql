@@ -641,6 +641,7 @@ INSERT INTO "tech_groups" VALUES ('ELC_NGA_E','');
 -- INSERT INTO "tech_groups" VALUES ('ELC_NGA_MIN_E','');
 INSERT INTO "tech_groups" VALUES ('ELC_NGA_CT_N','');
 INSERT INTO "tech_groups" VALUES ('ELC_NGA_CC_N','');
+INSERT INTO "tech_groups" VALUES ('ELC_NGA_CC_P','');
 INSERT INTO "tech_groups" VALUES ('ELC_NGA_OIL_STM_N','');
 INSERT INTO "tech_groups" VALUES ('ELC_NGA_OIL_STM_E','');
 INSERT INTO "tech_groups" VALUES ('ELC_CHP_NGA_CP_N','');
@@ -749,6 +750,7 @@ INSERT INTO "TechGroupWeight" VALUES ('ELC_COA_COND_E','ELC_COA_GRP',1.0,'');
 INSERT INTO "TechGroupWeight" VALUES ('ELC_COA_STM_P','ELC_COA_GRP',1.0,'');
 INSERT INTO "TechGroupWeight" VALUES ('ELC_COA_STM_N','ELC_COA_GRP',1.0,'');
 INSERT INTO "TechGroupWeight" VALUES ('ELC_NGA_CC_E','ELC_NGA_GRP',1.0,'');
+INSERT INTO "TechGroupWeight" VALUES ('ELC_NGA_CC_P','ELC_NGA_GRP',1.0,'');
 INSERT INTO "TechGroupWeight" VALUES ('ELC_NGA_E','ELC_NGA_GRP',1.0,'');
 -- INSERT INTO "TechGroupWeight" VALUES ('ELC_NGA_STM_REP_E','ELC_NGA_GRP',1.0,'');
 -- INSERT INTO "TechGroupWeight" VALUES ('ELC_NGA_TURB_E','ELC_NGA_GRP',1.0,'');
@@ -854,11 +856,11 @@ INSERT INTO "MinActivityGroup" VALUES ('ES',2050,'ELC_HYD_GRP',160.0000,'PJ');
 -- SOLAR, dati storici *0.95, con trend crescente per i futuri
 INSERT INTO "MinActivityGroup" VALUES ('ES',2007,'ELC_SOL_GRP',(1.8252+0.0288)*0.95,'PJ');
 INSERT INTO "MinActivityGroup" VALUES ('ES',2010,'ELC_SOL_GRP',25.8696*0.95,'PJ');
-INSERT INTO "MinActivityGroup" VALUES ('ES',2012,'ELC_SOL_GRP',43.0812*0.95,'PJ');
+INSERT INTO "MinActivityGroup" VALUES ('ES',2012,'ELC_SOL_GRP',43.0812,'PJ');
 INSERT INTO "MinActivityGroup" VALUES ('ES',2014,'ELC_SOL_GRP',49.8924*0.95,'PJ');
 INSERT INTO "MinActivityGroup" VALUES ('ES',2016,'ELC_SOL_GRP',51.8292*0.95,'PJ');
-INSERT INTO "MinActivityGroup" VALUES ('ES',2018,'ELC_SOL_GRP',54.3708*0.95,'PJ');
-INSERT INTO "MinActivityGroup" VALUES ('ES',2020,'ELC_SOL_GRP',74.4012*0.95,'PJ');
+INSERT INTO "MinActivityGroup" VALUES ('ES',2018,'ELC_SOL_GRP',45.8784,'PJ');
+INSERT INTO "MinActivityGroup" VALUES ('ES',2020,'ELC_SOL_GRP',74.4012,'PJ');
 INSERT INTO "MinActivityGroup" VALUES ('ES',2022,'ELC_SOL_GRP',128.6028*0.95,'PJ');
 INSERT INTO "MinActivityGroup" VALUES ('ES',2024,'ELC_SOL_GRP',209.8368*0.95,'PJ');
 INSERT INTO "MinActivityGroup" VALUES ('ES',2030,'ELC_SOL_GRP',250.0000*0.95,'PJ');
@@ -893,8 +895,8 @@ INSERT INTO "MinActivityGroup" VALUES ('ES',2010,'ELC_NGA_GRP',341.4636*0.95,'PJ
 INSERT INTO "MinActivityGroup" VALUES ('ES',2012,'ELC_NGA_GRP',263.9088,'PJ');
 INSERT INTO "MinActivityGroup" VALUES ('ES',2014,'ELC_NGA_GRP',188.9928*0.95,'PJ');
 INSERT INTO "MinActivityGroup" VALUES ('ES',2016,'ELC_NGA_GRP',190.152*0.95,'PJ');
-INSERT INTO "MinActivityGroup" VALUES ('ES',2018,'ELC_NGA_GRP',208.8144*0.95,'PJ');
-INSERT INTO "MinActivityGroup" VALUES ('ES',2020,'ELC_NGA_GRP',251.0604*0.95,'PJ');
+INSERT INTO "MinActivityGroup" VALUES ('ES',2018,'ELC_NGA_GRP',208.8144,'PJ');
+INSERT INTO "MinActivityGroup" VALUES ('ES',2020,'ELC_NGA_GRP',251.0604,'PJ');
 INSERT INTO "MinActivityGroup" VALUES ('ES',2022,'ELC_NGA_GRP',309.5100*0.95,'PJ');
 INSERT INTO "MinActivityGroup" VALUES ('ES',2024,'ELC_NGA_GRP',188.3844*0.95,'PJ');
 INSERT INTO "MinActivityGroup" VALUES ('ES',2030,'ELC_NGA_GRP',50.0000*0.95,'PJ');
@@ -919,8 +921,8 @@ INSERT INTO "MinActivityGroup" VALUES ('ES',2010,'ELC_NUC_GRP',223.16 * 0.95,'PJ
 INSERT INTO "MinActivityGroup" VALUES ('ES',2012,'ELC_NUC_GRP',221.29,'PJ');   -- Anno 2012
 INSERT INTO "MinActivityGroup" VALUES ('ES',2014,'ELC_NUC_GRP',206.30 * 0.95,'PJ');   -- Anno 2014
 INSERT INTO "MinActivityGroup" VALUES ('ES',2016,'ELC_NUC_GRP',211.08 * 0.95,'PJ');   -- Anno 2016
-INSERT INTO "MinActivityGroup" VALUES ('ES',2018,'ELC_NUC_GRP',200.76 * 0.95,'PJ');   -- Anno 2018
-INSERT INTO "MinActivityGroup" VALUES ('ES',2020,'ELC_NUC_GRP',209.88 * 0.95,'PJ');   -- Anno 2020
+INSERT INTO "MinActivityGroup" VALUES ('ES',2018,'ELC_NUC_GRP',200.76,'PJ');   -- Anno 2018
+INSERT INTO "MinActivityGroup" VALUES ('ES',2020,'ELC_NUC_GRP',209.88,'PJ');   -- Anno 2020
 INSERT INTO "MinActivityGroup" VALUES ('ES',2025,'ELC_NUC_GRP',195.00 * 0.95,'PJ');   -- Anno 2020
 INSERT INTO "MinActivityGroup" VALUES ('ES',2030,'ELC_NUC_GRP',195.00 * 0.0,'PJ');   -- Mid Phase out
 INSERT INTO "MinActivityGroup" VALUES ('ES',2050,'ELC_NUC_GRP',190.00 * 0.0,'PJ');   -- Phase out
@@ -989,7 +991,7 @@ INSERT INTO "MaxActivityGroup" VALUES ('ES', 2024, 'ELC_BIO_GRP', 19.1484 * 1.1,
 --INSERT INTO "MaxActivityGroup" VALUES ('ES', 2030, 'ELC_BIO_GRP', 22.5000 * 1.1, 'PJ'); 
 INSERT INTO "MaxActivityGroup" VALUES ('ES', 2050, 'ELC_BIO_GRP', 50.0000 * 1.1, 'PJ'); 
 -- WIND: dati storici *1.1 per flessibilità
-INSERT INTO "MaxActivityGroup" VALUES ('ES',2010,'ELC_WIN_GRP', 159.38 * 1.1,'PJ'); -- Dato reale: 159.3756
+INSERT INTO "MaxActivityGroup" VALUES ('ES',2010,'ELC_WIN_GRP', 159.38,'PJ'); -- Dato reale: 159.3756
 INSERT INTO "MaxActivityGroup" VALUES ('ES',2012,'ELC_WIN_GRP', 178.10 * 1.1,'PJ'); -- Dato reale: 178.0992
 INSERT INTO "MaxActivityGroup" VALUES ('ES',2014,'ELC_WIN_GRP', 187.25 * 1.1,'PJ'); -- Dato reale: 187.2468
 INSERT INTO "MaxActivityGroup" VALUES ('ES',2016,'ELC_WIN_GRP', 176.06 * 1.1,'PJ'); -- Dato reale: 176.058
@@ -1058,7 +1060,7 @@ INSERT INTO "MaxActivityGroup" VALUES ('ES',2024,'ELC_NUC_GRP',196.31 * 1.1,'PJ'
 INSERT INTO "MaxActivityGroup" VALUES ('ES',2030,'ELC_NUC_GRP',195.00 * 0.7,'PJ');   -- Mid Phase out
 INSERT INTO "MaxActivityGroup" VALUES ('ES',2050,'ELC_NUC_GRP',190.00 * 0.7,'PJ');   -- Phase out
 -- SOLAR
--- INSERT INTO "MaxActivityGroup" VALUES ('ES',2014,'ELC_SOL_GRP',49.2156*1.1,'PJ');
+INSERT INTO "MaxActivityGroup" VALUES ('ES',2018,'ELC_SOL_GRP',45.88,'PJ');
 
 CREATE TABLE "MinCapacityGroup" (
 	"regions"	text,
@@ -1401,7 +1403,7 @@ INSERT INTO "MaxCapacity" VALUES ('ES',2010,'ELC_CHP_NGA_CC_N',0.0,'GW','Assumpt
 INSERT INTO "MaxCapacity" VALUES ('ES',2025,'ELC_CHP_NGA_CC_N',1.0,'GW','Assumption for realism');
 INSERT INTO "MaxCapacity" VALUES ('ES',2010,'ELC_CHP_NGA_CP_N',0.0,'GW','Assumption for realism');
 INSERT INTO "MaxCapacity" VALUES ('ES',2025,'ELC_CHP_NGA_CP_N',1.0,'GW','Assumption for realism');
-INSERT INTO "MaxCapacity" VALUES ('ES',2025,'ELC_CHP_NGA_TAP_N',4.0,'GW','Assumption for realism');
+INSERT INTO "MaxCapacity" VALUES ('ES',2025,'ELC_CHP_NGA_TAP_N',1.0,'GW','Assumption for realism');
 INSERT INTO "MaxCapacity" VALUES ('ES',2025,'ELC_CHP_NGA_CC_P',2.0,'GW','Assumption for realism');
 
 
