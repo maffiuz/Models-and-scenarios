@@ -504,6 +504,7 @@ CREATE TABLE "EnergyCommodityConcentrationIndex" (
 	FOREIGN KEY("comm_name") REFERENCES "commodities"("comm_name"),
 	FOREIGN KEY("periods") REFERENCES "time_periods"("t_periods")
 );
+
 CREATE TABLE "TechnologyMaterialSupplyRisk" (
 	"regions"	        text,
 	"tech"	            text,
@@ -515,6 +516,54 @@ CREATE TABLE "TechnologyMaterialSupplyRisk" (
 	FOREIGN KEY("tech") REFERENCES "technologies"("tech"),
 	FOREIGN KEY("vintage") REFERENCES "time_periods"("t_periods")
 );
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_COA_COND_E',1.85E-3,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_DERGAS_CC_E',7.40E-6,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_NGA_CC_E',7.40E-6,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_NGA_E',7.40E-6,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_NGA_OIL_STM_E',7.40E-6,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_BGS_E',9.18E-4,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_BIO_CEN_E',9.18E-4,''.'');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_SOL_E',7.66E-4,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_WIN_E',2.88E-2,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_HYD_E',2.05E-5,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_HYD_L10MW_E',2.05E-5,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_NUC_LWR_E',4.51E-3,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_COA_STM_P',1.85E-3,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_NGA_CC_P',7.40E-6,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_CHP_NGA_CC_P',7.40E-6,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_CHP_NGA_TURB_P',7.40E-6,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_WIN_P',2.88E-2,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_NGA_CT_N',7.40E-6,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_NGA_CC_N',7.40E-6,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_COA_STM_N',1.85E-3,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_NGA_OIL_STM_N',7.40E-6,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_BLQ_N',9.18E-4,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_BIO_5C_N',9.18E-4,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_BIO_12C_N',9.18E-4,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_BGS_AGR_N',9.18E-4,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_BGS_LAN_N',9.18E-4,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_HYD_MICRO_N',2.05E-5,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_HYD_MINI_N',2.05E-5,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_GEO_HENT_N',1.87E-2,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_GEO_LENT_N',1.87E-2,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_WIN_N',2.88E-2,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_WIN_OFF_N',2.88E-2,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_WIN_OFF_DEEP_N',2.88E-2,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_PV_GRO_NRD_N',7.66E-4,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_PV_GRO_CNT_N',7.66E-4,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_PV_GRO_SUD_N',7.66E-4,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_PV_ROOF_NRD_N',7.66E-4,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_PV_ROOF_CNT_N',7.66E-4,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_PV_ROOF_SUD_N',7.66E-4,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_NUC_LWR_N',4.51E-3,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_NUC_SMR_N',4.51E-3,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_CHP_BMU_N',9.18E-4,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_CHP_NGA_TURB_N',7.40E-6,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_CHP_NGA_CC_N',7.40E-6,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_CHP_NGA_CP_N',7.40E-6,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','ELC_CHP_NGA_TAP_N',7.40E-6,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','CCUS_ELC_COA',1.85E-3,'','');
+INSERT INTO "TechnologyMaterialSupplyRisk" VALUES ('ES','CCUS_ELC_NGA',7.40E-6,'','');
 
 CREATE TABLE "TechOutputSplit" (
 	"regions"	TEXT,
